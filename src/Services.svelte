@@ -7,7 +7,7 @@
       name_int: "collectory",
       desc: "biodiversity collections",
       optional: false,
-
+      sample: "https://collections.ala.org.au",
       path: ""
     },
     ala_hub: {
@@ -16,6 +16,7 @@
       desc: "occurrences search frontend",
       optional: false,
       hint: "Typically 'records' or similar",
+      sample: "https://biocache.ala.org.au",
       path: ""
     },
     biocache_service: {
@@ -23,13 +24,15 @@
       name_int: "biocache_service",
       desc: "occurrences web service",
       optional: false,
-      path: "ws"
+      sample: "https://biocache.ala.org.au/ws",
+      path: ""
     },
     ala_bie: {
       name: "species",
       name_int: "ala_bie",
       desc: "species search frontend",
       optional: false,
+      sample: "https://bie.ala.org.au",
       path: ""
     },
     bie_index: {
@@ -37,13 +40,15 @@
       name_int: "bie_index",
       desc: "species web service",
       optional: false,
-      path: "ws"
+      sample: "https://bie.ala.org.au/ws",
+      path: ""
     },
     images: {
       name: "images",
       name_int: "images",
       desc: "",
       optional: false,
+      sample: "https://images.ala.org.au",
       path: ""
     },
     species_lists: {
@@ -51,6 +56,7 @@
       name_int: "species_lists",
       desc: "user provided species lists",
       optional: true,
+      sample: "https://lists.ala.org.au",
       path: ""
     },
     regions: {
@@ -58,6 +64,7 @@
       name_int: "regions",
       desc: "regional data frontend",
       optional: true,
+      sample: "https://regions.ala.org.au",
       path: ""
     },
     logger: {
@@ -65,20 +72,23 @@
       name_int: "logger",
       desc: "event logging",
       optional: false,
+      sample: "https://logger.ala.org.au",
       path: ""
     },
     solr: {
-      name: "solr",
+      name: "index",
       name_int: "solr",
       desc: "indexing",
       optional: false,
       path: ""
     },
     cas: {
-      name: "cas",
+      name: "auth",
       name_int: "cas",
       desc: "authentication system",
       optional: true,
+      forceSubdomain: true,
+      sample: "https://auth.ala.org.au/cas/",
       path: ""
     },
     biocache_backend: {
@@ -100,6 +110,8 @@
       name_int: "spatial",
       desc: "spatial front-end",
       optional: true,
+      forceSubdomain: true,
+      sample: "https://spatial.ala.org.au",
       path: ""
     },
     webapi: {
@@ -107,6 +119,7 @@
       name_int: "webapi",
       desc: "API front-end",
       optional: true,
+      sample: "https://api.ala.org.au",
       path: ""
     },
     dashboard: {
@@ -114,6 +127,7 @@
       name_int: "dashboard",
       desc: "work in progress",
       optional: true,
+      sample: "https://dashboard.ala.org.au",
       path: ""
     },
     alerts: {
@@ -121,6 +135,7 @@
       name_int: "alerts",
       desc: "users can subscribe to notifications about new species occurrences they are interested, regions, etc",
       optional: true,
+      sample: "https://alerts.ala.org.au",
       path: ""
     },
     doi: {
@@ -128,6 +143,7 @@
       name_int: "doi",
       desc: "mainly used for user download DOIs",
       optional: true,
+      sample: "https://doi.ala.org.au",
       path: ""
     },
     nameindexer: {

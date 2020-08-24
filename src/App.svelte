@@ -28,25 +28,59 @@
   const save = myStore.subscribe(newVal => {
     conf = newVal.conf;
     page = newVal.page ? newVal.page : 1;
-    console.log("Subscribe");
+    // console.log("Subscribe");
     console.log(newVal);
+    console.log("Saved")
   });
 
-  const domain = /(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9][a-z0-9-]{0,61}[a-z0-9]/;
+  const domainRegexp = /(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9][a-z0-9-]{0,61}[a-z0-9]/;
+  const hostnameRegexp = /^[._\-a-z0-9A-Z, ]+$/;
+  const shortNameRegexp = /^[._\-a-z0-9A-Z ]+$/;
+  let longNameInvalid = false;
+  let longNameError = "";
+  let longNameAppend = "";
+  let shortNameInvalid = false;
+  let shortNameError = "";
+  let shortNameAppend = "";
+  let hostnameInvalid = false;
+  let hostnameError = "";
+  let hostnameAppend = "";
   let mainDomainInvalid = false;
-  let error = "";
-  let append = "";
+  let mainDomainError = "";
+  let mainDomainAppend = "";
   let firstBtnDisabled = true;
+  let sndBtnDisabled = false;
   let firstBtnText = "« Back";
   let sndBtnText = "Start";
   let lastPage = false;
+  // || shortNameInvalid || mainDomainInvalid),;
+  let pageValid = [() => true, () => !longNameInvalid && !shortNameInvalid & !mainDomainInvalid,
+    () => !hostnameInvalid,
+    () => true
+  ]
+  let hostnamesHint = "Something typically like 'vm1, vm2, vm3' or 'aws-ip-12-34-56-78, aws-ip-12-34-56-79, aws-ip-12-34-56-80'";
 
   $: {
-    mainDomainInvalid = !domain.test(conf.LA_domain);
-    error = mainDomainInvalid ? "You need to provide some-atlas-domain.org" : "";
-    append = mainDomainInvalid ? "error" : "";
+    longNameInvalid = !conf.LA_project_name.length > 0;
+    longNameError = longNameInvalid ? "Project name invalid" : "";
+    longNameAppend = longNameInvalid ? "error" : "";
 
-    firstBtnDisabled = page === 1;
+    shortNameInvalid = !shortNameRegexp.test(conf.LA_project_shortname);
+    shortNameError = shortNameInvalid ? "Project short name invalid" : "";
+    shortNameAppend = shortNameInvalid ? "error" : "";
+
+    mainDomainInvalid = !domainRegexp.test(conf.LA_domain);
+    mainDomainError = mainDomainInvalid ? "You need to provide some-atlas-domain.org" : "";
+    mainDomainAppend = mainDomainInvalid ? "error" : "";
+
+    hostnameInvalid = !hostnameRegexp.test(conf.hostnames);
+    hostnameError = hostnameInvalid ? hostnamesHint : "";
+    hostnameAppend = hostnameInvalid
+
+    firstBtnDisabled = page === 1
+    console.log(`Current page ${page} valid ${pageValid[page - 1]()}`)
+    sndBtnDisabled = !pageValid[page - 1]();
+
     lastPage = page === 4;
     sndBtnText = page === 1 ? "Start" : lastPage ? "Generate & Download" : "Continue »";
     if (conf.hostnames && conf.hostnames.length > 0) {
@@ -116,28 +150,30 @@
 				</div>
 			{/if}
 			{#if (page === 2)}
-				<TextField bind:value={conf.LA_project_name} label="Your LA Project Long Name"/>
-				<TextField bind:value={conf.LA_project_shortname} label="Your LA Project Short Name"/>
+				<TextField bind:value={conf.LA_project_name} label="Your LA Project Long Name" error={longNameError}
+									 append={longNameAppend}/>
+				<TextField bind:value={conf.LA_project_shortname} label="Your LA Project Short Name" error={shortNameError}
+									 append={shortNameAppend}/>
 				<Switch bind:value={conf.LA_enable_ssl} label="Use SSL?"></Switch>
 				<Flex align="center" justify="start">
 					<UrlPrefix ssl={conf.LA_enable_ssl}/>
-					<TextField bind:value={conf.LA_domain} error={error} append={append}
+					<TextField bind:value={conf.LA_domain} error={mainDomainError} append={mainDomainAppend}
 										 label="The domain of your LA node"/>
 				</Flex>
 			{/if}
 
 			{#if (page === 3)}
-				<TextField textarea rows=2 bind:value={conf.hostnames}
-									 label="List of the hostnames of the servers you will use (comma separated)"
-									 hint="Something tipically like 'vm1, vm2, vm3' or 'aws-ip-12-34-56-78, aws-ip-12-34-56-79, aws-ip-12-34-56-80'"/>
+				<TextField textarea rows=2 bind:value={conf.hostnames} append={hostnameAppend} error={hostnameError}
+									 label="List of the hostnames of the servers you will use (comma or spaces separated)"
+				/>
 			{/if}
 
 			{#if (page === 4)}
 				<div class="to-left">
-					<h5>Define how your services URLs will look like:</h5>
+					<h5 class="t-center">Define how your services URLs will look like:</h5>
 					<List class="" items={services}>
 						<li slot="item" let:item={item}>
-							<Service conf={conf} service={servicesStore[item]}
+							<Service conf={conf} service={servicesStore[item]} save="{save}"
 											 hostnamesList={conf.hostnamesList}/>
 						</li>
 					</List>
@@ -150,7 +186,7 @@
 					</div>
 				{/if}
 				<div class="py-2">
-					<Button dark block on:click="{onSndBtnClick}">{sndBtnText}</Button>
+					<Button dark block disabled={sndBtnDisabled} on:click="{onSndBtnClick}">{sndBtnText}</Button>
 				</div>
 			</Flex>
 		</div>
@@ -166,7 +202,7 @@
         margin: 0 auto;
     }
 
-    h2 {
+    h2, .t-center {
         text-align: center;
     }
 
