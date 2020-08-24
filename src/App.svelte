@@ -116,37 +116,39 @@
 				<div class="to-left">
 					<blockquote class="pl-8 mt-2 mb-10 border-l-8 border-primary-300 text-lg right">
 						<p>
-							This is a tool that allows you to generate your Living Atlas (LA) ansible inventories for you.
+							This is a tool that allows you to generate your Living Atlas (LA) configurations for you.
 						</p>
 						<p>
-							That allows you to bootstrap the deployment of your LA Platform, customizing and generating your
-							LA
-							ansible inventories.
+							This allows you to bootstrap the initial deployment of your LA Platform.
 						</p>
 					</blockquote>
 					<h5>How this works?</h5>
 					<p>A <a href="https://living-atlases.gbif.org" target="_blank">Living Atlas</a> can be typically
-						deployed
-						using:</p>
+						deployed using:</p>
 					<ul class="list-decimal">
-						<li><a href="https://ala.org.au/" target="_blank">Atlas of Living Australia (ALA)</a> Open Source
+						<li>The <a href="https://ala.org.au/" target="_blank">Atlas of Living Australia (ALA)</a> Open Source
 							Software, plus
 						</li>
-						<li><a href="https://github.com/AtlasOfLivingAustralia/ala-install/" target="_blank">ala-install</a>
-							ALA
-							ansible playbooks, plus
+						<li>The <a href="https://github.com/AtlasOfLivingAustralia/ala-install/" target="_blank">ala-install</a>
+							ALA <a href="https://www.ansible.com/" target="_blank">ansible</a> playbooks<span
+									class="footnote-link"><sup>1</sup></span>,
+							plus
 						</li>
-						<li>some custom ansible inventories with information for your LA site (like domain,
-							organization name, name of servers to use, contact email, and a big etcetera)
+						<li>some custom ansible inventories with information about your LA site (like your domain,
+							organization name, name of the servers to use, contact email, and a big etcetera)
 						</li>
 					</ul>
 					<p>This generator helps you with this last step, allowing to generate and download your initial LA
-						inventories filling this form.
+						inventories following this wizard, and asking some basic questions.
 					</p>
-					<h5>Do you prefer the command line?</h5>
+					<h5>Do you prefer to use the command line?</h5>
 					No problem, this is only a web helper for our <a
 						href="https://www.npmjs.com/package/generator-living-atlas"
 						target="_blank">yeoman living-atlas generator</a>.
+					<div class="footnote">
+						[1] That is, a big collection of IT 'recipes' that defines how to auto-deploy the LA services given some
+						variables (the ansible inventories)
+					</div>
 				</div>
 			{/if}
 			{#if (page === 2)}
@@ -179,16 +181,18 @@
 					</List>
 				</div>
 			{/if}
-			<Flex direction="row" align="end" justify="center">
-				{#if !firstBtnDisabled}
-					<div class="py-2 mr-2">
-						<Button on:click={onFirstBtnClick} block>« Back</Button>
+			<div class="btn-area">
+				<Flex direction="row" align="end" justify="center">
+					{#if !firstBtnDisabled}
+						<div class="py-2 mr-2">
+							<Button on:click={onFirstBtnClick} block>« Back</Button>
+						</div>
+					{/if}
+					<div class="py-2">
+						<Button dark block disabled={sndBtnDisabled} on:click="{onSndBtnClick}">{sndBtnText}</Button>
 					</div>
-				{/if}
-				<div class="py-2">
-					<Button dark block disabled={sndBtnDisabled} on:click="{onSndBtnClick}">{sndBtnText}</Button>
-				</div>
-			</Flex>
+				</Flex>
+			</div>
 		</div>
 	</Flex>
 </main>
@@ -196,10 +200,14 @@
 <style>
     main {
         /* text-align: center; */
-        padding: 20px;
+        padding: 30px;
 
         max-width: none;
         margin: 0 auto;
+    }
+
+    .btn-area {
+        margin-top: 20px;
     }
 
     h2, .t-center {
@@ -225,6 +233,20 @@
         padding-inline-start: 40px;
     }
 
+
+    .footnote-link {
+        color: gray;
+    }
+
+    .footnote {
+        position: fixed;
+        left: 20px;
+        bottom: 20px;
+        width: 100%;
+        color: gray;
+        font-size: 14px;
+    }
+
     @media (min-width: 640px) {
         main {
             max-width: none;
@@ -237,10 +259,10 @@
         }
     }
 
-
     @media (max-width: 640px) {
         h2 {
             font-size: 32px;
         }
     }
+
 </style>
