@@ -4,7 +4,7 @@ const app = new App({
   target: document.body,
   props: {
     defConf: {
-      "LA_project_name": "Living Atlas Of Wäkänðä",
+      "LA_project_name": "Living Atlas Of Wakanda",
       "LA_project_shortname": "LA Wakanda",
       "LA_pkg_name": "la-wakanda",
       "LA_domain": "your.l-a.site",
