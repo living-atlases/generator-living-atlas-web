@@ -8,7 +8,7 @@
   // import Textfield from '@smui/textfield';
   import Flex from 'svelte-flex';
   import UrlPrefix from './UrlPrefix.svelte';
-  import {Button, List, Switch, TextField, Tooltip} from "smelte";
+  import {Button, List, Snackbar, Switch, TextField, Tooltip} from "smelte";
   import {services, servicesStore} from './Services.svelte';
 
   import storez from "storez";
@@ -59,6 +59,7 @@
     () => true
   ]
   let hostnamesHint = "Something typically like 'vm1, vm2, vm3' or 'aws-ip-12-34-56-78, aws-ip-12-34-56-79, aws-ip-12-34-56-80'";
+  let showSnackbarTop = false;
 
   $: {
     longNameInvalid = !conf.LA_project_name.length > 0;
@@ -98,6 +99,7 @@
   let onSndBtnClick = function () {
     if (page === 4) {
       // server call
+      showSnackbarTop = true;
     } else {
       page += 1;
     }
@@ -126,8 +128,8 @@
 					<p>A <a href="https://living-atlases.gbif.org" target="_blank">Living Atlas</a> can be typically
 						deployed using:</p>
 					<ul class="list-decimal">
-						<li>The <a href="https://ala.org.au/" target="_blank">Atlas of Living Australia (ALA)</a> Open Source
-							Software, plus
+						<li>The <a href="https://ala.org.au/" target="_blank">Atlas of Living Australia (ALA)</a> Free and Open
+							Source Software, plus
 						</li>
 						<li>The <a href="https://github.com/AtlasOfLivingAustralia/ala-install/" target="_blank">ala-install</a>
 							ALA <a href="https://www.ansible.com/" target="_blank">ansible</a> playbooks<span
@@ -166,7 +168,7 @@
 
 			{#if (page === 3)}
 				<TextField textarea rows=2 bind:value={conf.hostnames} append={hostnameAppend} error={hostnameError}
-									 label="List of the hostnames of the servers you will use (comma or spaces separated)"
+									 label="List of the hostnames of the servers you will use (comma or space separated)"
 				/>
 			{/if}
 
@@ -195,6 +197,9 @@
 			</div>
 		</div>
 	</Flex>
+	<Snackbar top bind:value={showSnackbarTop}>
+		<div>This is still in development. Come back soon!</div>
+	</Snackbar>
 </main>
 
 <style>
