@@ -2,7 +2,7 @@ import svelte from "rollup-plugin-svelte";
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import livereload from "rollup-plugin-livereload";
-import { terser } from "rollup-plugin-terser";
+import {terser} from "rollup-plugin-terser";
 // import builtins from 'rollup-plugin-node-builtins';
 const smelte = require("smelte/rollup-plugin-smelte");
 
@@ -65,22 +65,22 @@ export default {
       dedupe: ["svelte"],
     }),
     commonjs(
-      {  }
+      {}
     ),
-/*    postcss({
-      extract: true,
-      minimize: true,
-      use: [
-        [
-          "sass",
-          {
-            includePaths: ["./theme", "./node_modules"],
-          },
-        ],
-      ],
-    }),*/
+    /*    postcss({
+          extract: true,
+          minimize: true,
+          use: [
+            [
+              "sass",
+              {
+                includePaths: ["./theme", "./node_modules"],
+              },
+            ],
+          ],
+        }),*/
     smelte({
-      purge: production,
+      purge: false, // with production fails https://github.com/matyunya/smelte/issues/115
       output: "public/global-smelte.css", // it defaults to static/global.css which is probably what you expect in Sapper
       postcss: [], // Your PostCSS plugins
       whitelist: [], // Array of classnames whitelisted from purging
