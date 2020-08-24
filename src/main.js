@@ -3,7 +3,7 @@ import App from "./App.svelte";
 const app = new App({
   target: document.body,
   props: {
-    conf: {
+    defConf: {
       "LA_project_name": "Living Atlas Of Wäkänðä",
       "LA_project_shortname": "LA Wakanda",
       "LA_pkg_name": "la-wakanda",

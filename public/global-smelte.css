@@ -55,18 +55,21 @@
     width:10%
   }
 }
-main.svelte-1j8yabz{
-  text-align:center;
-  padding:40px;
-  max-width:240px;
+main.svelte-1ululfa{
+  padding:20px;
+  max-width:none;
   margin:0 auto
 }
 
-.to-left.svelte-1j8yabz,blockquote.svelte-1j8yabz{
+h2.svelte-1ululfa{
+  text-align:center
+}
+
+.to-left.svelte-1ululfa,blockquote.svelte-1ululfa{
   text-align:left
 }
 
-p.svelte-1j8yabz{
+p.svelte-1ululfa{
   -webkit-margin-before:1em;
   margin-block-start:1em;
   -webkit-margin-after:1em;
@@ -77,7 +80,7 @@ p.svelte-1j8yabz{
   margin-inline-end:0px
 }
 
-ul.svelte-1j8yabz{
+ul.svelte-1ululfa{
   -webkit-margin-before:1em;
   margin-block-start:1em;
   -webkit-margin-after:1em;
@@ -91,8 +94,20 @@ ul.svelte-1j8yabz{
 }
 
 @media(min-width: 640px){
-  main.svelte-1j8yabz{
+  main.svelte-1ululfa{
     max-width:none
+  }
+}
+
+@media(min-width: 1024px){
+  .main-flex.svelte-1ululfa{
+    margin:0 150px
+  }
+}
+
+@media(max-width: 640px){
+  h2.svelte-1ululfa{
+    font-size:32px
   }
 }
 .wrapper.svelte-142y8oi{
@@ -112907,8 +112922,52 @@ tr.selected {
   }
 }
 
-.service-group.svelte-18r19px{
-  padding:10px;
-  margin:10px;
-  border:1px solid grey
+.deploy-in.svelte-1vha57x{
+  margin:0 0 5px 10px
+}
+.container.svelte-1lpkj1i{
+  box-sizing:border-box;
+  display:flex;
+  flex-wrap:wrap;
+  width:calc(100% + (var(--paddingSGR) * 2));
+  margin:var(--marginSGR)
+}
+
+.col.svelte-1lpkj1i{
+  position:relative;
+  box-sizing:border-box;
+  flex-grow:var(--colFlexSGR);
+  padding:var(--paddingSGR)
+}
+
+.col-xs.svelte-1lpkj1i{
+  flex-basis:var(--xsWidthSGR);
+  max-width:var(--xsWidthSGR)
+}
+
+@media(min-width: 576px){
+  .col-sm.svelte-1lpkj1i{
+    flex-basis:var(--smWidthSGR);
+    max-width:var(--smWidthSGR)
+  }
+}
+
+@media(min-width: 768px){
+  .col-md.svelte-1lpkj1i{
+    flex-basis:var(--mdWidthSGR);
+    max-width:var(--mdWidthSGR)
+  }
+}
+
+@media(min-width: 992px){
+  .col-lg.svelte-1lpkj1i{
+    flex-basis:var(--lgWidthSGR);
+    max-width:var(--lgWidthSGR)
+  }
+}
+
+@media(min-width: 1200px){
+  .col-xl.svelte-1lpkj1i{
+    max-width:var(--xlWidthSGR)
+  }
 }

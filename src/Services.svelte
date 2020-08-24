@@ -1,12 +1,13 @@
 <script context="module">
-  export const services = [ "collectory", "ala_hub", "biocache_service", "ala_bie", "bie_index", "images", "lists",
-    "regions", "logger", "solr", "cas", "spatial", "alerts", "doi", "dashboard" ];
+  export const services = ["collectory", "ala_hub", "biocache_service", "ala_bie", "bie_index", "images", "species_lists",
+    "regions", "logger", "solr", "cas", "spatial", "alerts", "doi", "dashboard"];
   export let servicesStore = {
     collectory: {
       name: "collections",
       name_int: "collectory",
       desc: "biodiversity collections",
       optional: false,
+
       path: ""
     },
     ala_hub: {
@@ -45,7 +46,7 @@
       optional: false,
       path: ""
     },
-    lists: {
+    species_lists: {
       name: "lists",
       name_int: "species_lists",
       desc: "user provided species lists",
@@ -118,7 +119,7 @@
     alerts: {
       name: "alerts",
       name_int: "alerts",
-      desc: "alerts notifications to new species occurrences, etc",
+      desc: "users can subscribe to notifications about new species occurrences they are interested, regions, etc",
       optional: true,
       path: ""
     },
