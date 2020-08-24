@@ -11,7 +11,7 @@
       path: ""
     },
     ala_hub: {
-      name: "biocache",
+      name: "records",
       name_int: "ala_hub",
       desc: "occurrences search frontend",
       optional: false,
@@ -20,7 +20,7 @@
       path: ""
     },
     biocache_service: {
-      name: "biocache-ws",
+      name: "records-ws",
       name_int: "biocache_service",
       desc: "occurrences web service",
       optional: false,
