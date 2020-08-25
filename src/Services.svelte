@@ -141,7 +141,7 @@
     doi: {
       name: "doi",
       name_int: "doi",
-      desc: "mainly used for user download DOIs",
+      desc: "mainly used for generating DOIs of user downloads",
       optional: true,
       sample: "https://doi.ala.org.au",
       path: ""
