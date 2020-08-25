@@ -21,7 +21,7 @@
     if (conf[`LA_${service.name_int}_path`] == null) {
       conf[`LA_${service.name_int}_path`] = service.path;
     }
-    if (conf[`LA_use_${service.name_int}_hostname`] == null) {
+    if (conf[`LA_use_${service.name_int}_hostname`] == null && hostnamesList && hostnamesList.length > 0) {
       conf[`LA_use_${service.name_int}_hostname`] = hostnamesList[0];
     }
     urlError[service.name_int] = (!subdomainRegexp.test(conf[`LA_${service.name_int}_suburl`])) ? "Invalid subdomain" : "";

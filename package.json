@@ -17,10 +17,10 @@
     "rollup-plugin-svelte": "^5.0.3",
     "rollup-plugin-terser": "^6.0.0",
     "smelte": "^1.0.15",
-    "storez": "^0.3.8",
+    "storez": "^0.3.9",
     "svelte": "^3.0.0",
     "svelte-flex": "^1.1.0"
- },
+  },
   "dependencies": {
     "sirv-cli": "^1.0.0"
   }

@@ -4,8 +4,8 @@
 
 <script>
   import Service from './Service.svelte';
+  import SiteMenu from './SiteMenu.svelte';
   import "smelte/src/tailwind.css";
-  // import Textfield from '@smui/textfield';
   import Flex from 'svelte-flex';
   import UrlPrefix from './UrlPrefix.svelte';
   import {Button, List, Snackbar, Switch, TextField, Tooltip} from "smelte";
@@ -17,7 +17,7 @@
 
   const actualStore = localStorage.getItem("store");
   console.log(actualStore);
-  const myStore = storez(actualStore ? actualStore : {
+  const myStore = storez(actualStore !== "null" ? actualStore : {
     conf: defConf,
     page: 1
   }, {localstorage: {key: "store"}}, {debounce: 500});
@@ -25,13 +25,25 @@
   let conf;
   let page;
 
-  const save = myStore.subscribe(newVal => {
-    conf = newVal.conf;
-    page = newVal.page ? newVal.page : 1;
-    // console.log("Subscribe");
-    console.log(newVal);
-    console.log("Saved")
+  const persist = myStore.subscribe(newVal => {
+    console.log("Trying to persist");
+    if (newVal != null) {
+      conf = newVal.conf;
+      page = newVal.page ? newVal.page : 1;
+      // console.log("Subscribe");
+      console.log(newVal);
+      console.log("Saved");
+    }
   });
+
+  let save = function (resetConf) {
+    if (resetConf) {
+      myStore.set(null);
+    } else {
+      myStore.set({conf: conf, "page": page});
+    }
+    persist();
+  }
 
   const domainRegexp = /(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9][a-z0-9-]{0,61}[a-z0-9]/;
   const hostnameRegexp = /^[._\-a-z0-9A-Z, ]+$/;
@@ -54,7 +66,7 @@
   let sndBtnText = "Start";
   let lastPage = false;
   // || shortNameInvalid || mainDomainInvalid),;
-  let pageValid = [() => true, () => !longNameInvalid && !shortNameInvalid & !mainDomainInvalid,
+  let pageValid = [() => true, () => !longNameInvalid && !shortNameInvalid && !mainDomainInvalid,
     () => !hostnameInvalid,
     () => true
   ]
@@ -92,7 +104,6 @@
 
   let onFirstBtnClick = function () {
     page -= 1;
-    myStore.set({"conf": conf, "page": page});
     save();
   }
 
@@ -103,13 +114,13 @@
     } else {
       page += 1;
     }
-    myStore.set({"conf": conf, "page": page});
     save();
   }
 
 </script>
 
 <main>
+	<SiteMenu conf={conf} save="{save}"/>
 	<Flex direction="column" align="stretch" justify="start">
 		<div class="main-flex">
 			<h2>Living Atlas Generator</h2>
@@ -128,13 +139,19 @@
 					<p>A <a href="https://living-atlases.gbif.org" target="_blank">Living Atlas</a> can be typically
 						deployed using:</p>
 					<ul class="list-decimal">
-						<li>The <a href="https://ala.org.au/" target="_blank">Atlas of Living Australia (ALA)</a> Free and Open
-							Source Software, plus
+						<li>the <a href="https://ala.org.au/" target="_blank">Atlas of Living Australia (ALA)</a> Free and Open
+							Source Software, with
 						</li>
-						<li>The <a href="https://github.com/AtlasOfLivingAustralia/ala-install/" target="_blank">ala-install</a>
-							ALA <a href="https://www.ansible.com/" target="_blank">ansible</a> playbooks<span
-									class="footnote-link"><sup>1</sup></span>,
-							plus
+						<li>the <a href="https://github.com/AtlasOfLivingAustralia/ala-install/" target="_blank">ala-install</a>
+							ALA <a href="https://www.ansible.com/" target="_blank">ansible</a> playbooks
+							<Tooltip>
+								<div slot="activator">
+									<a role='button'><sup>(1)</sup></a>
+								</div>
+								That is, a big collection of IT 'recipes' that defines how to auto-deploy the LA services given some
+								variables (the ansible inventories)
+							</Tooltip>
+							, with
 						</li>
 						<li>some custom ansible inventories with information about your LA site (like your domain,
 							organization name, name of the servers to use, contact email, and a big etcetera)
@@ -147,10 +164,6 @@
 					No problem, this is only a web helper for our <a
 						href="https://www.npmjs.com/package/generator-living-atlas"
 						target="_blank">yeoman living-atlas generator</a>.
-					<div class="footnote">
-						[1] That is, a big collection of IT 'recipes' that defines how to auto-deploy the LA services given some
-						variables (the ansible inventories)
-					</div>
 				</div>
 			{/if}
 			{#if (page === 2)}
@@ -244,12 +257,13 @@
     }
 
     .footnote {
-        position: fixed;
+        position: absolute;
         left: 20px;
         bottom: 20px;
         width: 100%;
         color: gray;
         font-size: 14px;
+        background-color: red;
     }
 
     @media (min-width: 640px) {

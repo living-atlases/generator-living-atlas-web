@@ -1,7 +1,3 @@
-*Looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
-
----
-
 # Living Atlas Ansible Web Generator
 
 This is a web interface for our yeoman [LA generator](https://github.com/living-atlases/generator-living-atlas). Tries to facilitate even more the initial deployment of a LA portal.
