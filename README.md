@@ -3,9 +3,7 @@
 *Work in progress*
 
 This is a web interface for our yeoman [Living Atlas generator](https://github.com/living-atlases/generator-living-atlas). 
-Tries to facilitate even more the initial deployment of a LA portal.
-
-[Demo site](https://generator.l-a.site).
+It tries to facilitate even more the initial deployment of a LA portal. [Demo site](https://generator.l-a.site).
 
 ## Why this tool?
 
