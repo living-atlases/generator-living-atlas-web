@@ -1,6 +1,9 @@
 # Living Atlas Ansible Web Generator
 
-This is a web interface for our yeoman [Living Atlas generator](https://github.com/living-atlases/generator-living-atlas). Tries to facilitate even more the initial deployment of a LA portal.
+*Work in progress*
+
+This is a web interface for our yeoman [Living Atlas generator](https://github.com/living-atlases/generator-living-atlas). 
+Tries to facilitate even more the initial deployment of a LA portal.
 
 [Demo site](https://generator.l-a.site).
 
@@ -22,7 +25,9 @@ This is inspired in other similar tools like the [Bootstrap customization tool](
 
 ## Development
 
-Install the dependencies...
+This web interface uses [svelte](https://svelte.dev/).
+
+Install the dependencies:
 
 ```bash
 npm install
