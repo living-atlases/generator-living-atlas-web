@@ -1,6 +1,24 @@
 # Living Atlas Ansible Web Generator
 
-This is a web interface for our yeoman [LA generator](https://github.com/living-atlases/generator-living-atlas). Tries to facilitate even more the initial deployment of a LA portal.
+This is a web interface for our yeoman [Living Atlas generator](https://github.com/living-atlases/generator-living-atlas). Tries to facilitate even more the initial deployment of a LA portal.
+
+[Demo site](https://generator.l-a.site).
+
+## Why this tool?
+
+To deploy a Living Atlas (LA) is not straightforward. Many times newcomers start using the ala-install demo ansible 
+inventories, or the vagrant test environment, but the effort necessary to go from these sample inventories to a 
+production quality ones is enormous.    
+
+Our [Living Atlas generator](https://github.com/living-atlases/generator-living-atlas), our 
+[LA base-branding](https://github.com/living-atlases/base-branding) and our bootstrap remote sessions helps a lot to get 
+a running LA portal for testing and even production, but still the effort to understand and use these tools is 
+worthy of considerable.
+
+This web tool tries to minimize this initial effort. Using a web assistant and asking some basic questions you can 
+generate & download your inventories and branding tailored for you LA portal.
+
+This is inspired in other similar tools like the [Bootstrap customization tool](https://getbootstrap.com/docs/3.4/customize/).
 
 ## Development
 
