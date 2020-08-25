@@ -46,7 +46,7 @@
     images: {
       name: "images",
       name_int: "images",
-      desc: "",
+      desc: "images service",
       optional: false,
       sample: "https://images.ala.org.au",
       path: ""
@@ -70,7 +70,7 @@
     logger: {
       name: "logger",
       name_int: "logger",
-      desc: "event logging",
+      desc: "event logging (downloads stats, etc)",
       optional: false,
       sample: "https://logger.ala.org.au",
       path: ""
@@ -78,17 +78,18 @@
     solr: {
       name: "index",
       name_int: "solr",
-      desc: "indexing",
+      desc: "indexing (Solr)",
       optional: false,
       path: ""
     },
     cas: {
       name: "auth",
       name_int: "cas",
-      desc: "authentication system",
+      desc: "CAS authentication system",
       optional: true,
       forceSubdomain: true,
       sample: "https://auth.ala.org.au/cas/",
+      recommended: true,
       path: ""
     },
     biocache_backend: {

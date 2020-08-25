@@ -47,8 +47,15 @@
 		{#if service.optional}
 			<div on:click={onChange}>
 				<Switch bind:value={conf["LA_use_" + service.name_int]}
-								label="Use the {service.name} service ({service.desc})?"/>
+								label="Use the {service.name} service ({service.desc})?"
+
+				/>
+				{#if service.recommended}
+					<span class="tip">Tip: It's quite recommended.</span>
+				{/if}
 			</div>
+		{:else}
+			<span class="desc">{service.desc.charAt(0).toUpperCase() + service.desc.slice(1)}:</span>
 		{/if}
 	</Flex>
 
@@ -132,4 +139,13 @@
         opacity: 100%;
     }
 
+    .tip {
+        color: gray;
+        position: relative;
+        bottom: 3px;
+    }
+
+    .desc {
+
+    }
 </style>
