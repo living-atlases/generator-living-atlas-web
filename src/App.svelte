@@ -8,7 +8,7 @@
   import "smelte/src/tailwind.css";
   import Flex from 'svelte-flex';
   import UrlPrefix from './UrlPrefix.svelte';
-  import {Button, List, Snackbar, Switch, TextField, Tooltip} from "smelte";
+  import {Card, Button, List, Snackbar, Switch, TextField, Tooltip} from "smelte";
   import {services, servicesStore} from './Services.svelte';
   import {onMount, onDestroy} from "svelte";
   import storez from "storez";
@@ -139,7 +139,7 @@
 				<div class="to-left">
 					<blockquote class="pl-8 mt-2 mb-10 border-l-8 border-primary-300 text-lg right">
 						<p>
-							This is a tool that allows you to generate your Living Atlas (LA) configurations for you.
+							This is tool facilitates the generation of your Living Atlas (LA) initial configuration.
 						</p>
 						<p>
 							This allows you to bootstrap the initial deployment of your LA Platform.
@@ -167,8 +167,8 @@
 							organization name, name of the servers to use, contact email, and a big etcetera)
 						</li>
 					</ul>
-					<p>This generator helps you with this last step, allowing to generate and download your initial LA
-						inventories following this wizard, and asking some basic questions. It generates also a compatible LA
+					<p>This generator helps you with this last step. Following this assistant, and asking some basic questions
+						you can generate and download your initial LA inventories. It generates also a compatible LA
 						basic theme for your site.
 					</p>
 					<h5>Do you prefer to use the command line?</h5>
@@ -182,7 +182,12 @@
 									 on:change={onChange} append={longNameAppend}/>
 				<TextField bind:value={conf.LA_project_shortname} label="Your LA Project Short Name" error={shortNameError}
 									 on:change={onChange} append={shortNameAppend}/>
-				<Switch bind:value={conf.LA_enable_ssl} label="Use SSL?"></Switch>
+				<Tooltip>
+					<div slot="activator">
+						<Switch bind:value={conf.LA_enable_ssl} label="Use SSL?"></Switch>
+					</div>
+					Quite recommended
+				</Tooltip>
 				<Flex align="center" justify="start">
 					<UrlPrefix ssl={conf.LA_enable_ssl}/>
 					<TextField on:change={onChange} bind:value={conf.LA_domain} error={mainDomainError} append={mainDomainAppend}
@@ -192,9 +197,25 @@
 
 			{#if (page === 3)}
 				<TextField textarea rows=2 bind:value={conf.hostnames} append={hostnameAppend} error={hostnameError}
-									 on:change={onChange}
-									 label="List of the hostnames of the servers you will use (comma or space separated)"
+									 on:change={onChange} outlined
+									 label="Names of the servers you will use (comma or space separated)"
 				/>
+				<p>
+					<Card.Card>
+						<div slot="title">
+							<Card.Title title="Tips" d/>
+						</div>
+						<div slot="text" class="p-5 pb-5 pt-0 text-gray-700 body-2">
+							See the <a href="https://github.com/AtlasOfLivingAustralia/documentation/wiki/Infrastructure-Requirements"
+												 target="_blank"> infrastructure requirements page</a> and other portals infrastructure in
+							<a href="https://github.com/AtlasOfLivingAustralia/documentation/wiki/"
+								 target="_blank">our documentation wiki</a> to dimension your LA portal.
+							For a test portal a big server can host the main basic LA services.<br>
+							If you are unsure type something like "server1, server2, server3". You can modify this and the rest of
+							values later.
+						</div>
+					</Card.Card>
+				</p>
 			{/if}
 
 			{#if (page === 4)}
