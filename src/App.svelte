@@ -10,39 +10,47 @@
   import UrlPrefix from './UrlPrefix.svelte';
   import {Button, List, Snackbar, Switch, TextField, Tooltip} from "smelte";
   import {services, servicesStore} from './Services.svelte';
-
+  import {onMount, onDestroy} from "svelte";
   import storez from "storez";
 
+  let debug = false;
   export let defConf;
 
-  const actualStore = localStorage.getItem("store");
-  console.log(actualStore);
-  const myStore = storez(actualStore !== "null" ? actualStore : {
+  const myStore = storez({
     conf: defConf,
     page: 1
-  }, {localstorage: {key: "store"}}, {debounce: 500});
+  }, {localstorage: {key: "store"}});
 
   let conf;
   let page;
 
-  const persist = myStore.subscribe(newVal => {
-    console.log("Trying to persist");
+  let subs = () => myStore.subscribe(newVal => {
+    console.log("On set conf");
     if (newVal != null) {
       conf = newVal.conf;
       page = newVal.page ? newVal.page : 1;
-      // console.log("Subscribe");
-      console.log(newVal);
-      console.log("Saved");
+      console.log(conf);
     }
   });
 
+  let persist = subs();
+
   let save = function (resetConf) {
     if (resetConf) {
+      if (debug) console.log("Resetting the assistant")
       myStore.set(null);
+      persist();
+      location.reload();
     } else {
       myStore.set({conf: conf, "page": page});
     }
-    persist();
+    persist(); // persist remove the subscription, so we subs again
+    persist = subs()
+  }
+
+  let onChange = function () {
+    console.log("onchange")
+    save();
   }
 
   const domainRegexp = /(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9][a-z0-9-]{0,61}[a-z0-9]/;
@@ -67,13 +75,15 @@
   let lastPage = false;
   // || shortNameInvalid || mainDomainInvalid),;
   let pageValid = [() => true, () => !longNameInvalid && !shortNameInvalid && !mainDomainInvalid,
-    () => !hostnameInvalid,
+    () => conf.hostnames != null && !hostnameInvalid,
     () => true
   ]
   let hostnamesHint = "Something typically like 'vm1, vm2, vm3' or 'aws-ip-12-34-56-78, aws-ip-12-34-56-79, aws-ip-12-34-56-80'";
   let showSnackbarTop = false;
 
   $: {
+    // persist = dispose();
+
     longNameInvalid = !conf.LA_project_name.length > 0;
     longNameError = longNameInvalid ? "Project name invalid" : "";
     longNameAppend = longNameInvalid ? "error" : "";
@@ -91,14 +101,14 @@
     hostnameAppend = hostnameInvalid
 
     firstBtnDisabled = page === 1
-    console.log(`Current page ${page} valid ${pageValid[page - 1]()}`)
+    if (debug) console.log(`Current page ${page} valid ${pageValid[page - 1]()}`)
     sndBtnDisabled = !pageValid[page - 1]();
 
     lastPage = page === 4;
     sndBtnText = page === 1 ? "Start" : lastPage ? "Generate & Download" : "Continue »";
     if (conf.hostnames && conf.hostnames.length > 0) {
       conf.hostnamesList = conf.hostnames.split(/[,\s]/).filter(Boolean);
-      console.log(`hostnames: ${conf.hostnamesList.toString()}`);
+      if (debug) console.log(`hostnames: ${conf.hostnamesList.toString()}`);
     }
   }
 
@@ -158,7 +168,8 @@
 						</li>
 					</ul>
 					<p>This generator helps you with this last step, allowing to generate and download your initial LA
-						inventories following this wizard, and asking some basic questions.
+						inventories following this wizard, and asking some basic questions. It generates also a compatible LA
+						basic theme for your site.
 					</p>
 					<h5>Do you prefer to use the command line?</h5>
 					No problem, this is only a web helper for our <a
@@ -168,19 +179,20 @@
 			{/if}
 			{#if (page === 2)}
 				<TextField bind:value={conf.LA_project_name} label="Your LA Project Long Name" error={longNameError}
-									 append={longNameAppend}/>
+									 on:change={onChange} append={longNameAppend}/>
 				<TextField bind:value={conf.LA_project_shortname} label="Your LA Project Short Name" error={shortNameError}
-									 append={shortNameAppend}/>
+									 on:change={onChange} append={shortNameAppend}/>
 				<Switch bind:value={conf.LA_enable_ssl} label="Use SSL?"></Switch>
 				<Flex align="center" justify="start">
 					<UrlPrefix ssl={conf.LA_enable_ssl}/>
-					<TextField bind:value={conf.LA_domain} error={mainDomainError} append={mainDomainAppend}
+					<TextField on:change={onChange} bind:value={conf.LA_domain} error={mainDomainError} append={mainDomainAppend}
 										 label="The domain of your LA node"/>
 				</Flex>
 			{/if}
 
 			{#if (page === 3)}
 				<TextField textarea rows=2 bind:value={conf.hostnames} append={hostnameAppend} error={hostnameError}
+									 on:change={onChange}
 									 label="List of the hostnames of the servers you will use (comma or space separated)"
 				/>
 			{/if}

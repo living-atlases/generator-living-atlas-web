@@ -11,12 +11,11 @@
     {value: 1, text: 'Living Atlases Community'},
     {value: 2, text: 'Report issues'},
     {value: 3, text: 'Reset this assistant'},
-    {value: 4, text: 'This tool on github'},
+    {value: 4, text: 'This software on github'},
   ];
 
   let doReset = function () {
     save(true);
-    location.reload();
   }
 
   $: {
