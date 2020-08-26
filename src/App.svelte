@@ -76,7 +76,6 @@
   let firstBtnText = "« Back";
   let sndBtnText = "Start";
   let lastPage = false;
-  // || shortNameInvalid || mainDomainInvalid),;
   let pageValid = [() => true, () => !longNameInvalid && !shortNameInvalid && !mainDomainInvalid,
     () => conf.hostnames != null && !hostnameInvalid,
     () => true
@@ -85,8 +84,6 @@
   let showSnackbarTop = false;
 
   $: {
-    // persist = dispose();
-
     longNameInvalid = !conf.LA_project_name.length > 0;
     longNameError = longNameInvalid ? "Project name invalid" : "";
     longNameAppend = longNameInvalid ? "error" : "";
