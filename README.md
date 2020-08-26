@@ -18,7 +18,7 @@ a running LA portal for testing and even production. But still the effort to und
 considerable.
 
 This web tool tries to minimize this initial effort. Using a web assistant and asking some basic questions you can 
-generate & download your inventories, and a compatible html/css theme tailored for you LA portal.
+generate & download your initial inventories, and a compatible html/css theme, tailored for you LA portal.
 
 This is inspired in other similar tools like the [Bootstrap customization tool](https://getbootstrap.com/docs/3.4/customize/).
 
