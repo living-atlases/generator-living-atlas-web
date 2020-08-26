@@ -139,7 +139,7 @@
 				<div class="to-left">
 					<blockquote class="pl-8 mt-2 mb-10 border-l-8 border-primary-300 text-lg right">
 						<p>
-							This is tool facilitates the generation of your Living Atlas (LA) initial configuration.
+							This tool facilitates the generation of your Living Atlas (LA) initial configuration.
 						</p>
 						<p>
 							This allows you to bootstrap the initial deployment of your LA Platform.
