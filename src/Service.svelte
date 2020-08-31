@@ -7,6 +7,7 @@
   export let conf;
   export let hostnamesList;
   export let save;
+  export let debug = false;
 
   const subdomainRegexp = /[a-z0-9_.\-]+/
   let deployError = {};
@@ -18,18 +19,28 @@
     if (conf[`LA_${service.name_int}_suburl`] == null) {
       conf[`LA_${service.name_int}_suburl`] = service.name;
     }
-    if (conf[`LA_${service.name_int}_path`] == null) {
-      conf[`LA_${service.name_int}_path`] = service.path;
+    if (conf[`LA_${service.name_int}_iniPath`] == null) {
+      conf[`LA_${service.name_int}_iniPath`] = service.path;
     }
-    if (conf[`LA_use_${service.name_int}_hostname`] == null && hostnamesList && hostnamesList.length > 0) {
-      conf[`LA_use_${service.name_int}_hostname`] = hostnamesList[0];
+    if (conf[`LA_${service.name_int}_hostname`] == null && hostnamesList && hostnamesList.length > 0) {
+      conf[`LA_${service.name_int}_hostname`] = hostnamesList[0];
     }
+
+    conf[`LA_${service.name_int}_path`] = (conf[`LA_${service.name_int}_uses_subdomain`] ? conf[`LA_${service.name_int}_iniPath`].startsWith("/") ? "" : "/" +
+      conf[`LA_${service.name_int}_iniPath`] : conf[`LA_${service.name_int}_suburl`].startsWith("/") ? "" : "/" +
+      conf[`LA_${service.name_int}_suburl`]);
+
+    conf[`LA_${service.name_int}_url`] = (conf[`LA_${service.name_int}_uses_subdomain`] ?
+      conf[`LA_${service.name_int}_suburl`] + "." + conf.LA_domain : conf.LA_domain);
+
     urlError[service.name_int] = (!subdomainRegexp.test(conf[`LA_${service.name_int}_suburl`])) ? "Invalid subdomain" : "";
-    deployError[service.name_int] = conf[`LA_use_${service.name_int}_hostname`] == null ? "Please select a server" : "";
+    deployError[service.name_int] = conf[`LA_${service.name_int}_hostname`] == null ? "Please select a server" : "";
+    if (debug) console.log("Url: " + conf[`LA_${service.name_int}_url`]);
+    if (debug) console.log("Path: " + conf[`LA_${service.name_int}_path`]);
   }
 
   let onChange = function () {
-    console.log("onchange")
+    console.log("on service change")
     verify();
     save();
   }
@@ -62,7 +73,7 @@
 	{#if !service.optional || conf["LA_use_" + service.name_int]}
 		<Flex justify="between">
 			<Flex justify="start">
-				{#if typeof service.forceSubdomain === 'undefined' && !service.forceSubdomain}
+				{#if (typeof service.forceSubdomain === 'undefined' && !service.forceSubdomain) && !service.withoutUrl}
 					<Tooltip>
 						<div slot="activator">
 							<div on:click={onChange}>
@@ -73,26 +84,31 @@
 						Use a subdomain for this service?
 					</Tooltip>
 				{/if}
-				<UrlPrefix ssl={conf.LA_enable_ssl}/>
 
-				{#if conf[`LA_${service.name_int}_uses_subdomain`]}
-					<TextField bind:value={conf[`LA_${service.name_int}_suburl`]}
-										 error={urlError[service.name_int]} on:change={onChange}
-										 hint={service.hint}/>
-					<span class="nowrap">.{conf.LA_domain}/</span>
-					<TextField bind:value={conf[`LA_${service.name_int}_path`]} on:change={onChange}/>
+				{#if !service.withoutUrl}
+					<UrlPrefix ssl={conf.LA_enable_ssl}/>
 				{/if}
 
-				{#if !conf[`LA_${service.name_int}_uses_subdomain`]}
-					<span class="nowrap">{conf.LA_domain}/</span>
-					<TextField bind:value={conf[`LA_${service.name_int}_suburl`]}
-										 error={urlError[service.name_int]} on:change={onChange}
-										 hint={service.hint}/>
-					<span> /</span>
+				{#if !service.withoutUrl}
+					{#if conf[`LA_${service.name_int}_uses_subdomain`]}
+						<TextField bind:value={conf[`LA_${service.name_int}_suburl`]}
+											 error={urlError[service.name_int]} on:change={onChange}
+											 hint={service.hint}/>
+						<span class="nowrap">.{conf.LA_domain}/</span>
+						<TextField bind:value={conf[`LA_${service.name_int}_iniPath`]} on:change={onChange}/>
+					{/if}
+
+					{#if !conf[`LA_${service.name_int}_uses_subdomain`]}
+						<span class="nowrap">{conf.LA_domain}/</span>
+						<TextField bind:value={conf[`LA_${service.name_int}_suburl`]}
+											 error={urlError[service.name_int]} on:change={onChange}
+											 hint={service.hint}/>
+						<span> /</span>
+					{/if}
 				{/if}
 			</Flex>
 			<div class="deploy-in">
-				<Select bind:value={conf[`LA_use_${service.name_int}_hostname`]}
+				<Select bind:value={conf[`LA_${service.name_int}_hostname`]}
 								error={deployError[service.name_int]} class="deploy-in" outlined
 								autocomplete on:change={onChange}
 								label="deploy in" items={hostnamesList}/>
@@ -120,7 +136,8 @@
 
 <style>
     .deploy-in {
-        margin: 0 0 5px 10px;
+        margin: 0 0 5px auto;
+        padding-left: 10px;
     }
 
     a.nohover:hover {
@@ -148,4 +165,5 @@
     .desc {
 
     }
+
 </style>
