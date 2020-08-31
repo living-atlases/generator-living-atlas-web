@@ -6,7 +6,6 @@ const app = new App({
     defConf: {
       "LA_project_name": "Living Atlas Of Wakanda",
       "LA_project_shortname": "LA Wakanda",
-      "LA_pkg_name": "la-wakanda",
       "LA_domain": "your.l-a.site",
       "LA_enable_ssl": true,
       "LA_use_spatial": true,
@@ -23,7 +22,6 @@ const app = new App({
       "LA_ala_bie_uses_subdomain": true,
       "LA_bie_index_uses_subdomain": true,
       "LA_images_uses_subdomain": true,
-      "LA_lists_uses_subdomain": true, // this should be translated in server
       "LA_species_lists_uses_subdomain": true,
       "LA_regions_uses_subdomain": true,
       "LA_logger_uses_subdomain": true,
