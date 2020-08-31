@@ -16,7 +16,7 @@
   import storez from "storez";
 
   let footerHeight = "70px";
-  let debug = false;
+  let debug = true;
   export let defConf;
 
   const myStore = storez({
@@ -28,10 +28,11 @@
   let page;
 
   let subs = () => myStore.subscribe(newVal => {
-    console.log("On set conf");
+    if (debug) console.log("On set conf");
     if (newVal != null) {
       conf = newVal.conf;
       page = newVal.page ? newVal.page : 1;
+      if (debug) console.log(newVal);
       console.log(conf);
     }
   });
@@ -183,7 +184,7 @@
 					<h5 class="t-center">Define how your services URLs will look like:</h5>
 					<List class="" items={services}>
 						<li slot="item" let:item={item}>
-							<Service conf={conf} service={servicesStore[item]} save="{save}"
+							<Service conf={conf} service={servicesStore[item]} save="{save}" debug
 											 hostnamesList={conf.hostnamesList}/>
 						</li>
 					</List>
@@ -200,7 +201,7 @@
 <style>
     main {
         /* text-align: center; */
-        padding: 30px;
+        /* padding: 30px; */
         max-width: none;
         margin: 0 auto;
     }
@@ -215,20 +216,40 @@
     }
 
     @media (min-width: 640px) {
+        .main-flex {
+            padding: 30px;
+        }
+    }
+
+    @media (max-width: 640px) {
+        main {
+            max-width: none;
+        }
+
+        .main-flex {
+            padding: 10px;
+        }
+
+        h2 {
+            font-size: 32px;
+        }
+    }
+
+    @media (min-width: 640px) and (max-width: 1024px) {
         main {
             max-width: none;
         }
     }
 
-    @media (min-width: 1024px) {
+    @media (min-width: 1024px) and (max-width: 1920px) {
         .main-flex {
-            margin: 0 150px;
+            margin: 0 100px;
         }
     }
 
-    @media (max-width: 640px) {
-        h2 {
-            font-size: 32px;
+    @media (min-width: 1920px) {
+        .main-flex {
+            margin: 0 150px;
         }
     }
 
