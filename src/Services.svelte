@@ -1,6 +1,6 @@
 <script context="module">
   export const services = ["collectory", "ala_hub", "biocache_service", "ala_bie", "bie_index", "images", "species_lists",
-    "regions", "logger", "solr", "cas", "spatial", "alerts", "doi", "dashboard"];
+    "regions", "logger", "solr", "biocache_backend", "cas", "spatial", "alerts", "doi", "dashboard"];
   export let servicesStore = {
     collectory: {
       name: "collections",
@@ -95,7 +95,8 @@
     biocache_backend: {
       name: "biocache-backend",
       name_int: "biocache_backend",
-      desc: "cassandra",
+      desc: "cassandra and biocache-store backend",
+      withoutUrl: true,
       optional: false,
       path: ""
     },
