@@ -10,6 +10,8 @@ import postcss from "rollup-plugin-postcss";
 
 const production = !process.env.ROLLUP_WATCH;
 
+const BUILD_PATH = "assets";
+
 function serve() {
   let server;
 
@@ -41,7 +43,9 @@ export default {
     sourcemap: true,
     format: "iife",
     name: "app",
-    file: "public/build/bundle.js",
+    // file: "public/build/bundle.js",
+    // jso: don't included by default by sails in every page like js
+    file: `${BUILD_PATH}/jso/bundle.js`,
   },
 
   plugins: [
@@ -51,7 +55,7 @@ export default {
       // we'll extract any component CSS out into
       // a separate file - better for performance
       css: (css) => {
-        css.write("public/build/bundle.css");
+        css.write(`${BUILD_PATH}/styles/bundle.css`);
       },
       emitCss: true,
     }),
@@ -64,9 +68,7 @@ export default {
       browser: true,
       dedupe: ["svelte"],
     }),
-    commonjs(
-      {}
-    ),
+    commonjs({}),
     /*    postcss({
           extract: true,
           minimize: true,
@@ -81,7 +83,7 @@ export default {
         }),*/
     smelte({
       purge: false, // with production fails https://github.com/matyunya/smelte/issues/115
-      output: "public/global-smelte.css", // it defaults to static/global.css which is probably what you expect in Sapper
+      output: `${BUILD_PATH}/styles/global-smelte.css`, // it defaults to static/global.css which is probably what you expect in Sapper
       postcss: [], // Your PostCSS plugins
       whitelist: [], // Array of classnames whitelisted from purging
       whitelistPatterns: [], // Same as above, but list of regexes
@@ -106,7 +108,7 @@ export default {
 
     // Watch the `public` directory and refresh the
     // browser on changes when not in production
-    !production && livereload("public"),
+    !production && livereload(BUILD_PATH),
 
     // If we're building for production (npm run build
     // instead of npm run dev), minify
@@ -116,4 +118,3 @@ export default {
     clearScreen: false,
   },
 };
-2

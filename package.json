@@ -1,15 +1,26 @@
 {
-  "name": "svelte-app",
+  "name": "generator-living-atlas-web-backend",
+  "private": true,
   "version": "1.0.0",
+  "description": "A backend for the LA generator",
+  "keywords": [],
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "start": "sirv public"
+    "startSieve": "sirv public",
+    "start": "NODE_ENV=production node app.js",
+    "test": "npm run lint && npm run custom-tests && echo 'Done.'",
+    "lint": "./node_modules/eslint/bin/eslint.js . --max-warnings=0 --report-unused-disable-directives && echo '✔  Your .js files look good.'",
+    "custom-tests": "ava"
   },
   "devDependencies": {
+    "ava": "^3.12.1",
+    "eslint": "5.16.0",
     "@rollup/plugin-commonjs": "^14.0.0",
     "@rollup/plugin-node-resolve": "^8.0.0",
-    "node-sass": "^4.14.1",
+    "object-mapper": "^6.2.0",
+    "tmp": "^0.2.1",
+    "validator": "^13.1.1",
     "rollup": "^2.3.4",
     "rollup-plugin-livereload": "^1.0.0",
     "rollup-plugin-node-builtins": "^2.1.2",
@@ -22,6 +33,19 @@
     "svelte-flex": "^1.1.0"
   },
   "dependencies": {
+    "@sailshq/connect-redis": "^3.2.1",
+    "@sailshq/lodash": "^3.10.3",
+    "@sailshq/socket.io-redis": "^5.2.0",
+    "archiver": "^5.0.0",
+    "grunt": "1.0.4",
+    "sails": "^1.2.5",
+    "sails-hook-autoreload": "^1.1.0",
+    "sails-hook-grunt": "^4.0.0",
+    "sails-hook-orm": "^2.1.1",
+    "sails-hook-sockets": "^2.0.0",
     "sirv-cli": "^1.0.0"
+  },
+  "engines": {
+    "node": "^10.20"
   }
 }

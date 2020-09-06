@@ -1,0 +1,26 @@
+html, body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    color: #4e565f;
+    /*	margin: 0;
+        box-sizing: border-box; */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+a {
+    color: #4ba2ce !important;
+    text-decoration: none;
+}
+
+a:focus, a:hover {
+    color: #2c79a1;
+    text-decoration: underline;
+}
+
+label {
+    display: block;
+}
