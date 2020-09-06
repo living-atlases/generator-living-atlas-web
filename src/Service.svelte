@@ -57,7 +57,7 @@
 	<Flex justify="between">
 		{#if service.optional}
 			<div on:click={onChange}>
-				<Switch bind:value={conf["LA_use_" + service.name_int]}
+				<Switch color="secondary" bind:value={conf["LA_use_" + service.name_int]}
 								label="Use the {service.name} service ({service.desc})?"
 
 				/>
