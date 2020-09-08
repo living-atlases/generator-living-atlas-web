@@ -2,16 +2,17 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-<!--<GdprBanner
+<GdprBanner
 		cookieName="la-generator"
 		acceptLabel="Accept"
 		closeLabel="Close"
 		settingsLabel="Preferences"
 		heading="Use of Cookies"
-		choicesMerged="{{}}"
-		description="We use cookies to ensure a better use of our website. If you continue browsing, we consider that you accept their use"
+		choices="{{tracking: false, marketing: false, analytics: false}}"
+		categories={gdprCategories}
+		description="We use cookies to ensure a better use of our website. If you continue browsing, we consider that you accept their use."
 		showEditIcon=false
-		on:analytics={initAnalytics}/>-->
+		on:analytics={initAnalytics}/>
 
 <script>
   import {projectNameRegexp, domainRegexp, hostnameRegexp, shortNameRegexp} from './regexp.js';
@@ -32,6 +33,21 @@
   function initAnalytics() {
     // do something with segment.io or google analytics etc
   }
+
+  let gdprCategories = {
+    analytics: function () {
+      console.log('No analytics cookies specified')
+    },
+    tracking: function () {
+      console.log('No tracking cookies specified')
+    },
+    marketing: function () {
+      console.log('No marketing cookies specified')
+    },
+    necessary: function () {
+      console.log('No necessary cookies specified')
+    }
+  };
 
   let footerHeight = "70px";
   let debug = true;
