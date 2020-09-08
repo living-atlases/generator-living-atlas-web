@@ -17,6 +17,8 @@ module.exports = function (inputs) {
     LA_use_regions: "LA_use_regions",
     LA_use_species_lists: "LA_use_species_lists",
     LA_use_cas: "LA_use_CAS",
+    LA_use_ala_bie: "LA_use_species",
+    LA_use_images: "LA_use_images",
     LA_enable_ssl: "LA_enable_ssl",
     LA_use_git: {key: "LA_use_git", default: true},
     LA_generate_branding: {key: "LA_generate_branding", default: true}, // Set this to true
@@ -64,6 +66,7 @@ module.exports = function (inputs) {
     LA_solr_url: "LA_solr_url",
     LA_solr_path: "LA_solr_path",
     LA_biocache_backend_hostname: "LA_biocache_backend_hostname",
+    LA_branding_hostname: "LA_main_hostname",
     LA_use_webapi: "LA_use_webapi",
     LA_webapi_uses_subdomain: "LA_webapi_uses_subdomain",
     LA_webapi_hostname: "LA_webapi_hostname",

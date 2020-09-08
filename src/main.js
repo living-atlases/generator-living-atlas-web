@@ -10,6 +10,8 @@ const app = new App({
       "LA_enable_ssl": true,
       "LA_use_spatial": true,
       "LA_use_regions": true,
+      "LA_use_ala_bie": true,
+      "LA_use_images": true,
       "LA_use_species_lists": true,
       "LA_use_cas": true,
       "LA_use_webapi": false,

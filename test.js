@@ -9,6 +9,7 @@ const defObj = {
   LA_domain: "ala.org.au",
   LA_enable_ssl: true,
   LA_use_spatial: true,
+  LA_use_ala_bie: true,
   LA_use_regions: true,
   LA_use_species_lists: true,
   LA_use_cas: true,
@@ -150,7 +151,13 @@ test("long name valid", async (t) => {
 });
 
 test("cas", (t) => {
+  t.is(dest[P][G].LA_use_CAS, true);
   t.is(dest[P][G].LA_use_CAS, src.conf.LA_use_cas);
+});
+
+test("use_ala_bie", (t) => {
+  t.is(dest[P][G].LA_use_species, true);
+  t.is(dest[P][G].LA_use_species, src.conf.LA_use_ala_bie);
 });
 
 test("species list use", (t) => {

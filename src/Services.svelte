@@ -1,6 +1,6 @@
 <script context="module">
   export const services = ["collectory", "ala_hub", "biocache_service", "ala_bie", "bie_index", "images", "species_lists",
-    "regions", "logger", "solr", "biocache_backend", "cas", "spatial", "alerts", "doi", "dashboard"];
+    "regions", "logger", "solr", "cas", "spatial", "alerts", "doi", "dashboard", "branding", "biocache_backend"];
   export let servicesStore = {
     collectory: {
       name: "collections",
@@ -31,7 +31,7 @@
       name: "species",
       name_int: "ala_bie",
       desc: "species search frontend",
-      optional: false,
+      optional: true,
       sample: "https://bie.ala.org.au",
       path: ""
     },
@@ -39,6 +39,7 @@
       name: "species-ws",
       name_int: "bie_index",
       desc: "species web service",
+      depends: "ala_bie",
       optional: false,
       sample: "https://bie.ala.org.au/ws",
       path: ""
@@ -47,7 +48,7 @@
       name: "images",
       name_int: "images",
       desc: "images service",
-      optional: false,
+      optional: true,
       sample: "https://images.ala.org.au",
       path: ""
     },
@@ -55,6 +56,7 @@
       name: "lists",
       name_int: "species_lists",
       desc: "user provided species lists",
+      depends: "ala_bie",
       optional: true,
       sample: "https://lists.ala.org.au",
       path: ""
@@ -96,6 +98,14 @@
       name: "biocache-backend",
       name_int: "biocache_backend",
       desc: "cassandra and biocache-store backend",
+      withoutUrl: true,
+      optional: false,
+      path: ""
+    },
+    branding: {
+      name: "branding",
+      name_int: "branding",
+      desc: "Web branding used by all services",
       withoutUrl: true,
       optional: false,
       path: ""
