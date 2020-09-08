@@ -153,6 +153,8 @@ test("long name valid", async (t) => {
 test("cas", (t) => {
   t.is(dest[P][G].LA_use_CAS, true);
   t.is(dest[P][G].LA_use_CAS, src.conf.LA_use_cas);
+  t.is(dest[P][G].LA_cas_hostname, 'vm1');
+  t.is(dest[P][G].LA_cas_url, 'auth.ala.org.au');
 });
 
 test("use_ala_bie", (t) => {

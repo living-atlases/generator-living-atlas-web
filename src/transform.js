@@ -24,6 +24,7 @@ module.exports = function (inputs) {
     LA_generate_branding: {key: "LA_generate_branding", default: true}, // Set this to true
     // "check-ssl": "",
     LA_cas_hostname: "LA_cas_hostname",
+    LA_cas_url: "LA_cas_url",
     LA_spatial_hostname: "LA_spatial_hostname",
     LA_collectory_uses_subdomain: "LA_collectory_uses_subdomain",
     LA_collectory_hostname: "LA_collectory_hostname",
