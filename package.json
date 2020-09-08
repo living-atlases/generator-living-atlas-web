@@ -14,13 +14,12 @@
     "custom-tests": "ava"
   },
   "devDependencies": {
-    "ava": "^3.12.1",
-    "eslint": "5.16.0",
+    "@beyonk/gdpr-cookie-consent-banner": "^7.0.1",
     "@rollup/plugin-commonjs": "^14.0.0",
     "@rollup/plugin-node-resolve": "^8.0.0",
+    "ava": "^3.12.1",
+    "eslint": "5.16.0",
     "object-mapper": "^6.2.0",
-    "tmp": "^0.2.1",
-    "validator": "^13.1.1",
     "rollup": "^2.3.4",
     "rollup-plugin-livereload": "^1.0.0",
     "rollup-plugin-node-builtins": "^2.1.2",
@@ -30,7 +29,9 @@
     "smelte": "^1.0.15",
     "storez": "^0.3.9",
     "svelte": "^3.0.0",
-    "svelte-flex": "^1.1.0"
+    "svelte-flex": "^1.1.0",
+    "tmp": "^0.2.1",
+    "validator": "^13.1.1"
   },
   "dependencies": {
     "@sailshq/connect-redis": "^3.2.1",

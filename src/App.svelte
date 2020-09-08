@@ -2,6 +2,17 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+<!--<GdprBanner
+		cookieName="la-generator"
+		acceptLabel="Accept"
+		closeLabel="Close"
+		settingsLabel="Preferences"
+		heading="Use of Cookies"
+		choicesMerged="{{}}"
+		description="We use cookies to ensure a better use of our website. If you continue browsing, we consider that you accept their use"
+		showEditIcon=false
+		on:analytics={initAnalytics}/>-->
+
 <script>
   import {projectNameRegexp, domainRegexp, hostnameRegexp, shortNameRegexp} from './regexp.js';
   import IntroPage from './IntroPage.svelte';
@@ -15,6 +26,12 @@
   import {services, servicesStore} from './Services.svelte';
   import {onMount, onDestroy} from "svelte";
   import storez from "storez";
+  import '@beyonk/gdpr-cookie-consent-banner/dist/style.css' // optional, you can also define your own styles
+  import GdprBanner from '@beyonk/gdpr-cookie-consent-banner';
+
+  function initAnalytics() {
+    // do something with segment.io or google analytics etc
+  }
 
   let footerHeight = "70px";
   let debug = true;

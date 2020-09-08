@@ -24,3 +24,11 @@ a:focus, a:hover {
 label {
     display: block;
 }
+
+.cookieConsent__Button {
+    color: black;
+}
+
+.cookieConsent__Button--Close {
+    color: white;
+}
