@@ -78,14 +78,17 @@ module.exports = function (inputs) {
     LA_dashboard_uses_subdomain: "LA_dashboard_uses_subdomain",
     LA_dashboard_hostname: "LA_dashboard_hostname",
     LA_dashboard_path: "LA_dashboard_path",
+    LA_dashboard_url: "LA_dashboard_url",
     LA_use_alerts: "LA_use_alerts",
     LA_use_doi: "LA_use_doi",
     LA_alerts_uses_subdomain: "LA_alerts_uses_subdomain",
     LA_alerts_hostname: "LA_alerts_hostname",
     LA_alerts_path: "LA_alerts_path",
+    LA_alerts_url: "LA_alerts_url",
     LA_doi_uses_subdomain: "LA_doi_uses_subdomain",
     LA_doi_hostname: "LA_doi_hostname",
     LA_doi_path: "LA_doi_path",
+    LA_doi_url: "LA_doi_url",
   };
 
   const dest = {

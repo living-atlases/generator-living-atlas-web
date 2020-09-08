@@ -164,6 +164,12 @@ test("spatial", (t) => {
   t.is(dest[P][G].LA_spatial_url, 'spatial.ala.org.au');
 });
 
+test("others", (t) => {
+  t.is(dest[P][G].LA_doi_url, 'doi.ala.org.au');
+  t.is(dest[P][G].LA_alerts_url, 'alerts.ala.org.au');
+  t.is(dest[P][G].LA_dashboard_url, 'dashboard.ala.org.au');
+});
+
 test("use_ala_bie", (t) => {
   t.is(dest[P][G].LA_use_species, true);
   t.is(dest[P][G].LA_use_species, src.conf.LA_use_ala_bie);
