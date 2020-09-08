@@ -26,6 +26,7 @@ module.exports = function (inputs) {
     LA_cas_hostname: "LA_cas_hostname",
     LA_cas_url: "LA_cas_url",
     LA_spatial_hostname: "LA_spatial_hostname",
+    LA_spatial_url: "LA_spatial_url",
     LA_collectory_uses_subdomain: "LA_collectory_uses_subdomain",
     LA_collectory_hostname: "LA_collectory_hostname",
     LA_collectory_url: "LA_collectory_url",

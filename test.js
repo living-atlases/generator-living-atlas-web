@@ -95,11 +95,11 @@ const defObj = {
   LA_cas_hostname: "vm1",
   LA_cas_path: "/",
   LA_cas_url: "auth.ala.org.au",
-  LA_spatial_suburl: "spacial",
+  LA_spatial_suburl: "spatial",
   LA_spatial_iniPath: "",
   LA_spatial_hostname: "vm1",
   LA_spatial_path: "/",
-  LA_spatial_url: "spacial.ala.org.au",
+  LA_spatial_url: "spatial.ala.org.au",
   LA_alerts_suburl: "alerts",
   LA_alerts_iniPath: "",
   LA_alerts_hostname: "vm1",
@@ -155,6 +155,13 @@ test("cas", (t) => {
   t.is(dest[P][G].LA_use_CAS, src.conf.LA_use_cas);
   t.is(dest[P][G].LA_cas_hostname, 'vm1');
   t.is(dest[P][G].LA_cas_url, 'auth.ala.org.au');
+});
+
+test("spatial", (t) => {
+  t.is(dest[P][G].LA_use_spatial, true);
+  t.is(dest[P][G].LA_use_spatial, src.conf.LA_use_spatial);
+  t.is(dest[P][G].LA_spatial_hostname, 'vm1');
+  t.is(dest[P][G].LA_spatial_url, 'spatial.ala.org.au');
 });
 
 test("use_ala_bie", (t) => {
