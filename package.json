@@ -38,11 +38,13 @@
     "@sailshq/lodash": "^3.10.3",
     "@sailshq/socket.io-redis": "^5.2.0",
     "archiver": "^5.0.0",
+    "git-rev-sync": "^3.0.1",
     "grunt": "1.0.4",
     "sails": "^1.2.5",
     "sails-hook-autoreload": "^1.1.0",
     "sails-hook-grunt": "^4.0.0",
     "sails-hook-orm": "^2.1.1",
+    "sails-hook-sentry": "^2.0.0-beta.2",
     "sails-hook-sockets": "^2.0.0",
     "sirv-cli": "^1.0.0"
   },
