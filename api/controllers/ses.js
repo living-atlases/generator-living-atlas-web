@@ -70,8 +70,9 @@ module.exports = {
     let currentUuid = inputs.uuid;
     if (currentUuid == null) {
       currentUuid = uuidV4();
-      await set(currentUuid, JSON.stringify(defConf));
-      return res.json({uuid: currentUuid, conf: defConf});
+      let withConf = typeof inputs.conf !== 'undefined' ? inputs.conf : JSON.stringify(defConf);
+      await set(currentUuid, withConf);
+      return res.json({uuid: currentUuid, conf: JSON.parse(withConf)});
     }
 
     let confRetrieved = await get(currentUuid);

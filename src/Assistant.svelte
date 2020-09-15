@@ -57,19 +57,34 @@
 
   if (debug) console.log(`Conf of '${conf.LA_project_name}' with uuid: ${uuid} `);
 
-  let save = async function (resetConf) {
+  let save = async function (resetConf, copyConf) {
     if (resetConf) {
       if (debug) console.log("Resetting the assistant")
       // window.history.pushState({page: "/"}, "Generator Living Atlas", "/");
       window.location.pathname = "/";
     }
-    let req = {uuid, conf: JSON.stringify(conf)} // let's get the conf for the server
+    let req; // let's get the conf for the server;
+    if (copyConf) {
+      let newConf = {
+        ...conf
+      };
+      newConf.LA_project_name = `Copy of ${conf.LA_project_name}`;
+      req = {conf: JSON.stringify(newConf)};
+    } else {
+      req = {uuid, conf: JSON.stringify(conf)};
+    }
     fetch('/v1/ses', {
       method: 'POST',
       body: JSON.stringify(req)
     }).then(res => res.json()).then((ses) => {
       // console.log(ses);
       if (debug) console.log(conf);
+      if (copyConf) {
+        uuid = ses.uuid;
+        conf = ses.conf;
+        window.history.pushState({page: uuid}, title(conf.LA_project_shortname), uuid);
+        showSnackbarTop = true;
+      }
     });
   }
 
@@ -231,7 +246,7 @@
 		</div>
 	</Flex>
 	<Snackbar top bind:value={showSnackbarTop}>
-		<div>This is still in development. Come back soon!</div>
+		<div>Configuration copied!</div>
 	</Snackbar>
 </main>
 

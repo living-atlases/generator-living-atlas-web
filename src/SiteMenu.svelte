@@ -8,17 +8,22 @@
 
   const items = [
     {value: 1, text: 'Share this configuration'},
-    {value: 2, text: 'This software on github'},
-    {value: 3, text: 'Report issues'},
-    {value: 4, text: 'Reset this assistant'},
-    {value: 5, text: 'Living Atlases Community'},
+    {value: 2, text: 'Make a copy'},
+    {value: 3, text: 'This software on github'},
+    {value: 4, text: 'Report issues'},
+    {value: 5, text: 'Reset this assistant'},
+    {value: 6, text: 'Living Atlases Community'},
   ];
 
   let doReset = () => {
     save(true);
   }
 
-  let share = () => {
+  let doCopy = () => {
+    save(false, true);
+  }
+
+  let doShare = () => {
     const text = window.location.href;
     const copyDiv = document.getElementById("inputContainingTextToBeCopied");
     copyDiv.style.display = 'block';
@@ -33,18 +38,21 @@
   $: {
     switch (selected) {
       case 1:
-        share();
+        doShare();
         break;
       case 2:
-        window.open("https://github.com/living-atlases/generator-living-atlas-web", "_blank");
+        doCopy();
         break;
       case 3:
-        window.open("https://github.com/living-atlases/generator-living-atlas-web/issues", "_blank");
+        window.open("https://github.com/living-atlases/generator-living-atlas-web", "_blank");
         break;
       case 4:
-        doReset();
+        window.open("https://github.com/living-atlases/generator-living-atlas-web/issues", "_blank");
         break;
       case 5:
+        doReset();
+        break;
+      case 6:
         window.open("https://living-atlases.gbif.org/", "_blank");
         break;
     }
