@@ -1,4 +1,4 @@
-var validate = require("../../src/validate");
+let validate = require("../../src/validate");
 
 module.exports = {
   friendlyName: "Validate received conf",
@@ -20,6 +20,9 @@ module.exports = {
     },
     domainError: {
       description: "Error in domain parameter."
+    },
+    serviceParamError: {
+      description: "Error in service parameter."
     },
     servicePathParamError: {
       description: "Error in service path parameter."

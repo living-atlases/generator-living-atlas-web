@@ -6,7 +6,7 @@ import {terser} from "rollup-plugin-terser";
 // import builtins from 'rollup-plugin-node-builtins';
 const smelte = require("smelte/rollup-plugin-smelte");
 
-import postcss from "rollup-plugin-postcss";
+// import postcss from "rollup-plugin-postcss";
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -84,7 +84,7 @@ export default {
     smelte({
       purge: false, // with production fails https://github.com/matyunya/smelte/issues/115
       output: `${BUILD_PATH}/styles/global-smelte.css`, // it defaults to static/global.css which is probably what you expect in Sapper
-      postcss: [], // Your PostCSS plugins
+      // postcss: [], // Your PostCSS plugins
       whitelist: [], // Array of classnames whitelisted from purging
       whitelistPatterns: [], // Same as above, but list of regexes
       tailwind: {

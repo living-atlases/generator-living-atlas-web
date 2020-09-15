@@ -78,6 +78,8 @@ module.exports = function (inputs) {
     const url = param[`LA_${service}_url`];
     const path = param[`LA_${service}_path`];
     const host = param[`LA_${service}_hostname`];
+    if (typeof url !== 'string' || typeof path !== 'string' || typeof host !== 'string')
+      return "serviceParamError";
     if (
       !validator.isURL(url, {require_protocol: false, require_host: true})
     ) {

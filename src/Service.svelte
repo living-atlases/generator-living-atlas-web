@@ -7,7 +7,7 @@
   export let conf;
   export let hostnamesList;
   export let save;
-  export let debug = false;
+  export let debug;
 
   const subdomainRegexp = /[a-z0-9_.\-]+/
   let deployError = {};
@@ -43,7 +43,7 @@
   }
 
   let onChange = function () {
-    console.log("on service change")
+    if (debug) console.log("on service change")
     verify();
     save();
   }

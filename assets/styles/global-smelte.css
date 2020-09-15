@@ -1,13 +1,5 @@
-.reverse.svelte-zzky5a{
-  -webkit-transform:rotate(180deg);
-  -ms-transform:rotate(180deg);
-  transform:rotate(180deg)
-}
-
-.tip.svelte-zzky5a{
-  -webkit-transform:rotate(90deg);
-  -ms-transform:rotate(90deg);
-  transform:rotate(90deg)
+.p-1\/2.svelte-ixci48{
+  padding:0.125rem
 }
 main.svelte-i3mvti{
   max-width:none;
@@ -158,6 +150,9 @@ a.nohover.svelte-198fmxd:hover{
   color:gray;
   position:relative;
   bottom:3px
+}
+
+.desc.svelte-198fmxd{
 }
 .flex.svelte-f66dpe{
   display:flex
@@ -421,15 +416,23 @@ a.nohover.svelte-198fmxd:hover{
 .wrapper.svelte-142y8oi{
   display:inline-block
 }
+.reverse.svelte-zzky5a{
+  -webkit-transform:rotate(180deg);
+  -ms-transform:rotate(180deg);
+  transform:rotate(180deg)
+}
+
+.tip.svelte-zzky5a{
+  -webkit-transform:rotate(90deg);
+  -ms-transform:rotate(90deg);
+  transform:rotate(90deg)
+}
 .drawer.svelte-6qcjcu{
   min-width:250px
 }
 
 aside.svelte-6qcjcu{
   height:100vh
-}
-.p-1\/2.svelte-ixci48{
-  padding:0.125rem
 }
 p.svelte-g25crf{
   -webkit-margin-before:1em;
@@ -511,6 +514,30 @@ ul.svelte-g25crf{
     width:10%
   }
 }
+.snackbar.svelte-1ym8qvd{
+  min-width:344px
+}
+.line.svelte-xd9zs6{
+  height:1px
+}
+.label-top.svelte-r33x2y{
+  line-height:0.05
+}
+
+.label-transition.svelte-r33x2y{
+  -webkit-transition:font-size 0.05s, line-height 0.1s;
+  -o-transition:font-size 0.05s, line-height 0.1s;
+  transition:font-size 0.05s, line-height 0.1s
+}
+
+label.text-xs{
+  font-size:0.7rem
+}
+th.svelte-1qy4u3g .asc.svelte-1qy4u3g{
+  -webkit-transform:rotate(180deg);
+  -ms-transform:rotate(180deg);
+  transform:rotate(180deg)
+}
 .circular.svelte-1xkiyez{
   -webkit-animation:svelte-1xkiyez-rotate 2s linear infinite;
   animation:svelte-1xkiyez-rotate 2s linear infinite;
@@ -572,38 +599,14 @@ ul.svelte-g25crf{
     stroke-dashoffset:-124
   }
 }
-.label-top.svelte-r33x2y{
-  line-height:0.05
-}
-
-.label-transition.svelte-r33x2y{
-  -webkit-transition:font-size 0.05s, line-height 0.1s;
-  -o-transition:font-size 0.05s, line-height 0.1s;
-  transition:font-size 0.05s, line-height 0.1s
-}
-
-label.text-xs{
-  font-size:0.7rem
-}
-th.svelte-1qy4u3g .asc.svelte-1qy4u3g{
-  -webkit-transform:rotate(180deg);
-  -ms-transform:rotate(180deg);
-  transform:rotate(180deg)
-}
-.line.svelte-xd9zs6{
-  height:1px
-}
-.snackbar.svelte-1ym8qvd{
-  min-width:344px
-}
-.ripple.svelte-1o8z87d{
-  position:absolute !important
-}
 .tooltip.svelte-1n6auy7{
   left:50%;
   -webkit-transform:translateX(-50%);
   -ms-transform:translateX(-50%);
   transform:translateX(-50%)
+}
+.ripple.svelte-1o8z87d{
+  position:absolute !important
 }
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 

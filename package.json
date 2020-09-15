@@ -8,7 +8,8 @@
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "startSieve": "sirv assets",
-    "start": "NODE_ENV=production node app.js",
+    "startProd": "NODE_ENV=production node app.js",
+    "start": "node app.js",
     "test": "npm run lint && npm run custom-tests && echo 'Done.'",
     "lint": "./node_modules/eslint/bin/eslint.js . --max-warnings=0 --report-unused-disable-directives && echo '✔  Your .js files look good.'",
     "custom-tests": "ava"
@@ -23,7 +24,6 @@
     "rollup": "^2.3.4",
     "rollup-plugin-livereload": "^1.0.0",
     "rollup-plugin-node-builtins": "^2.1.2",
-    "rollup-plugin-postcss": "^3.1.5",
     "rollup-plugin-svelte": "^5.0.3",
     "rollup-plugin-terser": "^6.0.0",
     "smelte": "^1.0.15",
@@ -38,6 +38,7 @@
     "@sailshq/lodash": "^3.10.3",
     "@sailshq/socket.io-redis": "^5.2.0",
     "archiver": "^5.0.0",
+    "domurl": "^2.3.4",
     "git-rev-sync": "^3.0.1",
     "grunt": "1.0.4",
     "sails": "^1.2.5",
@@ -46,7 +47,9 @@
     "sails-hook-orm": "^2.1.1",
     "sails-hook-sentry": "^2.0.0-beta.2",
     "sails-hook-sockets": "^2.0.0",
-    "sirv-cli": "^1.0.0"
+    "sails-redis": "^1.0.0",
+    "sirv-cli": "^1.0.0",
+    "uuid": "^8.3.0"
   },
   "engines": {
     "node": "^10.20"
