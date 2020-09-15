@@ -164,7 +164,7 @@
 </script>
 
 <main class="hero" style="--footer-height: {footerHeight};">
-	<SiteMenu conf={conf} save="{save}"/>
+	<SiteMenu save="{save}"/>
 	<Flex direction="column" align="stretch" justify="start">
 		<div class="main-flex">
 			<h2>Living Atlas Generator</h2>
