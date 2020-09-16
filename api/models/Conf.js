@@ -6,14 +6,13 @@
  */
 
 module.exports = {
-
   attributes: {
 
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
 
-    "uuid": { type: "string", unique: true},
+    "uuid": { type: "string", unique: true },
     "LA_project_name": { type: "string", defaultsTo: "Living Atlas Of Wakanda", required: false },
     "LA_project_shortname":{ type: "string", defaultsTo: "LA Wakanda", required: false },
     "LA_domain":{ type: "string", defaultsTo: "your.l-a.site", required: false },
