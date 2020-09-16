@@ -117,7 +117,7 @@
 				</Flex>
 				<div class="deploy-in">
 					<Select bind:value={conf[`LA_${service.name_int}_hostname`]}
-									error={deployError[service.name_int]} class="deploy-in" outlined
+									error={deployError[service.name_int]} class="deploy-in" outlined autocomplete
 									on:change={v => onChange(v.datail)} label="deploy it in" items={hostnamesList}/>
 				</div>
 				{#if service.sample != null}
