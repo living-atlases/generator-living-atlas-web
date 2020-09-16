@@ -11328,7 +11328,7 @@ var app = (function () {
     			hr = element("hr");
     			attr_dev(div, "class", "p-20 pb-5 pt-3 body-2");
     			add_location(div, file$l, 63, 1, 2565);
-    			add_location(hr, file$l, 139, 1, 5184);
+    			add_location(hr, file$l, 139, 1, 5197);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -12397,7 +12397,7 @@ var app = (function () {
     			div = element("div");
     			create_component(button.$$.fragment);
     			attr_dev(div, "class", "btn-hidden svelte-198fmxd");
-    			add_location(div, file$l, 132, 5, 5057);
+    			add_location(div, file$l, 132, 5, 5070);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -12515,9 +12515,9 @@ var app = (function () {
     			attr_dev(a, "class", "btn-visible nohover svelte-198fmxd");
     			attr_dev(a, "href", a_href_value = /*service*/ ctx[1].sample);
     			attr_dev(a, "target", "_blank");
-    			add_location(a, file$l, 125, 7, 4833);
+    			add_location(a, file$l, 125, 7, 4846);
     			attr_dev(div, "slot", "activator");
-    			add_location(div, file$l, 124, 6, 4803);
+    			add_location(div, file$l, 124, 6, 4816);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -12616,6 +12616,7 @@ var app = (function () {
     		error: /*deployError*/ ctx[3][/*service*/ ctx[1].name_int],
     		class: "deploy-in",
     		outlined: true,
+    		autocomplete: true,
     		label: "deploy it in",
     		items: /*hostnamesList*/ ctx[2]
     	};
