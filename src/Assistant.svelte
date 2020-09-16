@@ -29,6 +29,7 @@
   import '@beyonk/gdpr-cookie-consent-banner/dist/style.css' // optional, you can also define your own styles
   import GdprBanner from '@beyonk/gdpr-cookie-consent-banner';
   import {title} from './utils';
+  import Url from 'domurl';
 
   function initAnalytics() {
     // do something with segment.io or google analytics etc
@@ -57,7 +58,7 @@
 
   if (debug) console.log(`Conf of '${conf.LA_project_name}' with uuid: ${uuid} `);
 
-  let save = async function (resetConf, copyConf) {
+  let save = async function (resetConf, copyConf, callback) {
     if (resetConf) {
       if (debug) console.log("Resetting the assistant")
       // window.history.pushState({page: "/"}, "Generator Living Atlas", "/");
@@ -81,11 +82,13 @@
       // console.log(ses);
       if (debug) console.log(conf);
       if (copyConf) {
-        uuid = ses.uuid;
-        conf = ses.conf;
-        window.history.pushState({page: uuid}, title(conf.LA_project_shortname), uuid);
+        const newUuid = ses.uuid;
         showSnackbarTop = true;
+        const copyUrl = new Url();
+        copyUrl.path = `/${newUuid}`;
+        window.open(copyUrl.toString(), "_blank");
       }
+      if (callback) callback();
     });
   }
 
@@ -168,9 +171,7 @@
 
   let onSndBtnClick = function () {
     if (conf.page === 4) {
-      save();
-      doPost();
-      // showSnackbarTop = true;
+      save(false, false, () => doPost());
     } else {
       conf.page += 1;
       save();

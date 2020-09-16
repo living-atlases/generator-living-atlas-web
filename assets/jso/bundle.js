@@ -11298,7 +11298,7 @@ var app = (function () {
     const { console: console_1 } = globals;
     const file$l = "src/Service.svelte";
 
-    // (60:0) {#if (service.depends != null && conf[`LA_use_${service.depends}`] === true) || service.depends == null }
+    // (63:0) {#if (service.depends != null && conf[`LA_use_${service.depends}`] === true) || service.depends == null }
     function create_if_block$a(ctx) {
     	let div;
     	let flex;
@@ -11327,8 +11327,8 @@ var app = (function () {
     			t1 = space();
     			hr = element("hr");
     			attr_dev(div, "class", "p-20 pb-5 pt-3 body-2");
-    			add_location(div, file$l, 60, 1, 2336);
-    			add_location(hr, file$l, 137, 1, 4962);
+    			add_location(div, file$l, 63, 1, 2565);
+    			add_location(hr, file$l, 139, 1, 5184);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -11342,7 +11342,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const flex_changes = {};
 
-    			if (dirty & /*$$scope, service, conf*/ 32771) {
+    			if (dirty & /*$$scope, service, conf*/ 65539) {
     				flex_changes.$$scope = { dirty, ctx };
     			}
 
@@ -11395,14 +11395,14 @@ var app = (function () {
     		block,
     		id: create_if_block$a.name,
     		type: "if",
-    		source: "(60:0) {#if (service.depends != null && conf[`LA_use_${service.depends}`] === true) || service.depends == null }",
+    		source: "(63:0) {#if (service.depends != null && conf[`LA_use_${service.depends}`] === true) || service.depends == null }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (73:3) {:else}
+    // (76:3) {:else}
     function create_else_block_1(ctx) {
     	let span;
     	let t0_value = /*service*/ ctx[1].desc.charAt(0).toUpperCase() + /*service*/ ctx[1].desc.slice(1) + "";
@@ -11415,7 +11415,7 @@ var app = (function () {
     			t0 = text(t0_value);
     			t1 = text(":");
     			attr_dev(span, "class", "desc svelte-198fmxd");
-    			add_location(span, file$l, 73, 4, 2740);
+    			add_location(span, file$l, 76, 4, 2969);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -11436,14 +11436,14 @@ var app = (function () {
     		block,
     		id: create_else_block_1.name,
     		type: "else",
-    		source: "(73:3) {:else}",
+    		source: "(76:3) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (63:3) {#if (service.optional) }
+    // (66:3) {#if (service.optional) }
     function create_if_block_8(ctx) {
     	let div;
     	let switch_1;
@@ -11476,7 +11476,7 @@ var app = (function () {
     			create_component(switch_1.$$.fragment);
     			t = space();
     			if (if_block) if_block.c();
-    			add_location(div, file$l, 63, 4, 2432);
+    			add_location(div, file$l, 66, 4, 2661);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -11535,14 +11535,14 @@ var app = (function () {
     		block,
     		id: create_if_block_8.name,
     		type: "if",
-    		source: "(63:3) {#if (service.optional) }",
+    		source: "(66:3) {#if (service.optional) }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (69:5) {#if service.recommended}
+    // (72:5) {#if service.recommended}
     function create_if_block_9(ctx) {
     	let span;
 
@@ -11551,7 +11551,7 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "Tip: It's quite recommended.";
     			attr_dev(span, "class", "tip svelte-198fmxd");
-    			add_location(span, file$l, 69, 6, 2649);
+    			add_location(span, file$l, 72, 6, 2878);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -11565,14 +11565,14 @@ var app = (function () {
     		block,
     		id: create_if_block_9.name,
     		type: "if",
-    		source: "(69:5) {#if service.recommended}",
+    		source: "(72:5) {#if service.recommended}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (62:2) <Flex justify="between">
+    // (65:2) <Flex justify="between">
     function create_default_slot_4(ctx) {
     	let current_block_type_index;
     	let if_block;
@@ -11643,14 +11643,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_4.name,
     		type: "slot",
-    		source: "(62:2) <Flex justify=\\\"between\\\">",
+    		source: "(65:2) <Flex justify=\\\"between\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (78:2) {#if !service.optional || conf["LA_use_" + service.name_int]}
+    // (81:2) {#if !service.optional || conf["LA_use_" + service.name_int]}
     function create_if_block_1$4(ctx) {
     	let flex;
     	let current;
@@ -11675,7 +11675,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const flex_changes = {};
 
-    			if (dirty & /*$$scope, service, deployError, hostnamesList, conf, urlError*/ 32799) {
+    			if (dirty & /*$$scope, service, deployError, hostnamesList, conf, urlError*/ 65567) {
     				flex_changes.$$scope = { dirty, ctx };
     			}
 
@@ -11699,14 +11699,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$4.name,
     		type: "if",
-    		source: "(78:2) {#if !service.optional || conf[\\\"LA_use_\\\" + service.name_int]}",
+    		source: "(81:2) {#if !service.optional || conf[\\\"LA_use_\\\" + service.name_int]}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (81:5) {#if (typeof service.forceSubdomain === 'undefined' && !service.forceSubdomain) && !service.withoutUrl}
+    // (84:5) {#if (typeof service.forceSubdomain === 'undefined' && !service.forceSubdomain) && !service.withoutUrl}
     function create_if_block_7(ctx) {
     	let tooltip;
     	let current;
@@ -11733,7 +11733,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const tooltip_changes = {};
 
-    			if (dirty & /*$$scope, conf, service*/ 32771) {
+    			if (dirty & /*$$scope, conf, service*/ 65539) {
     				tooltip_changes.$$scope = { dirty, ctx };
     			}
 
@@ -11757,14 +11757,14 @@ var app = (function () {
     		block,
     		id: create_if_block_7.name,
     		type: "if",
-    		source: "(81:5) {#if (typeof service.forceSubdomain === 'undefined' && !service.forceSubdomain) && !service.withoutUrl}",
+    		source: "(84:5) {#if (typeof service.forceSubdomain === 'undefined' && !service.forceSubdomain) && !service.withoutUrl}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (83:7) <div slot="activator">
+    // (86:7) <div slot="activator">
     function create_activator_slot_1(ctx) {
     	let div0;
     	let div1;
@@ -11792,9 +11792,9 @@ var app = (function () {
     			div0 = element("div");
     			div1 = element("div");
     			create_component(switch_1.$$.fragment);
-    			add_location(div1, file$l, 83, 8, 3132);
+    			add_location(div1, file$l, 86, 8, 3361);
     			attr_dev(div0, "slot", "activator");
-    			add_location(div0, file$l, 82, 7, 3101);
+    			add_location(div0, file$l, 85, 7, 3330);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div0, anchor);
@@ -11839,14 +11839,14 @@ var app = (function () {
     		block,
     		id: create_activator_slot_1.name,
     		type: "slot",
-    		source: "(83:7) <div slot=\\\"activator\\\">",
+    		source: "(86:7) <div slot=\\\"activator\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (82:6) <Tooltip>
+    // (85:6) <Tooltip>
     function create_default_slot_3(ctx) {
     	let t;
 
@@ -11869,14 +11869,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_3.name,
     		type: "slot",
-    		source: "(82:6) <Tooltip>",
+    		source: "(85:6) <Tooltip>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (93:5) {#if !service.withoutUrl}
+    // (96:5) {#if !service.withoutUrl}
     function create_if_block_6$1(ctx) {
     	let urlprefix;
     	let current;
@@ -11917,14 +11917,14 @@ var app = (function () {
     		block,
     		id: create_if_block_6$1.name,
     		type: "if",
-    		source: "(93:5) {#if !service.withoutUrl}",
+    		source: "(96:5) {#if !service.withoutUrl}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (97:5) {#if !service.withoutUrl}
+    // (100:5) {#if !service.withoutUrl}
     function create_if_block_3$1(ctx) {
     	let t;
     	let if_block1_anchor;
@@ -12016,14 +12016,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3$1.name,
     		type: "if",
-    		source: "(97:5) {#if !service.withoutUrl}",
+    		source: "(100:5) {#if !service.withoutUrl}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (98:6) {#if conf[`LA_${service.name_int}_uses_subdomain`]}
+    // (101:6) {#if conf[`LA_${service.name_int}_uses_subdomain`]}
     function create_if_block_5$1(ctx) {
     	let textfield0;
     	let updating_value;
@@ -12080,7 +12080,7 @@ var app = (function () {
     			t4 = space();
     			create_component(textfield1.$$.fragment);
     			attr_dev(span, "class", "nowrap svelte-198fmxd");
-    			add_location(span, file$l, 101, 7, 3755);
+    			add_location(span, file$l, 104, 7, 3984);
     		},
     		m: function mount(target, anchor) {
     			mount_component(textfield0, target, anchor);
@@ -12140,14 +12140,14 @@ var app = (function () {
     		block,
     		id: create_if_block_5$1.name,
     		type: "if",
-    		source: "(98:6) {#if conf[`LA_${service.name_int}_uses_subdomain`]}",
+    		source: "(101:6) {#if conf[`LA_${service.name_int}_uses_subdomain`]}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (106:6) {#if !conf[`LA_${service.name_int}_uses_subdomain`]}
+    // (109:6) {#if !conf[`LA_${service.name_int}_uses_subdomain`]}
     function create_if_block_4$1(ctx) {
     	let span0;
     	let t0_value = /*conf*/ ctx[0].LA_domain + "";
@@ -12188,8 +12188,8 @@ var app = (function () {
     			span1 = element("span");
     			span1.textContent = "/";
     			attr_dev(span0, "class", "nowrap svelte-198fmxd");
-    			add_location(span0, file$l, 106, 7, 3974);
-    			add_location(span1, file$l, 110, 7, 4200);
+    			add_location(span0, file$l, 109, 7, 4203);
+    			add_location(span1, file$l, 113, 7, 4429);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span0, anchor);
@@ -12237,14 +12237,14 @@ var app = (function () {
     		block,
     		id: create_if_block_4$1.name,
     		type: "if",
-    		source: "(106:6) {#if !conf[`LA_${service.name_int}_uses_subdomain`]}",
+    		source: "(109:6) {#if !conf[`LA_${service.name_int}_uses_subdomain`]}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (80:4) <Flex justify="start">
+    // (83:4) <Flex justify="start">
     function create_default_slot_2$2(ctx) {
     	let t0;
     	let t1;
@@ -12369,14 +12369,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2$2.name,
     		type: "slot",
-    		source: "(80:4) <Flex justify=\\\"start\\\">",
+    		source: "(83:4) <Flex justify=\\\"start\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (130:4) {:else}
+    // (132:4) {:else}
     function create_else_block$2(ctx) {
     	let div;
     	let button;
@@ -12397,7 +12397,7 @@ var app = (function () {
     			div = element("div");
     			create_component(button.$$.fragment);
     			attr_dev(div, "class", "btn-hidden svelte-198fmxd");
-    			add_location(div, file$l, 130, 5, 4835);
+    			add_location(div, file$l, 132, 5, 5057);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -12424,14 +12424,14 @@ var app = (function () {
     		block,
     		id: create_else_block$2.name,
     		type: "else",
-    		source: "(130:4) {:else}",
+    		source: "(132:4) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (121:4) {#if service.sample != null}
+    // (123:4) {#if service.sample != null}
     function create_if_block_2$3(ctx) {
     	let tooltip;
     	let current;
@@ -12458,7 +12458,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const tooltip_changes = {};
 
-    			if (dirty & /*$$scope, service*/ 32770) {
+    			if (dirty & /*$$scope, service*/ 65538) {
     				tooltip_changes.$$scope = { dirty, ctx };
     			}
 
@@ -12482,14 +12482,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2$3.name,
     		type: "if",
-    		source: "(121:4) {#if service.sample != null}",
+    		source: "(123:4) {#if service.sample != null}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (123:6) <div slot="activator">
+    // (125:6) <div slot="activator">
     function create_activator_slot$1(ctx) {
     	let div;
     	let a;
@@ -12515,9 +12515,9 @@ var app = (function () {
     			attr_dev(a, "class", "btn-visible nohover svelte-198fmxd");
     			attr_dev(a, "href", a_href_value = /*service*/ ctx[1].sample);
     			attr_dev(a, "target", "_blank");
-    			add_location(a, file$l, 123, 7, 4611);
+    			add_location(a, file$l, 125, 7, 4833);
     			attr_dev(div, "slot", "activator");
-    			add_location(div, file$l, 122, 6, 4581);
+    			add_location(div, file$l, 124, 6, 4803);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -12549,14 +12549,14 @@ var app = (function () {
     		block,
     		id: create_activator_slot$1.name,
     		type: "slot",
-    		source: "(123:6) <div slot=\\\"activator\\\">",
+    		source: "(125:6) <div slot=\\\"activator\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (122:5) <Tooltip>
+    // (124:5) <Tooltip>
     function create_default_slot_1$4(ctx) {
     	let t;
 
@@ -12579,14 +12579,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$4.name,
     		type: "slot",
-    		source: "(122:5) <Tooltip>",
+    		source: "(124:5) <Tooltip>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (79:3) <Flex justify="between">
+    // (82:3) <Flex justify="between">
     function create_default_slot$8(ctx) {
     	let flex;
     	let t0;
@@ -12616,7 +12616,6 @@ var app = (function () {
     		error: /*deployError*/ ctx[3][/*service*/ ctx[1].name_int],
     		class: "deploy-in",
     		outlined: true,
-    		autocomplete: true,
     		label: "deploy it in",
     		items: /*hostnamesList*/ ctx[2]
     	};
@@ -12627,7 +12626,7 @@ var app = (function () {
 
     	select = new Select({ props: select_props, $$inline: true });
     	binding_callbacks.push(() => bind(select, "value", select_value_binding));
-    	select.$on("change", /*onChange*/ ctx[5]);
+    	select.$on("change", /*change_handler*/ ctx[14]);
     	const if_block_creators = [create_if_block_2$3, create_else_block$2];
     	const if_blocks = [];
 
@@ -12649,7 +12648,7 @@ var app = (function () {
     			if_block.c();
     			if_block_anchor = empty();
     			attr_dev(div, "class", "deploy-in svelte-198fmxd");
-    			add_location(div, file$l, 114, 4, 4255);
+    			add_location(div, file$l, 117, 4, 4484);
     		},
     		m: function mount(target, anchor) {
     			mount_component(flex, target, anchor);
@@ -12664,7 +12663,7 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			const flex_changes = {};
 
-    			if (dirty & /*$$scope, urlError, service, conf*/ 32787) {
+    			if (dirty & /*$$scope, urlError, service, conf*/ 65555) {
     				flex_changes.$$scope = { dirty, ctx };
     			}
 
@@ -12732,7 +12731,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$8.name,
     		type: "slot",
-    		source: "(79:3) <Flex justify=\\\"between\\\">",
+    		source: "(82:3) <Flex justify=\\\"between\\\">",
     		ctx
     	});
 
@@ -12817,7 +12816,7 @@ var app = (function () {
     	let { debug } = $$props;
     	let deployError = {};
     	let urlError = {};
-    	deployError[service.name_int] = "";
+    	deployError[service.name_int] = "kk";
     	urlError[service.name_int] = "";
 
     	let verify = function () {
@@ -12830,6 +12829,7 @@ var app = (function () {
     		}
 
     		if (hostnamesList && hostnamesList.length > 0 && (conf[`LA_${service.name_int}_hostname`] == "" || !hostnamesList.includes(conf[`LA_${service.name_int}_hostname`]))) {
+    			if (debug) console.log("Setting " + conf[`LA_${service.name_int}_hostname`] + ` to ${hostnamesList[0]}`);
     			$$invalidate(0, conf[`LA_${service.name_int}_hostname`] = hostnamesList[0], conf);
     		}
 
@@ -12867,7 +12867,7 @@ var app = (function () {
 
     		$$invalidate(
     			3,
-    			deployError[service.name_int] = conf[`LA_${service.name_int}_hostname`] == null
+    			deployError[service.name_int] = conf[`LA_${service.name_int}_hostname`] == null || !hostnamesList.includes(conf[`LA_${service.name_int}_hostname`])
     			? "Please select a server"
     			: "",
     			deployError
@@ -12878,7 +12878,8 @@ var app = (function () {
     		if (debug) console.log("Hostname : " + conf[`LA_${service.name_int}_hostname`]);
     	};
 
-    	let onChange = function () {
+    	let onChange = function (val) {
+    		if (val && debug) console.log(val);
     		if (debug) console.log("on service change");
     		verify();
     		save();
@@ -12923,6 +12924,8 @@ var app = (function () {
     		$$invalidate(0, conf);
     	}
 
+    	const change_handler = v => onChange(v.datail);
+
     	$$self.$$set = $$props => {
     		if ("service" in $$props) $$invalidate(1, service = $$props.service);
     		if ("conf" in $$props) $$invalidate(0, conf = $$props.conf);
@@ -12960,7 +12963,7 @@ var app = (function () {
     		if ("debug" in $$props) $$invalidate(7, debug = $$props.debug);
     		if ("deployError" in $$props) $$invalidate(3, deployError = $$props.deployError);
     		if ("urlError" in $$props) $$invalidate(4, urlError = $$props.urlError);
-    		if ("verify" in $$props) $$invalidate(14, verify = $$props.verify);
+    		if ("verify" in $$props) $$invalidate(15, verify = $$props.verify);
     		if ("onChange" in $$props) $$invalidate(5, onChange = $$props.onChange);
     	};
 
@@ -12986,7 +12989,8 @@ var app = (function () {
     		textfield0_value_binding,
     		textfield1_value_binding,
     		textfield_value_binding,
-    		select_value_binding
+    		select_value_binding,
+    		change_handler
     	];
     }
 
@@ -14914,7 +14918,7 @@ var app = (function () {
     const { console: console_1$1 } = globals;
     const file$o = "src/Assistant.svelte";
 
-    // (187:3) {#if (conf.page === 1)}
+    // (188:3) {#if (conf.page === 1)}
     function create_if_block_3$3(ctx) {
     	let intropage;
     	let current;
@@ -14946,14 +14950,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3$3.name,
     		type: "if",
-    		source: "(187:3) {#if (conf.page === 1)}",
+    		source: "(188:3) {#if (conf.page === 1)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (190:3) {#if (conf.page === 2)}
+    // (191:3) {#if (conf.page === 2)}
     function create_if_block_2$5(ctx) {
     	let textfield0;
     	let updating_value;
@@ -15111,14 +15115,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2$5.name,
     		type: "if",
-    		source: "(190:3) {#if (conf.page === 2)}",
+    		source: "(191:3) {#if (conf.page === 2)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (196:5) <div slot="activator">
+    // (197:5) <div slot="activator">
     function create_activator_slot$3(ctx) {
     	let div;
     	let switch_1;
@@ -15143,7 +15147,7 @@ var app = (function () {
     			div = element("div");
     			create_component(switch_1.$$.fragment);
     			attr_dev(div, "slot", "activator");
-    			add_location(div, file$o, 195, 5, 6611);
+    			add_location(div, file$o, 196, 5, 6680);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -15180,14 +15184,14 @@ var app = (function () {
     		block,
     		id: create_activator_slot$3.name,
     		type: "slot",
-    		source: "(196:5) <div slot=\\\"activator\\\">",
+    		source: "(197:5) <div slot=\\\"activator\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (195:4) <Tooltip>
+    // (196:4) <Tooltip>
     function create_default_slot_5(ctx) {
     	let t;
 
@@ -15210,14 +15214,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_5.name,
     		type: "slot",
-    		source: "(195:4) <Tooltip>",
+    		source: "(196:4) <Tooltip>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (201:4) <Flex align="center" justify="start">
+    // (202:4) <Flex align="center" justify="start">
     function create_default_slot_4$1(ctx) {
     	let urlprefix;
     	let t;
@@ -15298,14 +15302,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_4$1.name,
     		type: "slot",
-    		source: "(201:4) <Flex align=\\\"center\\\" justify=\\\"start\\\">",
+    		source: "(202:4) <Flex align=\\\"center\\\" justify=\\\"start\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (208:3) {#if (conf.page === 3)}
+    // (209:3) {#if (conf.page === 3)}
     function create_if_block_1$6(ctx) {
     	let textfield;
     	let updating_value;
@@ -15353,7 +15357,7 @@ var app = (function () {
     			t = space();
     			p = element("p");
     			create_component(card_card.$$.fragment);
-    			add_location(p, file$o, 212, 4, 7289);
+    			add_location(p, file$o, 213, 4, 7358);
     		},
     		m: function mount(target, anchor) {
     			mount_component(textfield, target, anchor);
@@ -15405,14 +15409,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$6.name,
     		type: "if",
-    		source: "(208:3) {#if (conf.page === 3)}",
+    		source: "(209:3) {#if (conf.page === 3)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (215:6) <div slot="title">
+    // (216:6) <div slot="title">
     function create_title_slot(ctx) {
     	let div;
     	let card_title;
@@ -15428,7 +15432,7 @@ var app = (function () {
     			div = element("div");
     			create_component(card_title.$$.fragment);
     			attr_dev(div, "slot", "title");
-    			add_location(div, file$o, 214, 6, 7316);
+    			add_location(div, file$o, 215, 6, 7385);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -15455,14 +15459,14 @@ var app = (function () {
     		block,
     		id: create_title_slot.name,
     		type: "slot",
-    		source: "(215:6) <div slot=\\\"title\\\">",
+    		source: "(216:6) <div slot=\\\"title\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (218:6) <div slot="text" class="p-5 pb-5 pt-0 text-gray-700 body-2">
+    // (219:6) <div slot="text" class="p-5 pb-5 pt-0 text-gray-700 body-2">
     function create_text_slot(ctx) {
     	let div;
     	let t0;
@@ -15487,14 +15491,14 @@ var app = (function () {
     			t5 = text("\n\t\t\t\t\t\t\tIf you are unsure type something like \"server1, server2, server3\". You can modify this and the rest of\n\t\t\t\t\t\t\tvalues later.");
     			attr_dev(a0, "href", "https://github.com/AtlasOfLivingAustralia/documentation/wiki/Infrastructure-Requirements");
     			attr_dev(a0, "target", "_blank");
-    			add_location(a0, file$o, 218, 15, 7466);
+    			add_location(a0, file$o, 219, 15, 7535);
     			attr_dev(a1, "href", "https://github.com/AtlasOfLivingAustralia/documentation/wiki/");
     			attr_dev(a1, "target", "_blank");
-    			add_location(a1, file$o, 220, 7, 7675);
-    			add_location(br, file$o, 222, 74, 7902);
+    			add_location(a1, file$o, 221, 7, 7744);
+    			add_location(br, file$o, 223, 74, 7971);
     			attr_dev(div, "slot", "text");
     			attr_dev(div, "class", "p-5 pb-5 pt-0 text-gray-700 body-2");
-    			add_location(div, file$o, 217, 6, 7390);
+    			add_location(div, file$o, 218, 6, 7459);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -15515,14 +15519,14 @@ var app = (function () {
     		block,
     		id: create_text_slot.name,
     		type: "slot",
-    		source: "(218:6) <div slot=\\\"text\\\" class=\\\"p-5 pb-5 pt-0 text-gray-700 body-2\\\">",
+    		source: "(219:6) <div slot=\\\"text\\\" class=\\\"p-5 pb-5 pt-0 text-gray-700 body-2\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (214:5) <Card.Card>
+    // (215:5) <Card.Card>
     function create_default_slot_3$1(ctx) {
     	let t;
 
@@ -15545,14 +15549,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_3$1.name,
     		type: "slot",
-    		source: "(214:5) <Card.Card>",
+    		source: "(215:5) <Card.Card>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (231:3) {#if (conf.page === 4)}
+    // (232:3) {#if (conf.page === 4)}
     function create_if_block$c(ctx) {
     	let div;
     	let h5;
@@ -15591,20 +15595,20 @@ var app = (function () {
     			form = element("form");
     			button = element("button");
     			attr_dev(h5, "class", "t-center svelte-i3mvti");
-    			add_location(h5, file$o, 232, 5, 8146);
+    			add_location(h5, file$o, 233, 5, 8215);
     			attr_dev(div, "class", "to-left svelte-i3mvti");
-    			add_location(div, file$o, 231, 4, 8119);
+    			add_location(div, file$o, 232, 4, 8188);
     			attr_dev(button, "id", "submit-btn");
     			attr_dev(button, "type", "submit");
     			attr_dev(button, "name", "conf");
     			button.value = button_value_value = JSON.stringify(/*conf*/ ctx[1]);
     			attr_dev(button, "class", "link-button");
-    			add_location(button, file$o, 241, 5, 8541);
+    			add_location(button, file$o, 242, 5, 8610);
     			attr_dev(form, "target", "_blank");
     			attr_dev(form, "method", "post");
     			attr_dev(form, "action", "/v1/gen");
     			attr_dev(form, "class", "form-link svelte-i3mvti");
-    			add_location(form, file$o, 240, 4, 8464);
+    			add_location(form, file$o, 241, 4, 8533);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -15650,14 +15654,14 @@ var app = (function () {
     		block,
     		id: create_if_block$c.name,
     		type: "if",
-    		source: "(231:3) {#if (conf.page === 4)}",
+    		source: "(232:3) {#if (conf.page === 4)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (235:6) <li slot="item" let:item={item}>
+    // (236:6) <li slot="item" let:item={item}>
     function create_item_slot(ctx) {
     	let li;
     	let service;
@@ -15679,7 +15683,7 @@ var app = (function () {
     			li = element("li");
     			create_component(service.$$.fragment);
     			attr_dev(li, "slot", "item");
-    			add_location(li, file$o, 234, 6, 8262);
+    			add_location(li, file$o, 235, 6, 8331);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -15713,14 +15717,14 @@ var app = (function () {
     		block,
     		id: create_item_slot.name,
     		type: "slot",
-    		source: "(235:6) <li slot=\\\"item\\\" let:item={item}>",
+    		source: "(236:6) <li slot=\\\"item\\\" let:item={item}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (184:1) <Flex direction="column" align="stretch" justify="start">
+    // (185:1) <Flex direction="column" align="stretch" justify="start">
     function create_default_slot_1$6(ctx) {
     	let div;
     	let h2;
@@ -15764,9 +15768,9 @@ var app = (function () {
     			t5 = space();
     			create_component(btnarea.$$.fragment);
     			attr_dev(h2, "class", "svelte-i3mvti");
-    			add_location(h2, file$o, 185, 3, 6148);
+    			add_location(h2, file$o, 186, 3, 6217);
     			attr_dev(div, "class", "main-flex svelte-i3mvti");
-    			add_location(div, file$o, 184, 2, 6121);
+    			add_location(div, file$o, 185, 2, 6190);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -15911,14 +15915,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$6.name,
     		type: "slot",
-    		source: "(184:1) <Flex direction=\\\"column\\\" align=\\\"stretch\\\" justify=\\\"start\\\">",
+    		source: "(185:1) <Flex direction=\\\"column\\\" align=\\\"stretch\\\" justify=\\\"start\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (249:1) <Snackbar top bind:value={showSnackbarTop}>
+    // (250:1) <Snackbar top bind:value={showSnackbarTop}>
     function create_default_slot$9(ctx) {
     	let div;
 
@@ -15926,7 +15930,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			div.textContent = "Configuration copied!";
-    			add_location(div, file$o, 249, 2, 8854);
+    			add_location(div, file$o, 250, 2, 8923);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -15940,7 +15944,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$9.name,
     		type: "slot",
-    		source: "(249:1) <Snackbar top bind:value={showSnackbarTop}>",
+    		source: "(250:1) <Snackbar top bind:value={showSnackbarTop}>",
     		ctx
     	});
 
@@ -16046,7 +16050,7 @@ var app = (function () {
     			add_location(link2, file$o, 2, 0, 181);
     			attr_dev(main, "class", "hero svelte-i3mvti");
     			set_style(main, "--footer-height", /*footerHeight*/ ctx[15]);
-    			add_location(main, file$o, 181, 0, 5972);
+    			add_location(main, file$o, 182, 0, 6041);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -16159,7 +16163,7 @@ var app = (function () {
     	let conf = initStore.conf;
     	if (debug) console.log(`Conf of '${conf.LA_project_name}' with uuid: ${uuid} `);
 
-    	let save = async function (resetConf, copyConf) {
+    	let save = async function (resetConf, copyConf, callback) {
     		if (resetConf) {
     			if (debug) console.log("Resetting the assistant");
 
@@ -16186,11 +16190,14 @@ var app = (function () {
     			if (debug) console.log(conf);
 
     			if (copyConf) {
-    				uuid = ses.uuid;
-    				$$invalidate(1, conf = ses.conf);
-    				window.history.pushState({ page: uuid }, utils$1.title(conf.LA_project_shortname), uuid);
+    				const newUuid = ses.uuid;
     				$$invalidate(13, showSnackbarTop = true);
+    				const copyUrl = new url_min();
+    				copyUrl.path = `/${newUuid}`;
+    				window.open(copyUrl.toString(), "_blank");
     			}
+
+    			if (callback) callback();
     		});
     	};
 
@@ -16241,10 +16248,9 @@ var app = (function () {
 
     	let onSndBtnClick = function () {
     		if (conf.page === 4) {
-    			save();
-    			doPost();
+    			save(false, false, () => doPost());
     		} else {
-    			$$invalidate(1, conf.page += 1, conf); // showSnackbarTop = true;
+    			$$invalidate(1, conf.page += 1, conf);
     			save();
     		}
     	};
@@ -16260,27 +16266,27 @@ var app = (function () {
 
     	function textfield0_value_binding(value) {
     		conf.LA_project_name = value;
-    		((((((((($$invalidate(1, conf), $$invalidate(28, longNameInvalid)), $$invalidate(29, shortNameInvalid)), $$invalidate(31, mainDomainInvalid)), $$invalidate(30, hostnameInvalid)), $$invalidate(35, hostnamesHint)), $$invalidate(0, debug)), $$invalidate(34, pageValid)), $$invalidate(32, lastPage)), $$invalidate(16, save));
+    		((((((((($$invalidate(1, conf), $$invalidate(27, longNameInvalid)), $$invalidate(28, shortNameInvalid)), $$invalidate(30, mainDomainInvalid)), $$invalidate(29, hostnameInvalid)), $$invalidate(35, hostnamesHint)), $$invalidate(0, debug)), $$invalidate(34, pageValid)), $$invalidate(31, lastPage)), $$invalidate(16, save));
     	}
 
     	function textfield1_value_binding(value) {
     		conf.LA_project_shortname = value;
-    		((((((((($$invalidate(1, conf), $$invalidate(28, longNameInvalid)), $$invalidate(29, shortNameInvalid)), $$invalidate(31, mainDomainInvalid)), $$invalidate(30, hostnameInvalid)), $$invalidate(35, hostnamesHint)), $$invalidate(0, debug)), $$invalidate(34, pageValid)), $$invalidate(32, lastPage)), $$invalidate(16, save));
+    		((((((((($$invalidate(1, conf), $$invalidate(27, longNameInvalid)), $$invalidate(28, shortNameInvalid)), $$invalidate(30, mainDomainInvalid)), $$invalidate(29, hostnameInvalid)), $$invalidate(35, hostnamesHint)), $$invalidate(0, debug)), $$invalidate(34, pageValid)), $$invalidate(31, lastPage)), $$invalidate(16, save));
     	}
 
     	function switch_1_value_binding(value) {
     		conf.LA_enable_ssl = value;
-    		((((((((($$invalidate(1, conf), $$invalidate(28, longNameInvalid)), $$invalidate(29, shortNameInvalid)), $$invalidate(31, mainDomainInvalid)), $$invalidate(30, hostnameInvalid)), $$invalidate(35, hostnamesHint)), $$invalidate(0, debug)), $$invalidate(34, pageValid)), $$invalidate(32, lastPage)), $$invalidate(16, save));
+    		((((((((($$invalidate(1, conf), $$invalidate(27, longNameInvalid)), $$invalidate(28, shortNameInvalid)), $$invalidate(30, mainDomainInvalid)), $$invalidate(29, hostnameInvalid)), $$invalidate(35, hostnamesHint)), $$invalidate(0, debug)), $$invalidate(34, pageValid)), $$invalidate(31, lastPage)), $$invalidate(16, save));
     	}
 
     	function textfield_value_binding(value) {
     		conf.LA_domain = value;
-    		((((((((($$invalidate(1, conf), $$invalidate(28, longNameInvalid)), $$invalidate(29, shortNameInvalid)), $$invalidate(31, mainDomainInvalid)), $$invalidate(30, hostnameInvalid)), $$invalidate(35, hostnamesHint)), $$invalidate(0, debug)), $$invalidate(34, pageValid)), $$invalidate(32, lastPage)), $$invalidate(16, save));
+    		((((((((($$invalidate(1, conf), $$invalidate(27, longNameInvalid)), $$invalidate(28, shortNameInvalid)), $$invalidate(30, mainDomainInvalid)), $$invalidate(29, hostnameInvalid)), $$invalidate(35, hostnamesHint)), $$invalidate(0, debug)), $$invalidate(34, pageValid)), $$invalidate(31, lastPage)), $$invalidate(16, save));
     	}
 
     	function textfield_value_binding_1(value) {
     		conf.hostnames = value;
-    		((((((((($$invalidate(1, conf), $$invalidate(28, longNameInvalid)), $$invalidate(29, shortNameInvalid)), $$invalidate(31, mainDomainInvalid)), $$invalidate(30, hostnameInvalid)), $$invalidate(35, hostnamesHint)), $$invalidate(0, debug)), $$invalidate(34, pageValid)), $$invalidate(32, lastPage)), $$invalidate(16, save));
+    		((((((((($$invalidate(1, conf), $$invalidate(27, longNameInvalid)), $$invalidate(28, shortNameInvalid)), $$invalidate(30, mainDomainInvalid)), $$invalidate(29, hostnameInvalid)), $$invalidate(35, hostnamesHint)), $$invalidate(0, debug)), $$invalidate(34, pageValid)), $$invalidate(31, lastPage)), $$invalidate(16, save));
     	}
 
     	function snackbar_value_binding(value) {
@@ -16316,6 +16322,7 @@ var app = (function () {
     		storez,
     		GdprBanner: Banner,
     		title: utils$1.title,
+    		Url: url_min,
     		initAnalytics,
     		gdprCategories,
     		footerHeight,
@@ -16359,23 +16366,23 @@ var app = (function () {
     		if ("conf" in $$props) $$invalidate(1, conf = $$props.conf);
     		if ("save" in $$props) $$invalidate(16, save = $$props.save);
     		if ("onChange" in $$props) $$invalidate(17, onChange = $$props.onChange);
-    		if ("longNameInvalid" in $$props) $$invalidate(28, longNameInvalid = $$props.longNameInvalid);
+    		if ("longNameInvalid" in $$props) $$invalidate(27, longNameInvalid = $$props.longNameInvalid);
     		if ("longNameError" in $$props) $$invalidate(2, longNameError = $$props.longNameError);
     		if ("longNameAppend" in $$props) $$invalidate(3, longNameAppend = $$props.longNameAppend);
-    		if ("shortNameInvalid" in $$props) $$invalidate(29, shortNameInvalid = $$props.shortNameInvalid);
+    		if ("shortNameInvalid" in $$props) $$invalidate(28, shortNameInvalid = $$props.shortNameInvalid);
     		if ("shortNameError" in $$props) $$invalidate(4, shortNameError = $$props.shortNameError);
     		if ("shortNameAppend" in $$props) $$invalidate(5, shortNameAppend = $$props.shortNameAppend);
-    		if ("hostnameInvalid" in $$props) $$invalidate(30, hostnameInvalid = $$props.hostnameInvalid);
+    		if ("hostnameInvalid" in $$props) $$invalidate(29, hostnameInvalid = $$props.hostnameInvalid);
     		if ("hostnameError" in $$props) $$invalidate(6, hostnameError = $$props.hostnameError);
     		if ("hostnameAppend" in $$props) $$invalidate(7, hostnameAppend = $$props.hostnameAppend);
-    		if ("mainDomainInvalid" in $$props) $$invalidate(31, mainDomainInvalid = $$props.mainDomainInvalid);
+    		if ("mainDomainInvalid" in $$props) $$invalidate(30, mainDomainInvalid = $$props.mainDomainInvalid);
     		if ("mainDomainError" in $$props) $$invalidate(8, mainDomainError = $$props.mainDomainError);
     		if ("mainDomainAppend" in $$props) $$invalidate(9, mainDomainAppend = $$props.mainDomainAppend);
     		if ("firstBtnDisabled" in $$props) $$invalidate(10, firstBtnDisabled = $$props.firstBtnDisabled);
     		if ("sndBtnDisabled" in $$props) $$invalidate(11, sndBtnDisabled = $$props.sndBtnDisabled);
     		if ("firstBtnText" in $$props) firstBtnText = $$props.firstBtnText;
     		if ("sndBtnText" in $$props) $$invalidate(12, sndBtnText = $$props.sndBtnText);
-    		if ("lastPage" in $$props) $$invalidate(32, lastPage = $$props.lastPage);
+    		if ("lastPage" in $$props) $$invalidate(31, lastPage = $$props.lastPage);
     		if ("pageValid" in $$props) $$invalidate(34, pageValid = $$props.pageValid);
     		if ("hostnamesHint" in $$props) $$invalidate(35, hostnamesHint = $$props.hostnamesHint);
     		if ("showSnackbarTop" in $$props) $$invalidate(13, showSnackbarTop = $$props.showSnackbarTop);
@@ -16389,28 +16396,28 @@ var app = (function () {
     	}
 
     	$$self.$$.update = () => {
-    		if ($$self.$$.dirty[0] & /*conf, longNameInvalid, shortNameInvalid, hostnameInvalid, debug*/ 1879048195 | $$self.$$.dirty[1] & /*mainDomainInvalid, lastPage*/ 3) {
+    		if ($$self.$$.dirty[0] & /*conf, longNameInvalid, shortNameInvalid, mainDomainInvalid, hostnameInvalid, debug*/ 2013265923 | $$self.$$.dirty[1] & /*lastPage*/ 1) {
     			 {
-    				$$invalidate(28, longNameInvalid = !(conf.LA_project_name.length > 0 && projectNameRegexp.test(conf.LA_project_name)));
+    				$$invalidate(27, longNameInvalid = !(conf.LA_project_name.length > 0 && projectNameRegexp.test(conf.LA_project_name)));
     				$$invalidate(2, longNameError = longNameInvalid ? "Project name invalid" : "");
     				$$invalidate(3, longNameAppend = longNameInvalid ? "error" : "");
-    				$$invalidate(29, shortNameInvalid = !shortNameRegexp.test(conf.LA_project_shortname));
+    				$$invalidate(28, shortNameInvalid = !shortNameRegexp.test(conf.LA_project_shortname));
     				$$invalidate(4, shortNameError = shortNameInvalid ? "Project short name invalid" : "");
     				$$invalidate(5, shortNameAppend = shortNameInvalid ? "error" : "");
-    				$$invalidate(31, mainDomainInvalid = !domainRegexp.test(conf.LA_domain));
+    				$$invalidate(30, mainDomainInvalid = !domainRegexp.test(conf.LA_domain));
 
     				$$invalidate(8, mainDomainError = mainDomainInvalid
     				? "You need to provide some-atlas-domain.org"
     				: "");
 
     				$$invalidate(9, mainDomainAppend = mainDomainInvalid ? "error" : "");
-    				$$invalidate(30, hostnameInvalid = !hostnameRegexp.test(conf.hostnames));
+    				$$invalidate(29, hostnameInvalid = !hostnameRegexp.test(conf.hostnames));
     				$$invalidate(6, hostnameError = hostnameInvalid ? hostnamesHint : "");
     				$$invalidate(7, hostnameAppend = hostnameInvalid);
     				$$invalidate(10, firstBtnDisabled = conf.page === 1);
     				if (debug) console.log(`Current page ${conf.page} valid ${pageValid[conf.page - 1]()}`);
     				$$invalidate(11, sndBtnDisabled = !pageValid[conf.page - 1]());
-    				$$invalidate(32, lastPage = conf.page === 4);
+    				$$invalidate(31, lastPage = conf.page === 4);
 
     				$$invalidate(12, sndBtnText = conf.page === 1
     				? "Start"

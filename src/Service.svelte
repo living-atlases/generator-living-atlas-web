@@ -12,7 +12,7 @@
   const subdomainRegexp = /[a-z0-9_.\-]+/
   let deployError = {};
   let urlError = {};
-  deployError[service.name_int] = "";
+  deployError[service.name_int] = "kk";
   urlError[service.name_int] = "";
 
   let verify = function () {
@@ -24,6 +24,7 @@
     }
     if (hostnamesList && hostnamesList.length > 0 && (conf[`LA_${service.name_int}_hostname`] == "" ||
       !hostnamesList.includes(conf[`LA_${service.name_int}_hostname`]))) {
+      if (debug) console.log("Setting " + conf[`LA_${service.name_int}_hostname`] + ` to ${hostnamesList[0]}`);
       conf[`LA_${service.name_int}_hostname`] = hostnamesList[0];
     }
     if (!conf['LA_use_ala_bie']) {
@@ -38,13 +39,15 @@
       conf[`LA_${service.name_int}_suburl`] + "." + conf.LA_domain : conf.LA_domain);
 
     urlError[service.name_int] = (!subdomainRegexp.test(conf[`LA_${service.name_int}_suburl`])) ? "Invalid subdomain" : "";
-    deployError[service.name_int] = conf[`LA_${service.name_int}_hostname`] == null ? "Please select a server" : "";
+    deployError[service.name_int] = conf[`LA_${service.name_int}_hostname`] == null ||
+    !hostnamesList.includes(conf[`LA_${service.name_int}_hostname`]) ? "Please select a server" : "";
     if (debug) console.log("Url: " + conf[`LA_${service.name_int}_url`]);
     if (debug) console.log("Path: " + conf[`LA_${service.name_int}_path`]);
     if (debug) console.log("Hostname : " + conf[`LA_${service.name_int}_hostname`]);
   }
 
-  let onChange = function () {
+  let onChange = function (val) {
+    if (val && debug) console.log(val);
     if (debug) console.log("on service change")
     verify();
     save();
@@ -115,8 +118,7 @@
 				<div class="deploy-in">
 					<Select bind:value={conf[`LA_${service.name_int}_hostname`]}
 									error={deployError[service.name_int]} class="deploy-in" outlined
-									autocomplete on:change={onChange}
-									label="deploy it in" items={hostnamesList}/>
+									on:change={v => onChange(v.datail)} label="deploy it in" items={hostnamesList}/>
 				</div>
 				{#if service.sample != null}
 					<Tooltip>
