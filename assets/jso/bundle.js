@@ -15477,6 +15477,8 @@ var app = (function () {
     	let t4;
     	let br;
     	let t5;
+    	let a2;
+    	let span;
 
     	const block = {
     		c: function create() {
@@ -15489,7 +15491,10 @@ var app = (function () {
     			a1.textContent = "our documentation wiki";
     			t4 = text(" to dimension your LA portal.\n\t\t\t\t\t\t\tFor a test portal a big server can host the main basic LA services.");
     			br = element("br");
-    			t5 = text("\n\t\t\t\t\t\t\tIf you are unsure type something like \"server1, server2, server3\". You can modify this and the rest of\n\t\t\t\t\t\t\tvalues later.");
+    			t5 = text("\n\t\t\t\t\t\t\tIf you are unsure type something like \"server1, server2, server3\".\n\t\t\t\t\t\t\t");
+    			a2 = element("a");
+    			a2.textContent = "You can modify this and the rest of values later.";
+    			span = element("span");
     			attr_dev(a0, "href", "https://github.com/AtlasOfLivingAustralia/documentation/wiki/Infrastructure-Requirements");
     			attr_dev(a0, "target", "_blank");
     			add_location(a0, file$o, 219, 15, 7535);
@@ -15497,6 +15502,11 @@ var app = (function () {
     			attr_dev(a1, "target", "_blank");
     			add_location(a1, file$o, 221, 7, 7744);
     			add_location(br, file$o, 223, 74, 7971);
+    			attr_dev(a2, "href", "https://github.com/living-atlases/generator-living-atlas#rerunning-the-generator");
+    			attr_dev(a2, "target", "_blank");
+    			add_location(a2, file$o, 225, 7, 8057);
+    			attr_dev(span, "class", "");
+    			add_location(span, file$o, 227, 61, 8235);
     			attr_dev(div, "slot", "text");
     			attr_dev(div, "class", "p-5 pb-5 pt-0 text-gray-700 body-2");
     			add_location(div, file$o, 218, 6, 7459);
@@ -15510,6 +15520,8 @@ var app = (function () {
     			append_dev(div, t4);
     			append_dev(div, br);
     			append_dev(div, t5);
+    			append_dev(div, a2);
+    			append_dev(div, span);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
@@ -15557,7 +15569,7 @@ var app = (function () {
     	return block;
     }
 
-    // (232:3) {#if (conf.page === 4)}
+    // (234:3) {#if (conf.page === 4)}
     function create_if_block$c(ctx) {
     	let div;
     	let h5;
@@ -15595,20 +15607,20 @@ var app = (function () {
     			form = element("form");
     			button = element("button");
     			attr_dev(h5, "class", "t-center svelte-i3mvti");
-    			add_location(h5, file$o, 233, 5, 8215);
+    			add_location(h5, file$o, 235, 5, 8366);
     			attr_dev(div, "class", "to-left svelte-i3mvti");
-    			add_location(div, file$o, 232, 4, 8188);
+    			add_location(div, file$o, 234, 4, 8339);
     			attr_dev(button, "id", "submit-btn");
     			attr_dev(button, "type", "submit");
     			attr_dev(button, "name", "uuid");
     			button.value = /*uuid*/ ctx[16];
     			attr_dev(button, "class", "link-button");
-    			add_location(button, file$o, 242, 5, 8610);
+    			add_location(button, file$o, 244, 5, 8761);
     			attr_dev(form, "target", "_blank");
     			attr_dev(form, "method", "post");
     			attr_dev(form, "action", "/v1/gen");
     			attr_dev(form, "class", "form-link svelte-i3mvti");
-    			add_location(form, file$o, 241, 4, 8533);
+    			add_location(form, file$o, 243, 4, 8684);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -15650,14 +15662,14 @@ var app = (function () {
     		block,
     		id: create_if_block$c.name,
     		type: "if",
-    		source: "(232:3) {#if (conf.page === 4)}",
+    		source: "(234:3) {#if (conf.page === 4)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (236:6) <li slot="item" let:item={item}>
+    // (238:6) <li slot="item" let:item={item}>
     function create_item_slot(ctx) {
     	let li;
     	let service;
@@ -15679,7 +15691,7 @@ var app = (function () {
     			li = element("li");
     			create_component(service.$$.fragment);
     			attr_dev(li, "slot", "item");
-    			add_location(li, file$o, 235, 6, 8331);
+    			add_location(li, file$o, 237, 6, 8482);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -15713,7 +15725,7 @@ var app = (function () {
     		block,
     		id: create_item_slot.name,
     		type: "slot",
-    		source: "(236:6) <li slot=\\\"item\\\" let:item={item}>",
+    		source: "(238:6) <li slot=\\\"item\\\" let:item={item}>",
     		ctx
     	});
 
@@ -15918,7 +15930,7 @@ var app = (function () {
     	return block;
     }
 
-    // (250:1) <Snackbar top bind:value={showSnackbarTop}>
+    // (252:1) <Snackbar top bind:value={showSnackbarTop}>
     function create_default_slot$9(ctx) {
     	let div;
 
@@ -15926,7 +15938,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			div.textContent = "Configuration copied!";
-    			add_location(div, file$o, 250, 2, 8907);
+    			add_location(div, file$o, 252, 2, 9058);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -15940,7 +15952,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$9.name,
     		type: "slot",
-    		source: "(250:1) <Snackbar top bind:value={showSnackbarTop}>",
+    		source: "(252:1) <Snackbar top bind:value={showSnackbarTop}>",
     		ctx
     	});
 

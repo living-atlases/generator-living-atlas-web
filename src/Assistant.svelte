@@ -222,8 +222,10 @@
 							<a href="https://github.com/AtlasOfLivingAustralia/documentation/wiki/"
 								 target="_blank">our documentation wiki</a> to dimension your LA portal.
 							For a test portal a big server can host the main basic LA services.<br>
-							If you are unsure type something like "server1, server2, server3". You can modify this and the rest of
-							values later.
+							If you are unsure type something like "server1, server2, server3".
+							<a href="https://github.com/living-atlases/generator-living-atlas#rerunning-the-generator"
+								 target="_blank">
+								You can modify this and the rest of values later.</a><span class=""></span>
 						</div>
 					</Card.Card>
 				</p>
