@@ -8,13 +8,12 @@ module.exports = {
   description: "Generate the LA inventories and send to the user",
 
   inputs: {
-    conf: {
-      description: "the incoming g for yo living-atlas",
+    uuid: {
+      description: "the uuid to download",
       type: "string",
       required: true,
-      custom: function (value) {
-        // do input validation
-        return sails.helpers.validate(value);
+      custom: async function (uuid) {
+        return await Conf.findOne({uuid: uuid});
       },
     },
   },
@@ -39,8 +38,9 @@ module.exports = {
     const tmpobj = tmp.dirSync({unsafeCleanup: true});
     const path = tmpobj.name;
     console.log("Tmp dir: ", path);
+    let conf = await Conf.findOne({uuid: inputs.uuid});
 
-    const yoRc = sails.helpers.transform(JSON.parse(inputs.conf));
+    const yoRc = sails.helpers.transform(conf);
     const pkgName = yoRc["generator-living-atlas"]["promptValues"]["LA_pkg_name"]
 
     await sails.helpers.yoGen(pkgName, path, yoRc);

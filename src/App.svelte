@@ -2,10 +2,13 @@
   import Url from 'domurl';
   import Assistant from './Assistant.svelte';
   import {title} from './utils';
+  import Flex from 'svelte-flex';
+  import {Button} from "smelte";
 
   let initStore = {};
   let debug = false;
   let uuid = new Url().path.replace(/^\/+/, '');
+  let error = "";
   let init = function () {
     let req;
     if (uuid === "" || uuid == null) req = {} // let's ask for a uuid
@@ -13,7 +16,14 @@
     fetch('/v1/ses', {
       method: 'POST',
       body: JSON.stringify(req)
-    }).then(res => res.json()).then((ses) => {
+    }).then((res) => {
+      if (res.ok)
+        return res.json()
+      else {
+        error = "Oops, we can't find this configuration ...";
+        throw new Error(error);
+      }
+    }).then((ses) => {
       uuid = ses.uuid;
       let conf = ses.conf;
       if (debug) console.log(`Conf of '${conf.LA_project_name}' with uuid: ${uuid} `);
@@ -21,14 +31,33 @@
       initStore = {uuid, conf};
     })
   }
+  let onFirstBtnClick = () => {
+    const newUrl = new Url();
+    newUrl.path = "/";
+    window.open(newUrl.toString());
+  }
   init();
 </script>
 
-{#if (typeof initStore.uuid !== "undefined")}
-	<Assistant {initStore} {debug}/>
-{:else}
-	<!--	Loading -->
-{/if}
+<Flex direction="row" align="stretch" justify="center">
+	<Flex direction="column" align="stretch" justify="center">
+		{#if (typeof initStore.uuid !== "undefined")}
+			<Assistant {initStore} {debug}/>
+		{:else}
+			<!--	Loading -->
+			{#if (error.length > 0)}
+				<h2>Living Atlas Generator</h2>
+				<span class="error-message">{error}</span>
+				<div class="py-2 mr-2">
+					<Button on:click={onFirstBtnClick} block>Restart</Button>
+				</div>
+			{/if}
+		{/if}
+	</Flex>
+</Flex>
 
 <style>
+    .error-message {
+        font-size: 24px;
+    }
 </style>

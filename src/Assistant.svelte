@@ -240,7 +240,7 @@
 					</List>
 				</div>
 				<form target="_blank" method="post" action="/v1/gen" class="form-link">
-					<button id="submit-btn" type="submit" name="conf" value={JSON.stringify(conf)} class="link-button">
+					<button id="submit-btn" type="submit" name="uuid" value={uuid} class="link-button">
 					</button>
 				</form>
 			{/if}

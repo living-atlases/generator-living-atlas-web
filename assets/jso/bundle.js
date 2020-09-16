@@ -14971,7 +14971,7 @@ var app = (function () {
     	let current;
 
     	function textfield0_value_binding(value) {
-    		/*textfield0_value_binding*/ ctx[21].call(null, value);
+    		/*textfield0_value_binding*/ ctx[22].call(null, value);
     	}
 
     	let textfield0_props = {
@@ -14986,10 +14986,10 @@ var app = (function () {
 
     	textfield0 = new TextField({ props: textfield0_props, $$inline: true });
     	binding_callbacks.push(() => bind(textfield0, "value", textfield0_value_binding));
-    	textfield0.$on("change", /*onChange*/ ctx[17]);
+    	textfield0.$on("change", /*onChange*/ ctx[18]);
 
     	function textfield1_value_binding(value) {
-    		/*textfield1_value_binding*/ ctx[22].call(null, value);
+    		/*textfield1_value_binding*/ ctx[23].call(null, value);
     	}
 
     	let textfield1_props = {
@@ -15004,7 +15004,7 @@ var app = (function () {
 
     	textfield1 = new TextField({ props: textfield1_props, $$inline: true });
     	binding_callbacks.push(() => bind(textfield1, "value", textfield1_value_binding));
-    	textfield1.$on("change", /*onChange*/ ctx[17]);
+    	textfield1.$on("change", /*onChange*/ ctx[18]);
 
     	tooltip = new Tooltip({
     			props: {
@@ -15130,7 +15130,7 @@ var app = (function () {
     	let current;
 
     	function switch_1_value_binding(value) {
-    		/*switch_1_value_binding*/ ctx[23].call(null, value);
+    		/*switch_1_value_binding*/ ctx[24].call(null, value);
     	}
 
     	let switch_1_props = { label: "Use SSL?" };
@@ -15235,7 +15235,7 @@ var app = (function () {
     		});
 
     	function textfield_value_binding(value) {
-    		/*textfield_value_binding*/ ctx[24].call(null, value);
+    		/*textfield_value_binding*/ ctx[25].call(null, value);
     	}
 
     	let textfield_props = {
@@ -15250,7 +15250,7 @@ var app = (function () {
 
     	textfield = new TextField({ props: textfield_props, $$inline: true });
     	binding_callbacks.push(() => bind(textfield, "value", textfield_value_binding));
-    	textfield.$on("change", /*onChange*/ ctx[17]);
+    	textfield.$on("change", /*onChange*/ ctx[18]);
 
     	const block = {
     		c: function create() {
@@ -15319,7 +15319,7 @@ var app = (function () {
     	let current;
 
     	function textfield_value_binding_1(value) {
-    		/*textfield_value_binding_1*/ ctx[25].call(null, value);
+    		/*textfield_value_binding_1*/ ctx[26].call(null, value);
     	}
 
     	let textfield_props = {
@@ -15337,7 +15337,7 @@ var app = (function () {
 
     	textfield = new TextField({ props: textfield_props, $$inline: true });
     	binding_callbacks.push(() => bind(textfield, "value", textfield_value_binding_1));
-    	textfield.$on("change", /*onChange*/ ctx[17]);
+    	textfield.$on("change", /*onChange*/ ctx[18]);
 
     	card_card = new Card$1.Card({
     			props: {
@@ -15565,7 +15565,6 @@ var app = (function () {
     	let t2;
     	let form;
     	let button;
-    	let button_value_value;
     	let current;
 
     	list = new List({
@@ -15600,8 +15599,8 @@ var app = (function () {
     			add_location(div, file$o, 232, 4, 8188);
     			attr_dev(button, "id", "submit-btn");
     			attr_dev(button, "type", "submit");
-    			attr_dev(button, "name", "conf");
-    			button.value = button_value_value = JSON.stringify(/*conf*/ ctx[1]);
+    			attr_dev(button, "name", "uuid");
+    			button.value = /*uuid*/ ctx[16];
     			attr_dev(button, "class", "link-button");
     			add_location(button, file$o, 242, 5, 8610);
     			attr_dev(form, "target", "_blank");
@@ -15628,10 +15627,6 @@ var app = (function () {
     			}
 
     			list.$set(list_changes);
-
-    			if (!current || dirty[0] & /*conf*/ 2 && button_value_value !== (button_value_value = JSON.stringify(/*conf*/ ctx[1]))) {
-    				prop_dev(button, "value", button_value_value);
-    			}
     		},
     		i: function intro(local) {
     			if (current) return;
@@ -15671,7 +15666,7 @@ var app = (function () {
     			props: {
     				conf: /*conf*/ ctx[1],
     				service: servicesStore[/*item*/ ctx[37]],
-    				save: /*save*/ ctx[16],
+    				save: /*save*/ ctx[17],
     				debug: /*debug*/ ctx[0],
     				hostnamesList: /*conf*/ ctx[1].hostnamesList
     			},
@@ -15743,9 +15738,9 @@ var app = (function () {
     	btnarea = new BtnArea({
     			props: {
     				firstBtnDisabled: /*firstBtnDisabled*/ ctx[10],
-    				onFirstBtnClick: /*onFirstBtnClick*/ ctx[18],
+    				onFirstBtnClick: /*onFirstBtnClick*/ ctx[19],
     				sndBtnDisabled: /*sndBtnDisabled*/ ctx[11],
-    				onSndBtnClick: /*onSndBtnClick*/ ctx[19],
+    				onSndBtnClick: /*onSndBtnClick*/ ctx[20],
     				sndBtnText: /*sndBtnText*/ ctx[12],
     				footerHeight: /*footerHeight*/ ctx[15]
     			},
@@ -15930,7 +15925,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			div.textContent = "Configuration copied!";
-    			add_location(div, file$o, 250, 2, 8923);
+    			add_location(div, file$o, 250, 2, 8907);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -15991,7 +15986,7 @@ var app = (function () {
     	gdprbanner.$on("analytics", initAnalytics);
 
     	sitemenu = new SiteMenu({
-    			props: { save: /*save*/ ctx[16] },
+    			props: { save: /*save*/ ctx[17] },
     			$$inline: true
     		});
 
@@ -16007,7 +16002,7 @@ var app = (function () {
     		});
 
     	function snackbar_value_binding(value) {
-    		/*snackbar_value_binding*/ ctx[26].call(null, value);
+    		/*snackbar_value_binding*/ ctx[27].call(null, value);
     	}
 
     	let snackbar_props = {
@@ -16266,27 +16261,27 @@ var app = (function () {
 
     	function textfield0_value_binding(value) {
     		conf.LA_project_name = value;
-    		((((((((($$invalidate(1, conf), $$invalidate(27, longNameInvalid)), $$invalidate(28, shortNameInvalid)), $$invalidate(30, mainDomainInvalid)), $$invalidate(29, hostnameInvalid)), $$invalidate(35, hostnamesHint)), $$invalidate(0, debug)), $$invalidate(34, pageValid)), $$invalidate(31, lastPage)), $$invalidate(16, save));
+    		((((((((($$invalidate(1, conf), $$invalidate(28, longNameInvalid)), $$invalidate(29, shortNameInvalid)), $$invalidate(31, mainDomainInvalid)), $$invalidate(30, hostnameInvalid)), $$invalidate(35, hostnamesHint)), $$invalidate(0, debug)), $$invalidate(34, pageValid)), $$invalidate(32, lastPage)), $$invalidate(17, save));
     	}
 
     	function textfield1_value_binding(value) {
     		conf.LA_project_shortname = value;
-    		((((((((($$invalidate(1, conf), $$invalidate(27, longNameInvalid)), $$invalidate(28, shortNameInvalid)), $$invalidate(30, mainDomainInvalid)), $$invalidate(29, hostnameInvalid)), $$invalidate(35, hostnamesHint)), $$invalidate(0, debug)), $$invalidate(34, pageValid)), $$invalidate(31, lastPage)), $$invalidate(16, save));
+    		((((((((($$invalidate(1, conf), $$invalidate(28, longNameInvalid)), $$invalidate(29, shortNameInvalid)), $$invalidate(31, mainDomainInvalid)), $$invalidate(30, hostnameInvalid)), $$invalidate(35, hostnamesHint)), $$invalidate(0, debug)), $$invalidate(34, pageValid)), $$invalidate(32, lastPage)), $$invalidate(17, save));
     	}
 
     	function switch_1_value_binding(value) {
     		conf.LA_enable_ssl = value;
-    		((((((((($$invalidate(1, conf), $$invalidate(27, longNameInvalid)), $$invalidate(28, shortNameInvalid)), $$invalidate(30, mainDomainInvalid)), $$invalidate(29, hostnameInvalid)), $$invalidate(35, hostnamesHint)), $$invalidate(0, debug)), $$invalidate(34, pageValid)), $$invalidate(31, lastPage)), $$invalidate(16, save));
+    		((((((((($$invalidate(1, conf), $$invalidate(28, longNameInvalid)), $$invalidate(29, shortNameInvalid)), $$invalidate(31, mainDomainInvalid)), $$invalidate(30, hostnameInvalid)), $$invalidate(35, hostnamesHint)), $$invalidate(0, debug)), $$invalidate(34, pageValid)), $$invalidate(32, lastPage)), $$invalidate(17, save));
     	}
 
     	function textfield_value_binding(value) {
     		conf.LA_domain = value;
-    		((((((((($$invalidate(1, conf), $$invalidate(27, longNameInvalid)), $$invalidate(28, shortNameInvalid)), $$invalidate(30, mainDomainInvalid)), $$invalidate(29, hostnameInvalid)), $$invalidate(35, hostnamesHint)), $$invalidate(0, debug)), $$invalidate(34, pageValid)), $$invalidate(31, lastPage)), $$invalidate(16, save));
+    		((((((((($$invalidate(1, conf), $$invalidate(28, longNameInvalid)), $$invalidate(29, shortNameInvalid)), $$invalidate(31, mainDomainInvalid)), $$invalidate(30, hostnameInvalid)), $$invalidate(35, hostnamesHint)), $$invalidate(0, debug)), $$invalidate(34, pageValid)), $$invalidate(32, lastPage)), $$invalidate(17, save));
     	}
 
     	function textfield_value_binding_1(value) {
     		conf.hostnames = value;
-    		((((((((($$invalidate(1, conf), $$invalidate(27, longNameInvalid)), $$invalidate(28, shortNameInvalid)), $$invalidate(30, mainDomainInvalid)), $$invalidate(29, hostnameInvalid)), $$invalidate(35, hostnamesHint)), $$invalidate(0, debug)), $$invalidate(34, pageValid)), $$invalidate(31, lastPage)), $$invalidate(16, save));
+    		((((((((($$invalidate(1, conf), $$invalidate(28, longNameInvalid)), $$invalidate(29, shortNameInvalid)), $$invalidate(31, mainDomainInvalid)), $$invalidate(30, hostnameInvalid)), $$invalidate(35, hostnamesHint)), $$invalidate(0, debug)), $$invalidate(34, pageValid)), $$invalidate(32, lastPage)), $$invalidate(17, save));
     	}
 
     	function snackbar_value_binding(value) {
@@ -16296,7 +16291,7 @@ var app = (function () {
 
     	$$self.$$set = $$props => {
     		if ("debug" in $$props) $$invalidate(0, debug = $$props.debug);
-    		if ("initStore" in $$props) $$invalidate(20, initStore = $$props.initStore);
+    		if ("initStore" in $$props) $$invalidate(21, initStore = $$props.initStore);
     	};
 
     	$$self.$capture_state = () => ({
@@ -16361,34 +16356,34 @@ var app = (function () {
     		if ("gdprCategories" in $$props) $$invalidate(14, gdprCategories = $$props.gdprCategories);
     		if ("footerHeight" in $$props) $$invalidate(15, footerHeight = $$props.footerHeight);
     		if ("debug" in $$props) $$invalidate(0, debug = $$props.debug);
-    		if ("initStore" in $$props) $$invalidate(20, initStore = $$props.initStore);
-    		if ("uuid" in $$props) uuid = $$props.uuid;
+    		if ("initStore" in $$props) $$invalidate(21, initStore = $$props.initStore);
+    		if ("uuid" in $$props) $$invalidate(16, uuid = $$props.uuid);
     		if ("conf" in $$props) $$invalidate(1, conf = $$props.conf);
-    		if ("save" in $$props) $$invalidate(16, save = $$props.save);
-    		if ("onChange" in $$props) $$invalidate(17, onChange = $$props.onChange);
-    		if ("longNameInvalid" in $$props) $$invalidate(27, longNameInvalid = $$props.longNameInvalid);
+    		if ("save" in $$props) $$invalidate(17, save = $$props.save);
+    		if ("onChange" in $$props) $$invalidate(18, onChange = $$props.onChange);
+    		if ("longNameInvalid" in $$props) $$invalidate(28, longNameInvalid = $$props.longNameInvalid);
     		if ("longNameError" in $$props) $$invalidate(2, longNameError = $$props.longNameError);
     		if ("longNameAppend" in $$props) $$invalidate(3, longNameAppend = $$props.longNameAppend);
-    		if ("shortNameInvalid" in $$props) $$invalidate(28, shortNameInvalid = $$props.shortNameInvalid);
+    		if ("shortNameInvalid" in $$props) $$invalidate(29, shortNameInvalid = $$props.shortNameInvalid);
     		if ("shortNameError" in $$props) $$invalidate(4, shortNameError = $$props.shortNameError);
     		if ("shortNameAppend" in $$props) $$invalidate(5, shortNameAppend = $$props.shortNameAppend);
-    		if ("hostnameInvalid" in $$props) $$invalidate(29, hostnameInvalid = $$props.hostnameInvalid);
+    		if ("hostnameInvalid" in $$props) $$invalidate(30, hostnameInvalid = $$props.hostnameInvalid);
     		if ("hostnameError" in $$props) $$invalidate(6, hostnameError = $$props.hostnameError);
     		if ("hostnameAppend" in $$props) $$invalidate(7, hostnameAppend = $$props.hostnameAppend);
-    		if ("mainDomainInvalid" in $$props) $$invalidate(30, mainDomainInvalid = $$props.mainDomainInvalid);
+    		if ("mainDomainInvalid" in $$props) $$invalidate(31, mainDomainInvalid = $$props.mainDomainInvalid);
     		if ("mainDomainError" in $$props) $$invalidate(8, mainDomainError = $$props.mainDomainError);
     		if ("mainDomainAppend" in $$props) $$invalidate(9, mainDomainAppend = $$props.mainDomainAppend);
     		if ("firstBtnDisabled" in $$props) $$invalidate(10, firstBtnDisabled = $$props.firstBtnDisabled);
     		if ("sndBtnDisabled" in $$props) $$invalidate(11, sndBtnDisabled = $$props.sndBtnDisabled);
     		if ("firstBtnText" in $$props) firstBtnText = $$props.firstBtnText;
     		if ("sndBtnText" in $$props) $$invalidate(12, sndBtnText = $$props.sndBtnText);
-    		if ("lastPage" in $$props) $$invalidate(31, lastPage = $$props.lastPage);
+    		if ("lastPage" in $$props) $$invalidate(32, lastPage = $$props.lastPage);
     		if ("pageValid" in $$props) $$invalidate(34, pageValid = $$props.pageValid);
     		if ("hostnamesHint" in $$props) $$invalidate(35, hostnamesHint = $$props.hostnamesHint);
     		if ("showSnackbarTop" in $$props) $$invalidate(13, showSnackbarTop = $$props.showSnackbarTop);
-    		if ("onFirstBtnClick" in $$props) $$invalidate(18, onFirstBtnClick = $$props.onFirstBtnClick);
+    		if ("onFirstBtnClick" in $$props) $$invalidate(19, onFirstBtnClick = $$props.onFirstBtnClick);
     		if ("doPost" in $$props) doPost = $$props.doPost;
-    		if ("onSndBtnClick" in $$props) $$invalidate(19, onSndBtnClick = $$props.onSndBtnClick);
+    		if ("onSndBtnClick" in $$props) $$invalidate(20, onSndBtnClick = $$props.onSndBtnClick);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -16396,28 +16391,28 @@ var app = (function () {
     	}
 
     	$$self.$$.update = () => {
-    		if ($$self.$$.dirty[0] & /*conf, longNameInvalid, shortNameInvalid, mainDomainInvalid, hostnameInvalid, debug*/ 2013265923 | $$self.$$.dirty[1] & /*lastPage*/ 1) {
+    		if ($$self.$$.dirty[0] & /*conf, longNameInvalid, shortNameInvalid, hostnameInvalid, debug*/ 1879048195 | $$self.$$.dirty[1] & /*mainDomainInvalid, lastPage*/ 3) {
     			 {
-    				$$invalidate(27, longNameInvalid = !(conf.LA_project_name.length > 0 && projectNameRegexp.test(conf.LA_project_name)));
+    				$$invalidate(28, longNameInvalid = !(conf.LA_project_name.length > 0 && projectNameRegexp.test(conf.LA_project_name)));
     				$$invalidate(2, longNameError = longNameInvalid ? "Project name invalid" : "");
     				$$invalidate(3, longNameAppend = longNameInvalid ? "error" : "");
-    				$$invalidate(28, shortNameInvalid = !shortNameRegexp.test(conf.LA_project_shortname));
+    				$$invalidate(29, shortNameInvalid = !shortNameRegexp.test(conf.LA_project_shortname));
     				$$invalidate(4, shortNameError = shortNameInvalid ? "Project short name invalid" : "");
     				$$invalidate(5, shortNameAppend = shortNameInvalid ? "error" : "");
-    				$$invalidate(30, mainDomainInvalid = !domainRegexp.test(conf.LA_domain));
+    				$$invalidate(31, mainDomainInvalid = !domainRegexp.test(conf.LA_domain));
 
     				$$invalidate(8, mainDomainError = mainDomainInvalid
     				? "You need to provide some-atlas-domain.org"
     				: "");
 
     				$$invalidate(9, mainDomainAppend = mainDomainInvalid ? "error" : "");
-    				$$invalidate(29, hostnameInvalid = !hostnameRegexp.test(conf.hostnames));
+    				$$invalidate(30, hostnameInvalid = !hostnameRegexp.test(conf.hostnames));
     				$$invalidate(6, hostnameError = hostnameInvalid ? hostnamesHint : "");
     				$$invalidate(7, hostnameAppend = hostnameInvalid);
     				$$invalidate(10, firstBtnDisabled = conf.page === 1);
     				if (debug) console.log(`Current page ${conf.page} valid ${pageValid[conf.page - 1]()}`);
     				$$invalidate(11, sndBtnDisabled = !pageValid[conf.page - 1]());
-    				$$invalidate(31, lastPage = conf.page === 4);
+    				$$invalidate(32, lastPage = conf.page === 4);
 
     				$$invalidate(12, sndBtnText = conf.page === 1
     				? "Start"
@@ -16455,6 +16450,7 @@ var app = (function () {
     		showSnackbarTop,
     		gdprCategories,
     		footerHeight,
+    		uuid,
     		save,
     		onChange,
     		onFirstBtnClick,
@@ -16472,7 +16468,7 @@ var app = (function () {
     class Assistant extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$o, create_fragment$o, safe_not_equal, { debug: 0, initStore: 20 }, [-1, -1]);
+    		init(this, options, instance$o, create_fragment$o, safe_not_equal, { debug: 0, initStore: 21 }, [-1, -1]);
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -16488,7 +16484,7 @@ var app = (function () {
     			console_1$1.warn("<Assistant> was created without expected prop 'debug'");
     		}
 
-    		if (/*initStore*/ ctx[20] === undefined && !("initStore" in props)) {
+    		if (/*initStore*/ ctx[21] === undefined && !("initStore" in props)) {
     			console_1$1.warn("<Assistant> was created without expected prop 'initStore'");
     		}
     	}
@@ -16512,31 +16508,76 @@ var app = (function () {
 
     /* src/App.svelte generated by Svelte v3.24.1 */
 
-    const { console: console_1$2 } = globals;
+    const { Error: Error_1$1, console: console_1$2 } = globals;
+    const file$p = "src/App.svelte";
 
-    // (29:0) {:else}
+    // (46:2) {:else}
     function create_else_block$3(ctx) {
+    	let if_block_anchor;
+    	let current;
+    	let if_block = /*error*/ ctx[1].length > 0 && create_if_block_1$7(ctx);
+
     	const block = {
-    		c: noop,
-    		m: noop,
-    		p: noop,
-    		i: noop,
-    		o: noop,
-    		d: noop
+    		c: function create() {
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    		},
+    		m: function mount(target, anchor) {
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			if (/*error*/ ctx[1].length > 0) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+
+    					if (dirty & /*error*/ 2) {
+    						transition_in(if_block, 1);
+    					}
+    				} else {
+    					if_block = create_if_block_1$7(ctx);
+    					if_block.c();
+    					transition_in(if_block, 1);
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			} else if (if_block) {
+    				group_outros();
+
+    				transition_out(if_block, 1, 1, () => {
+    					if_block = null;
+    				});
+
+    				check_outros();
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(if_block);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(if_block);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (if_block) if_block.d(detaching);
+    			if (detaching) detach_dev(if_block_anchor);
+    		}
     	};
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
     		id: create_else_block$3.name,
     		type: "else",
-    		source: "(29:0) {:else}",
+    		source: "(46:2) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (27:0) {#if (typeof initStore.uuid !== "undefined")}
+    // (44:2) {#if (typeof initStore.uuid !== "undefined")}
     function create_if_block$d(ctx) {
     	let assistant;
     	let current;
@@ -16544,7 +16585,7 @@ var app = (function () {
     	assistant = new Assistant({
     			props: {
     				initStore: /*initStore*/ ctx[0],
-    				debug: /*debug*/ ctx[1]
+    				debug: /*debug*/ ctx[2]
     			},
     			$$inline: true
     		});
@@ -16580,14 +16621,130 @@ var app = (function () {
     		block,
     		id: create_if_block$d.name,
     		type: "if",
-    		source: "(27:0) {#if (typeof initStore.uuid !== \\\"undefined\\\")}",
+    		source: "(44:2) {#if (typeof initStore.uuid !== \\\"undefined\\\")}",
     		ctx
     	});
 
     	return block;
     }
 
-    function create_fragment$p(ctx) {
+    // (48:3) {#if (error.length > 0)}
+    function create_if_block_1$7(ctx) {
+    	let h2;
+    	let t1;
+    	let span;
+    	let t2;
+    	let t3;
+    	let div;
+    	let button;
+    	let current;
+
+    	button = new Button({
+    			props: {
+    				block: true,
+    				$$slots: { default: [create_default_slot_2$3] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button.$on("click", /*onFirstBtnClick*/ ctx[3]);
+
+    	const block = {
+    		c: function create() {
+    			h2 = element("h2");
+    			h2.textContent = "Living Atlas Generator";
+    			t1 = space();
+    			span = element("span");
+    			t2 = text(/*error*/ ctx[1]);
+    			t3 = space();
+    			div = element("div");
+    			create_component(button.$$.fragment);
+    			add_location(h2, file$p, 48, 4, 1419);
+    			attr_dev(span, "class", "error-message svelte-r7f723");
+    			add_location(span, file$p, 49, 4, 1455);
+    			attr_dev(div, "class", "py-2 mr-2");
+    			add_location(div, file$p, 50, 4, 1502);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, h2, anchor);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, span, anchor);
+    			append_dev(span, t2);
+    			insert_dev(target, t3, anchor);
+    			insert_dev(target, div, anchor);
+    			mount_component(button, div, null);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			if (!current || dirty & /*error*/ 2) set_data_dev(t2, /*error*/ ctx[1]);
+    			const button_changes = {};
+
+    			if (dirty & /*$$scope*/ 64) {
+    				button_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button.$set(button_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(button.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(button.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(h2);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(span);
+    			if (detaching) detach_dev(t3);
+    			if (detaching) detach_dev(div);
+    			destroy_component(button);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_1$7.name,
+    		type: "if",
+    		source: "(48:3) {#if (error.length > 0)}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (52:5) <Button on:click={onFirstBtnClick} block>
+    function create_default_slot_2$3(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Restart");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_2$3.name,
+    		type: "slot",
+    		source: "(52:5) <Button on:click={onFirstBtnClick} block>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (43:1) <Flex direction="column" align="stretch" justify="center">
+    function create_default_slot_1$7(ctx) {
     	let current_block_type_index;
     	let if_block;
     	let if_block_anchor;
@@ -16608,15 +16765,12 @@ var app = (function () {
     			if_block.c();
     			if_block_anchor = empty();
     		},
-    		l: function claim(nodes) {
-    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
-    		},
     		m: function mount(target, anchor) {
     			if_blocks[current_block_type_index].m(target, anchor);
     			insert_dev(target, if_block_anchor, anchor);
     			current = true;
     		},
-    		p: function update(ctx, [dirty]) {
+    		p: function update(ctx, dirty) {
     			let previous_block_index = current_block_type_index;
     			current_block_type_index = select_block_type(ctx);
 
@@ -16658,6 +16812,124 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
+    		id: create_default_slot_1$7.name,
+    		type: "slot",
+    		source: "(43:1) <Flex direction=\\\"column\\\" align=\\\"stretch\\\" justify=\\\"center\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (42:0) <Flex direction="row" align="stretch" justify="center">
+    function create_default_slot$a(ctx) {
+    	let flex;
+    	let current;
+
+    	flex = new Flex({
+    			props: {
+    				direction: "column",
+    				align: "stretch",
+    				justify: "center",
+    				$$slots: { default: [create_default_slot_1$7] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			create_component(flex.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(flex, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const flex_changes = {};
+
+    			if (dirty & /*$$scope, initStore, error*/ 67) {
+    				flex_changes.$$scope = { dirty, ctx };
+    			}
+
+    			flex.$set(flex_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(flex.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(flex.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(flex, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot$a.name,
+    		type: "slot",
+    		source: "(42:0) <Flex direction=\\\"row\\\" align=\\\"stretch\\\" justify=\\\"center\\\">",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$p(ctx) {
+    	let flex;
+    	let current;
+
+    	flex = new Flex({
+    			props: {
+    				direction: "row",
+    				align: "stretch",
+    				justify: "center",
+    				$$slots: { default: [create_default_slot$a] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			create_component(flex.$$.fragment);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error_1$1("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(flex, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, [dirty]) {
+    			const flex_changes = {};
+
+    			if (dirty & /*$$scope, initStore, error*/ 67) {
+    				flex_changes.$$scope = { dirty, ctx };
+    			}
+
+    			flex.$set(flex_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(flex.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(flex.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(flex, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
     		id: create_fragment$p.name,
     		type: "component",
     		source: "",
@@ -16671,6 +16943,7 @@ var app = (function () {
     	let initStore = {};
     	let debug = false;
     	let uuid = new url_min().path.replace(/^\/+/, "");
+    	let error = "";
 
     	let init = function () {
     		let req;
@@ -16683,13 +16956,24 @@ var app = (function () {
     		fetch("/v1/ses", {
     			method: "POST",
     			body: JSON.stringify(req)
-    		}).then(res => res.json()).then(ses => {
+    		}).then(res => {
+    			if (res.ok) return res.json(); else {
+    				$$invalidate(1, error = "Oops, we can't find this configuration ...");
+    				throw new Error(error);
+    			}
+    		}).then(ses => {
     			uuid = ses.uuid;
     			let conf = ses.conf;
     			if (debug) console.log(`Conf of '${conf.LA_project_name}' with uuid: ${uuid} `);
     			window.history.pushState({ page: uuid }, utils$1.title(conf.LA_project_shortname), uuid);
     			$$invalidate(0, initStore = { uuid, conf });
     		});
+    	};
+
+    	let onFirstBtnClick = () => {
+    		const newUrl = new url_min();
+    		newUrl.path = "/";
+    		window.open(newUrl.toString());
     	};
 
     	init();
@@ -16706,24 +16990,30 @@ var app = (function () {
     		Url: url_min,
     		Assistant,
     		title: utils$1.title,
+    		Flex,
+    		Button,
     		initStore,
     		debug,
     		uuid,
-    		init
+    		error,
+    		init,
+    		onFirstBtnClick
     	});
 
     	$$self.$inject_state = $$props => {
     		if ("initStore" in $$props) $$invalidate(0, initStore = $$props.initStore);
-    		if ("debug" in $$props) $$invalidate(1, debug = $$props.debug);
+    		if ("debug" in $$props) $$invalidate(2, debug = $$props.debug);
     		if ("uuid" in $$props) uuid = $$props.uuid;
+    		if ("error" in $$props) $$invalidate(1, error = $$props.error);
     		if ("init" in $$props) init = $$props.init;
+    		if ("onFirstBtnClick" in $$props) $$invalidate(3, onFirstBtnClick = $$props.onFirstBtnClick);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [initStore, debug];
+    	return [initStore, error, debug, onFirstBtnClick];
     }
 
     class App extends SvelteComponentDev {
