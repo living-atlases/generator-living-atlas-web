@@ -38,24 +38,22 @@
   }
   init();
 </script>
-
-<Flex direction="row" align="stretch" justify="center">
-	<Flex direction="column" align="stretch" justify="center">
-		{#if (typeof initStore.uuid !== "undefined")}
-			<Assistant {initStore} {debug}/>
-		{:else}
-			<!--	Loading -->
-			{#if (error.length > 0)}
+{#if (typeof initStore.uuid !== "undefined")}
+	<Assistant {initStore} {debug}/>
+{:else}
+	<!--	Loading -->
+	{#if (error.length > 0)}
+		<Flex direction="row" align="stretch" justify="center">
+			<Flex direction="column" align="stretch" justify="center">
 				<h2>Living Atlas Generator</h2>
 				<span class="error-message">{error}</span>
 				<div class="py-2 mr-2">
 					<Button on:click={onFirstBtnClick} block>Restart</Button>
 				</div>
-			{/if}
-		{/if}
-	</Flex>
-</Flex>
-
+			</Flex>
+		</Flex>
+	{/if}
+{/if}
 <style>
     .error-message {
         font-size: 24px;

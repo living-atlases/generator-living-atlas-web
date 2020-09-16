@@ -16524,7 +16524,7 @@ var app = (function () {
     const { Error: Error_1$1, console: console_1$2 } = globals;
     const file$p = "src/App.svelte";
 
-    // (46:2) {:else}
+    // (43:0) {:else}
     function create_else_block$3(ctx) {
     	let if_block_anchor;
     	let current;
@@ -16583,14 +16583,14 @@ var app = (function () {
     		block,
     		id: create_else_block$3.name,
     		type: "else",
-    		source: "(46:2) {:else}",
+    		source: "(43:0) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (44:2) {#if (typeof initStore.uuid !== "undefined")}
+    // (41:0) {#if (typeof initStore.uuid !== "undefined")}
     function create_if_block$d(ctx) {
     	let assistant;
     	let current;
@@ -16634,15 +16634,100 @@ var app = (function () {
     		block,
     		id: create_if_block$d.name,
     		type: "if",
-    		source: "(44:2) {#if (typeof initStore.uuid !== \\\"undefined\\\")}",
+    		source: "(41:0) {#if (typeof initStore.uuid !== \\\"undefined\\\")}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (48:3) {#if (error.length > 0)}
+    // (45:1) {#if (error.length > 0)}
     function create_if_block_1$7(ctx) {
+    	let flex;
+    	let current;
+
+    	flex = new Flex({
+    			props: {
+    				direction: "row",
+    				align: "stretch",
+    				justify: "center",
+    				$$slots: { default: [create_default_slot$a] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	const block = {
+    		c: function create() {
+    			create_component(flex.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(flex, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const flex_changes = {};
+
+    			if (dirty & /*$$scope, error*/ 66) {
+    				flex_changes.$$scope = { dirty, ctx };
+    			}
+
+    			flex.$set(flex_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(flex.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(flex.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(flex, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_1$7.name,
+    		type: "if",
+    		source: "(45:1) {#if (error.length > 0)}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (51:5) <Button on:click={onFirstBtnClick} block>
+    function create_default_slot_2$3(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("Restart");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_2$3.name,
+    		type: "slot",
+    		source: "(51:5) <Button on:click={onFirstBtnClick} block>",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (47:3) <Flex direction="column" align="stretch" justify="center">
+    function create_default_slot_1$7(ctx) {
     	let h2;
     	let t1;
     	let span;
@@ -16673,11 +16758,11 @@ var app = (function () {
     			t3 = space();
     			div = element("div");
     			create_component(button.$$.fragment);
-    			add_location(h2, file$p, 48, 4, 1419);
+    			add_location(h2, file$p, 47, 4, 1412);
     			attr_dev(span, "class", "error-message svelte-r7f723");
-    			add_location(span, file$p, 49, 4, 1455);
+    			add_location(span, file$p, 48, 4, 1448);
     			attr_dev(div, "class", "py-2 mr-2");
-    			add_location(div, file$p, 50, 4, 1502);
+    			add_location(div, file$p, 49, 4, 1495);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h2, anchor);
@@ -16720,44 +16805,74 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_1$7.name,
-    		type: "if",
-    		source: "(48:3) {#if (error.length > 0)}",
+    		id: create_default_slot_1$7.name,
+    		type: "slot",
+    		source: "(47:3) <Flex direction=\\\"column\\\" align=\\\"stretch\\\" justify=\\\"center\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (52:5) <Button on:click={onFirstBtnClick} block>
-    function create_default_slot_2$3(ctx) {
-    	let t;
+    // (46:2) <Flex direction="row" align="stretch" justify="center">
+    function create_default_slot$a(ctx) {
+    	let flex;
+    	let current;
+
+    	flex = new Flex({
+    			props: {
+    				direction: "column",
+    				align: "stretch",
+    				justify: "center",
+    				$$slots: { default: [create_default_slot_1$7] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
 
     	const block = {
     		c: function create() {
-    			t = text("Restart");
+    			create_component(flex.$$.fragment);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, t, anchor);
+    			mount_component(flex, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const flex_changes = {};
+
+    			if (dirty & /*$$scope, error*/ 66) {
+    				flex_changes.$$scope = { dirty, ctx };
+    			}
+
+    			flex.$set(flex_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(flex.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(flex.$$.fragment, local);
+    			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(t);
+    			destroy_component(flex, detaching);
     		}
     	};
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_2$3.name,
+    		id: create_default_slot$a.name,
     		type: "slot",
-    		source: "(52:5) <Button on:click={onFirstBtnClick} block>",
+    		source: "(46:2) <Flex direction=\\\"row\\\" align=\\\"stretch\\\" justify=\\\"center\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (43:1) <Flex direction="column" align="stretch" justify="center">
-    function create_default_slot_1$7(ctx) {
+    function create_fragment$p(ctx) {
     	let current_block_type_index;
     	let if_block;
     	let if_block_anchor;
@@ -16778,12 +16893,15 @@ var app = (function () {
     			if_block.c();
     			if_block_anchor = empty();
     		},
+    		l: function claim(nodes) {
+    			throw new Error_1$1("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
     		m: function mount(target, anchor) {
     			if_blocks[current_block_type_index].m(target, anchor);
     			insert_dev(target, if_block_anchor, anchor);
     			current = true;
     		},
-    		p: function update(ctx, dirty) {
+    		p: function update(ctx, [dirty]) {
     			let previous_block_index = current_block_type_index;
     			current_block_type_index = select_block_type(ctx);
 
@@ -16820,124 +16938,6 @@ var app = (function () {
     		d: function destroy(detaching) {
     			if_blocks[current_block_type_index].d(detaching);
     			if (detaching) detach_dev(if_block_anchor);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_default_slot_1$7.name,
-    		type: "slot",
-    		source: "(43:1) <Flex direction=\\\"column\\\" align=\\\"stretch\\\" justify=\\\"center\\\">",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    // (42:0) <Flex direction="row" align="stretch" justify="center">
-    function create_default_slot$a(ctx) {
-    	let flex;
-    	let current;
-
-    	flex = new Flex({
-    			props: {
-    				direction: "column",
-    				align: "stretch",
-    				justify: "center",
-    				$$slots: { default: [create_default_slot_1$7] },
-    				$$scope: { ctx }
-    			},
-    			$$inline: true
-    		});
-
-    	const block = {
-    		c: function create() {
-    			create_component(flex.$$.fragment);
-    		},
-    		m: function mount(target, anchor) {
-    			mount_component(flex, target, anchor);
-    			current = true;
-    		},
-    		p: function update(ctx, dirty) {
-    			const flex_changes = {};
-
-    			if (dirty & /*$$scope, initStore, error*/ 67) {
-    				flex_changes.$$scope = { dirty, ctx };
-    			}
-
-    			flex.$set(flex_changes);
-    		},
-    		i: function intro(local) {
-    			if (current) return;
-    			transition_in(flex.$$.fragment, local);
-    			current = true;
-    		},
-    		o: function outro(local) {
-    			transition_out(flex.$$.fragment, local);
-    			current = false;
-    		},
-    		d: function destroy(detaching) {
-    			destroy_component(flex, detaching);
-    		}
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_default_slot$a.name,
-    		type: "slot",
-    		source: "(42:0) <Flex direction=\\\"row\\\" align=\\\"stretch\\\" justify=\\\"center\\\">",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    function create_fragment$p(ctx) {
-    	let flex;
-    	let current;
-
-    	flex = new Flex({
-    			props: {
-    				direction: "row",
-    				align: "stretch",
-    				justify: "center",
-    				$$slots: { default: [create_default_slot$a] },
-    				$$scope: { ctx }
-    			},
-    			$$inline: true
-    		});
-
-    	const block = {
-    		c: function create() {
-    			create_component(flex.$$.fragment);
-    		},
-    		l: function claim(nodes) {
-    			throw new Error_1$1("options.hydrate only works if the component was compiled with the `hydratable: true` option");
-    		},
-    		m: function mount(target, anchor) {
-    			mount_component(flex, target, anchor);
-    			current = true;
-    		},
-    		p: function update(ctx, [dirty]) {
-    			const flex_changes = {};
-
-    			if (dirty & /*$$scope, initStore, error*/ 67) {
-    				flex_changes.$$scope = { dirty, ctx };
-    			}
-
-    			flex.$set(flex_changes);
-    		},
-    		i: function intro(local) {
-    			if (current) return;
-    			transition_in(flex.$$.fragment, local);
-    			current = true;
-    		},
-    		o: function outro(local) {
-    			transition_out(flex.$$.fragment, local);
-    			current = false;
-    		},
-    		d: function destroy(detaching) {
-    			destroy_component(flex, detaching);
     		}
     	};
 
