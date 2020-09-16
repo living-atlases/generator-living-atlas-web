@@ -207,7 +207,7 @@
 			{/if}
 
 			{#if (conf.page === 3)}
-				<TextField textarea rows=2 bind:value={conf.hostnames} append={hostnameAppend} error={hostnameError}
+				<TextField textarea rows=4 bind:value={conf.hostnames} append={hostnameAppend} error={hostnameError}
 									 on:change={onChange} outlined
 									 label="Names of the servers you will use (comma or space separated)"
 				/>

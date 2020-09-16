@@ -62,8 +62,8 @@
 <input type="text" name="InputToCopy" id="inputContainingTextToBeCopied" value="foo"
 			 style="display:none; position: relative; left: -10000px;"/>
 
-<Snackbar top bind:value={showSnackbarTop}>
-	<div>URL copied to your clipboard. Others can edit this configuration. You can also bookmark it</div>
+<Snackbar timeout={5000} top bind:value={showSnackbarTop}>
+	<div>URL copied. People with this URL can edit this configuration. You can also bookmark it</div>
 </Snackbar>
 <Menu bind:open {items} bind:value={selected}>
 	<div slot="activator">
