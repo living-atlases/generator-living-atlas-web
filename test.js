@@ -2,6 +2,7 @@ const test = require("ava");
 const transform = require("./src/transform.js");
 const validate = require("./src/validate.js");
 const sails = require("sails");
+const {projectNameRegexp, domainRegexp, hostnameRegexp, shortNameRegexp} = require("./src/regexp.js");
 
 const defObj = {
   LA_project_name: "Atlas of Living Australia",
@@ -42,79 +43,80 @@ const defObj = {
   LA_collectory_url: "collections.ala.org.au",
   LA_ala_hub_suburl: "biocache",
   LA_ala_hub_iniPath: "",
-  LA_ala_hub_hostname: "vm1",
+  LA_ala_hub_hostname: "vm2",
   LA_ala_hub_path: "/",
   LA_ala_hub_url: "biocache.ala.org.au",
   LA_biocache_service_suburl: "biocache-ws",
   LA_biocache_service_iniPath: "ws",
-  LA_biocache_service_hostname: "vm1",
+  LA_biocache_service_hostname: "vm3",
   LA_biocache_service_path: "/ws",
   LA_biocache_service_url: "biocache-ws.ala.org.au",
   LA_ala_bie_suburl: "bie",
   LA_ala_bie_iniPath: "",
-  LA_ala_bie_hostname: "vm1",
+  LA_ala_bie_hostname: "vm4",
   LA_ala_bie_path: "/",
   LA_ala_bie_url: "bie.ala.org.au",
   LA_bie_index_suburl: "bie-index",
   LA_bie_index_iniPath: "",
-  LA_bie_index_hostname: "vm1",
+  LA_bie_index_hostname: "vm5",
   LA_bie_index_path: "/",
   LA_bie_index_url: "bie-index.ala.org.au",
   LA_images_suburl: "images",
   LA_images_iniPath: "",
-  LA_images_hostname: "vm1",
+  LA_images_hostname: "vm6",
   LA_images_path: "/",
   LA_images_url: "images.ala.org.au",
   LA_species_lists_suburl: "lists",
   LA_species_lists_iniPath: "",
-  LA_species_lists_hostname: "vm1",
+  LA_species_lists_hostname: "vm7",
   LA_species_lists_path: "/",
   LA_species_lists_url: "lists.ala.org.au",
   LA_regions_suburl: "regions",
   LA_regions_iniPath: "",
-  LA_regions_hostname: "vm1",
+  LA_regions_hostname: "vm8",
   LA_regions_path: "/",
   LA_regions_url: "regions.ala.org.au",
   LA_logger_suburl: "logger",
   LA_logger_iniPath: "",
-  LA_logger_hostname: "vm1",
+  LA_logger_hostname: "vm9",
   LA_logger_path: "/",
   LA_logger_url: "logger.ala.org.au",
   LA_solr_suburl: "index",
   LA_solr_iniPath: "",
-  LA_solr_hostname: "vm1",
+  LA_solr_hostname: "vm10",
   LA_solr_path: "/",
   LA_solr_url: "index.ala.org.au",
   LA_biocache_backend_suburl: "biocache-backend",
   LA_biocache_backend_iniPath: "",
-  LA_biocache_backend_hostname: "vm1",
+  LA_biocache_backend_hostname: "vm11",
   LA_biocache_backend_path: "/biocache-backend",
   LA_biocache_backend_url: "ala.org.au",
   LA_cas_suburl: "auth",
   LA_cas_iniPath: "",
-  LA_cas_hostname: "vm1",
+  LA_cas_hostname: "vm12",
   LA_cas_path: "/",
   LA_cas_url: "auth.ala.org.au",
   LA_spatial_suburl: "spatial",
   LA_spatial_iniPath: "",
-  LA_spatial_hostname: "vm1",
+  LA_spatial_hostname: "vm13",
   LA_spatial_path: "/",
   LA_spatial_url: "spatial.ala.org.au",
   LA_alerts_suburl: "alerts",
   LA_alerts_iniPath: "",
-  LA_alerts_hostname: "vm1",
+  LA_alerts_hostname: "vm14",
   LA_alerts_path: "/",
   LA_alerts_url: "alerts.ala.org.au",
   LA_doi_suburl: "doi",
   LA_doi_iniPath: "",
-  LA_doi_hostname: "vm1",
+  LA_doi_hostname: "vm15",
   LA_doi_path: "/",
   LA_doi_url: "doi.ala.org.au",
   LA_dashboard_suburl: "dashboard",
   LA_dashboard_iniPath: "",
-  LA_dashboard_hostname: "vm1",
+  LA_dashboard_hostname: "vm16",
   LA_dashboard_path: "/",
   LA_dashboard_url: "dashboard.ala.org.au",
+  LA_branding_hostname: 'vm17',
 };
 
 const P = "generator-living-atlas";
@@ -153,14 +155,12 @@ test("long name valid", async (t) => {
 test("cas", (t) => {
   t.is(dest[P][G].LA_use_CAS, true);
   t.is(dest[P][G].LA_use_CAS, src.conf.LA_use_cas);
-  t.is(dest[P][G].LA_cas_hostname, 'vm1');
   t.is(dest[P][G].LA_cas_url, 'auth.ala.org.au');
 });
 
 test("spatial", (t) => {
   t.is(dest[P][G].LA_use_spatial, true);
   t.is(dest[P][G].LA_use_spatial, src.conf.LA_use_spatial);
-  t.is(dest[P][G].LA_spatial_hostname, 'vm1');
   t.is(dest[P][G].LA_spatial_url, 'spatial.ala.org.au');
 });
 
@@ -177,11 +177,6 @@ test("use_ala_bie", (t) => {
 
 test("species list use", (t) => {
   t.is(dest[P][G].LA_use_species_lists, true);
-  t.is(dest[P][G].LA_lists_hostname, "vm1");
-});
-
-test("species list hostname", (t) => {
-  t.is(dest[P][G].LA_lists_hostname, "vm1");
 });
 
 test("species list url", (t) => {
@@ -192,10 +187,35 @@ test("species list path", (t) => {
   t.is(dest[P][G].LA_lists_path, "/");
 });
 
-test("species list host", (t) => {
-  t.is(dest[P][G].LA_lists_hostname, "vm1");
+test("hosts", (t) => {
+  t.is(dest[P][G].LA_collectory_hostname, "vm1");
+  t.is(dest[P][G].LA_ala_hub_hostname, "vm2");
+  t.is(dest[P][G].LA_biocache_service_hostname, "vm3");
+  t.is(dest[P][G].LA_ala_bie_hostname, "vm4");
+  t.is(dest[P][G].LA_bie_index_hostname, "vm5");
+  t.is(dest[P][G].LA_images_hostname, "vm6");
+  t.is(dest[P][G].LA_lists_hostname, "vm7");
+  t.is(dest[P][G].LA_regions_hostname, "vm8");
+  t.is(dest[P][G].LA_logger_hostname, "vm9");
+  t.is(dest[P][G].LA_solr_hostname, "vm10");
+  t.is(dest[P][G].LA_biocache_backend_hostname, "vm11");
+  t.is(dest[P][G].LA_cas_hostname, "vm12");
+  t.is(dest[P][G].LA_spatial_hostname, "vm13");
+  t.is(dest[P][G].LA_alerts_hostname, "vm14");
+  t.is(dest[P][G].LA_doi_hostname, "vm15");
+  t.is(dest[P][G].LA_dashboard_hostname, "vm16");
+  t.is(dest[P][G].LA_main_hostname, "vm17");
 });
 
 test("json validation default", (t) => {
   t.is(validate({conf: JSON.stringify(defObj)}), '');
+});
+
+test("invalid and valid hostnames", (t) => {
+  t.is(hostnameRegexp.test('aad&'), false);
+  t.is(hostnameRegexp.test('aad%%%'), false);
+  t.is(hostnameRegexp.test('aad$z&'), false);
+  t.is(hostnameRegexp.test('aadAAA1213'), true);
+  t.is(hostnameRegexp.test('aad1213.org'), true);
+  t.is(hostnameRegexp.test('aad1213_0-1'), true);
 });

@@ -64,7 +64,7 @@ module.exports = {
     archive.on("end", function () {
       console.log("Archive wrote %d bytes", archive.pointer());
       // Manual temporal dir cleanup
-      tmpobj.removeCallback();
+      // tmpobj.removeCallback();
     });
 
     var files = [];

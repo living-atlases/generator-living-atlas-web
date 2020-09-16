@@ -69,6 +69,7 @@
         ...conf
       };
       newConf.LA_project_name = `Copy of ${conf.LA_project_name}`;
+      newConf.page = 2;
       req = {conf: JSON.stringify(newConf)};
     } else {
       req = {uuid, conf: JSON.stringify(conf)};

@@ -6,6 +6,7 @@
  */
 const uuidV4 = require('uuid').v4;
 const uuidValidate = require('uuid').validate;
+
 const PREFIX = 'user_configs_';
 const util = require('util');
 const assert = require('../../src/utils').assert;
@@ -14,26 +15,24 @@ let validate = require("../../src/validate");
 
 const get = async function (uuid) {
   assert(typeof uuid === 'string', 'uuid should be a String');
-  let value = await sails.getDatastore('cache').leaseConnection(async (db) => {
-    let found = await (util.promisify(db.get).bind(db))(PREFIX + uuid);
-    // console.log(`Uuid: ${uuid} ${typeof found !== 'undefined' ? "found" : "not found"}`);
-    if (typeof found === 'undefined') {
-      return undefined;
-    } else {
-      // console.log(found);
-      return found;
-    }
-  });
-  return JSON.parse(value);
+  return await Conf.findOne({uuid: uuid});
 }
 
 const set = async function (uuid, conf) {
   assert(typeof uuid === 'string', 'uuid should be a String');
-  assert(typeof conf === 'string', 'conf should be a String');
-  await sails.getDatastore('cache').leaseConnection(async (db) => {
-    await (util.promisify(db.set).bind(db))(PREFIX + uuid, conf);
+  assert(typeof conf === 'object', 'conf should be an Object');
+  conf.uuid = uuid;
+  return await Conf.findOne({uuid: uuid}).then(function (result) {
+    if (result) {
+      return Conf.update({uuid: uuid}, conf).fetch();
+    } else {
+      delete conf.id;
+      return Conf.create(conf).fetch();
+    }
   });
 }
+
+let validConf = (inputs) => validate(inputs) === '';
 
 module.exports = {
 
@@ -70,19 +69,24 @@ module.exports = {
     let currentUuid = inputs.uuid;
     if (currentUuid == null) {
       currentUuid = uuidV4();
-      let withConf = typeof inputs.conf !== 'undefined' ? inputs.conf : JSON.stringify(defConf);
-      await set(currentUuid, withConf);
-      return res.json({uuid: currentUuid, conf: JSON.parse(withConf)});
+      let withConf = typeof inputs.conf !== 'undefined' && validConf(inputs) ? JSON.parse(inputs.conf) : defConf;
+      let createdConf = await set(currentUuid, withConf);
+      // console.log(createdConf);
+      return res.json({uuid: currentUuid, conf: createdConf});
     }
 
     let confRetrieved = await get(currentUuid);
+    if (typeof confRetrieved === "undefined") {
+      return res.notFound();
+    }
     if (typeof inputs.conf === "undefined") {
       return res.json({uuid: currentUuid, conf: confRetrieved});
     }
 
-    if (validate(inputs) === '')
-      await set(currentUuid, inputs.conf);
-    else {
+    if (validConf(inputs)) {
+      let persisted = await set(currentUuid, JSON.parse(inputs.conf));
+      // console.log(persisted);
+    } else {
       console.log('Not saving because is not valid');
       // do nothing til is valid
     }

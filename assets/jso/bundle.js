@@ -11298,7 +11298,7 @@ var app = (function () {
     const { console: console_1 } = globals;
     const file$l = "src/Service.svelte";
 
-    // (58:0) {#if (service.depends != null && conf[`LA_use_${service.depends}`] === true) || service.depends == null }
+    // (60:0) {#if (service.depends != null && conf[`LA_use_${service.depends}`] === true) || service.depends == null }
     function create_if_block$a(ctx) {
     	let div;
     	let flex;
@@ -11327,8 +11327,8 @@ var app = (function () {
     			t1 = space();
     			hr = element("hr");
     			attr_dev(div, "class", "p-20 pb-5 pt-3 body-2");
-    			add_location(div, file$l, 58, 1, 2177);
-    			add_location(hr, file$l, 135, 1, 4803);
+    			add_location(div, file$l, 60, 1, 2336);
+    			add_location(hr, file$l, 137, 1, 4962);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -11395,14 +11395,14 @@ var app = (function () {
     		block,
     		id: create_if_block$a.name,
     		type: "if",
-    		source: "(58:0) {#if (service.depends != null && conf[`LA_use_${service.depends}`] === true) || service.depends == null }",
+    		source: "(60:0) {#if (service.depends != null && conf[`LA_use_${service.depends}`] === true) || service.depends == null }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (71:3) {:else}
+    // (73:3) {:else}
     function create_else_block_1(ctx) {
     	let span;
     	let t0_value = /*service*/ ctx[1].desc.charAt(0).toUpperCase() + /*service*/ ctx[1].desc.slice(1) + "";
@@ -11415,7 +11415,7 @@ var app = (function () {
     			t0 = text(t0_value);
     			t1 = text(":");
     			attr_dev(span, "class", "desc svelte-198fmxd");
-    			add_location(span, file$l, 71, 4, 2581);
+    			add_location(span, file$l, 73, 4, 2740);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -11436,14 +11436,14 @@ var app = (function () {
     		block,
     		id: create_else_block_1.name,
     		type: "else",
-    		source: "(71:3) {:else}",
+    		source: "(73:3) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (61:3) {#if (service.optional) }
+    // (63:3) {#if (service.optional) }
     function create_if_block_8(ctx) {
     	let div;
     	let switch_1;
@@ -11476,7 +11476,7 @@ var app = (function () {
     			create_component(switch_1.$$.fragment);
     			t = space();
     			if (if_block) if_block.c();
-    			add_location(div, file$l, 61, 4, 2273);
+    			add_location(div, file$l, 63, 4, 2432);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -11535,14 +11535,14 @@ var app = (function () {
     		block,
     		id: create_if_block_8.name,
     		type: "if",
-    		source: "(61:3) {#if (service.optional) }",
+    		source: "(63:3) {#if (service.optional) }",
     		ctx
     	});
 
     	return block;
     }
 
-    // (67:5) {#if service.recommended}
+    // (69:5) {#if service.recommended}
     function create_if_block_9(ctx) {
     	let span;
 
@@ -11551,7 +11551,7 @@ var app = (function () {
     			span = element("span");
     			span.textContent = "Tip: It's quite recommended.";
     			attr_dev(span, "class", "tip svelte-198fmxd");
-    			add_location(span, file$l, 67, 6, 2490);
+    			add_location(span, file$l, 69, 6, 2649);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span, anchor);
@@ -11565,14 +11565,14 @@ var app = (function () {
     		block,
     		id: create_if_block_9.name,
     		type: "if",
-    		source: "(67:5) {#if service.recommended}",
+    		source: "(69:5) {#if service.recommended}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (60:2) <Flex justify="between">
+    // (62:2) <Flex justify="between">
     function create_default_slot_4(ctx) {
     	let current_block_type_index;
     	let if_block;
@@ -11643,14 +11643,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_4.name,
     		type: "slot",
-    		source: "(60:2) <Flex justify=\\\"between\\\">",
+    		source: "(62:2) <Flex justify=\\\"between\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (76:2) {#if !service.optional || conf["LA_use_" + service.name_int]}
+    // (78:2) {#if !service.optional || conf["LA_use_" + service.name_int]}
     function create_if_block_1$4(ctx) {
     	let flex;
     	let current;
@@ -11699,14 +11699,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$4.name,
     		type: "if",
-    		source: "(76:2) {#if !service.optional || conf[\\\"LA_use_\\\" + service.name_int]}",
+    		source: "(78:2) {#if !service.optional || conf[\\\"LA_use_\\\" + service.name_int]}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (79:5) {#if (typeof service.forceSubdomain === 'undefined' && !service.forceSubdomain) && !service.withoutUrl}
+    // (81:5) {#if (typeof service.forceSubdomain === 'undefined' && !service.forceSubdomain) && !service.withoutUrl}
     function create_if_block_7(ctx) {
     	let tooltip;
     	let current;
@@ -11757,14 +11757,14 @@ var app = (function () {
     		block,
     		id: create_if_block_7.name,
     		type: "if",
-    		source: "(79:5) {#if (typeof service.forceSubdomain === 'undefined' && !service.forceSubdomain) && !service.withoutUrl}",
+    		source: "(81:5) {#if (typeof service.forceSubdomain === 'undefined' && !service.forceSubdomain) && !service.withoutUrl}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (81:7) <div slot="activator">
+    // (83:7) <div slot="activator">
     function create_activator_slot_1(ctx) {
     	let div0;
     	let div1;
@@ -11792,9 +11792,9 @@ var app = (function () {
     			div0 = element("div");
     			div1 = element("div");
     			create_component(switch_1.$$.fragment);
-    			add_location(div1, file$l, 81, 8, 2973);
+    			add_location(div1, file$l, 83, 8, 3132);
     			attr_dev(div0, "slot", "activator");
-    			add_location(div0, file$l, 80, 7, 2942);
+    			add_location(div0, file$l, 82, 7, 3101);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div0, anchor);
@@ -11839,14 +11839,14 @@ var app = (function () {
     		block,
     		id: create_activator_slot_1.name,
     		type: "slot",
-    		source: "(81:7) <div slot=\\\"activator\\\">",
+    		source: "(83:7) <div slot=\\\"activator\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (80:6) <Tooltip>
+    // (82:6) <Tooltip>
     function create_default_slot_3(ctx) {
     	let t;
 
@@ -11869,14 +11869,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_3.name,
     		type: "slot",
-    		source: "(80:6) <Tooltip>",
+    		source: "(82:6) <Tooltip>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (91:5) {#if !service.withoutUrl}
+    // (93:5) {#if !service.withoutUrl}
     function create_if_block_6$1(ctx) {
     	let urlprefix;
     	let current;
@@ -11917,14 +11917,14 @@ var app = (function () {
     		block,
     		id: create_if_block_6$1.name,
     		type: "if",
-    		source: "(91:5) {#if !service.withoutUrl}",
+    		source: "(93:5) {#if !service.withoutUrl}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (95:5) {#if !service.withoutUrl}
+    // (97:5) {#if !service.withoutUrl}
     function create_if_block_3$1(ctx) {
     	let t;
     	let if_block1_anchor;
@@ -12016,14 +12016,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3$1.name,
     		type: "if",
-    		source: "(95:5) {#if !service.withoutUrl}",
+    		source: "(97:5) {#if !service.withoutUrl}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (96:6) {#if conf[`LA_${service.name_int}_uses_subdomain`]}
+    // (98:6) {#if conf[`LA_${service.name_int}_uses_subdomain`]}
     function create_if_block_5$1(ctx) {
     	let textfield0;
     	let updating_value;
@@ -12080,7 +12080,7 @@ var app = (function () {
     			t4 = space();
     			create_component(textfield1.$$.fragment);
     			attr_dev(span, "class", "nowrap svelte-198fmxd");
-    			add_location(span, file$l, 99, 7, 3596);
+    			add_location(span, file$l, 101, 7, 3755);
     		},
     		m: function mount(target, anchor) {
     			mount_component(textfield0, target, anchor);
@@ -12140,14 +12140,14 @@ var app = (function () {
     		block,
     		id: create_if_block_5$1.name,
     		type: "if",
-    		source: "(96:6) {#if conf[`LA_${service.name_int}_uses_subdomain`]}",
+    		source: "(98:6) {#if conf[`LA_${service.name_int}_uses_subdomain`]}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (104:6) {#if !conf[`LA_${service.name_int}_uses_subdomain`]}
+    // (106:6) {#if !conf[`LA_${service.name_int}_uses_subdomain`]}
     function create_if_block_4$1(ctx) {
     	let span0;
     	let t0_value = /*conf*/ ctx[0].LA_domain + "";
@@ -12188,8 +12188,8 @@ var app = (function () {
     			span1 = element("span");
     			span1.textContent = "/";
     			attr_dev(span0, "class", "nowrap svelte-198fmxd");
-    			add_location(span0, file$l, 104, 7, 3815);
-    			add_location(span1, file$l, 108, 7, 4041);
+    			add_location(span0, file$l, 106, 7, 3974);
+    			add_location(span1, file$l, 110, 7, 4200);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, span0, anchor);
@@ -12237,14 +12237,14 @@ var app = (function () {
     		block,
     		id: create_if_block_4$1.name,
     		type: "if",
-    		source: "(104:6) {#if !conf[`LA_${service.name_int}_uses_subdomain`]}",
+    		source: "(106:6) {#if !conf[`LA_${service.name_int}_uses_subdomain`]}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (78:4) <Flex justify="start">
+    // (80:4) <Flex justify="start">
     function create_default_slot_2$2(ctx) {
     	let t0;
     	let t1;
@@ -12369,14 +12369,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_2$2.name,
     		type: "slot",
-    		source: "(78:4) <Flex justify=\\\"start\\\">",
+    		source: "(80:4) <Flex justify=\\\"start\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (128:4) {:else}
+    // (130:4) {:else}
     function create_else_block$2(ctx) {
     	let div;
     	let button;
@@ -12397,7 +12397,7 @@ var app = (function () {
     			div = element("div");
     			create_component(button.$$.fragment);
     			attr_dev(div, "class", "btn-hidden svelte-198fmxd");
-    			add_location(div, file$l, 128, 5, 4676);
+    			add_location(div, file$l, 130, 5, 4835);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -12424,14 +12424,14 @@ var app = (function () {
     		block,
     		id: create_else_block$2.name,
     		type: "else",
-    		source: "(128:4) {:else}",
+    		source: "(130:4) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (119:4) {#if service.sample != null}
+    // (121:4) {#if service.sample != null}
     function create_if_block_2$3(ctx) {
     	let tooltip;
     	let current;
@@ -12482,14 +12482,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2$3.name,
     		type: "if",
-    		source: "(119:4) {#if service.sample != null}",
+    		source: "(121:4) {#if service.sample != null}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (121:6) <div slot="activator">
+    // (123:6) <div slot="activator">
     function create_activator_slot$1(ctx) {
     	let div;
     	let a;
@@ -12515,9 +12515,9 @@ var app = (function () {
     			attr_dev(a, "class", "btn-visible nohover svelte-198fmxd");
     			attr_dev(a, "href", a_href_value = /*service*/ ctx[1].sample);
     			attr_dev(a, "target", "_blank");
-    			add_location(a, file$l, 121, 7, 4452);
+    			add_location(a, file$l, 123, 7, 4611);
     			attr_dev(div, "slot", "activator");
-    			add_location(div, file$l, 120, 6, 4422);
+    			add_location(div, file$l, 122, 6, 4581);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -12549,14 +12549,14 @@ var app = (function () {
     		block,
     		id: create_activator_slot$1.name,
     		type: "slot",
-    		source: "(121:6) <div slot=\\\"activator\\\">",
+    		source: "(123:6) <div slot=\\\"activator\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (120:5) <Tooltip>
+    // (122:5) <Tooltip>
     function create_default_slot_1$4(ctx) {
     	let t;
 
@@ -12579,14 +12579,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$4.name,
     		type: "slot",
-    		source: "(120:5) <Tooltip>",
+    		source: "(122:5) <Tooltip>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (77:3) <Flex justify="between">
+    // (79:3) <Flex justify="between">
     function create_default_slot$8(ctx) {
     	let flex;
     	let t0;
@@ -12649,7 +12649,7 @@ var app = (function () {
     			if_block.c();
     			if_block_anchor = empty();
     			attr_dev(div, "class", "deploy-in svelte-198fmxd");
-    			add_location(div, file$l, 112, 4, 4096);
+    			add_location(div, file$l, 114, 4, 4255);
     		},
     		m: function mount(target, anchor) {
     			mount_component(flex, target, anchor);
@@ -12732,7 +12732,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$8.name,
     		type: "slot",
-    		source: "(77:3) <Flex justify=\\\"between\\\">",
+    		source: "(79:3) <Flex justify=\\\"between\\\">",
     		ctx
     	});
 
@@ -12829,7 +12829,7 @@ var app = (function () {
     			$$invalidate(0, conf[`LA_${service.name_int}_iniPath`] = service.path, conf);
     		}
 
-    		if (conf[`LA_${service.name_int}_hostname`] == null && hostnamesList && hostnamesList.length > 0) {
+    		if (hostnamesList && hostnamesList.length > 0 && (conf[`LA_${service.name_int}_hostname`] == "" || !hostnamesList.includes(conf[`LA_${service.name_int}_hostname`]))) {
     			$$invalidate(0, conf[`LA_${service.name_int}_hostname`] = hostnamesList[0], conf);
     		}
 
@@ -12875,6 +12875,7 @@ var app = (function () {
 
     		if (debug) console.log("Url: " + conf[`LA_${service.name_int}_url`]);
     		if (debug) console.log("Path: " + conf[`LA_${service.name_int}_path`]);
+    		if (debug) console.log("Hostname : " + conf[`LA_${service.name_int}_hostname`]);
     	};
 
     	let onChange = function () {
@@ -14913,7 +14914,7 @@ var app = (function () {
     const { console: console_1$1 } = globals;
     const file$o = "src/Assistant.svelte";
 
-    // (186:3) {#if (conf.page === 1)}
+    // (187:3) {#if (conf.page === 1)}
     function create_if_block_3$3(ctx) {
     	let intropage;
     	let current;
@@ -14945,14 +14946,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3$3.name,
     		type: "if",
-    		source: "(186:3) {#if (conf.page === 1)}",
+    		source: "(187:3) {#if (conf.page === 1)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (189:3) {#if (conf.page === 2)}
+    // (190:3) {#if (conf.page === 2)}
     function create_if_block_2$5(ctx) {
     	let textfield0;
     	let updating_value;
@@ -15110,14 +15111,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2$5.name,
     		type: "if",
-    		source: "(189:3) {#if (conf.page === 2)}",
+    		source: "(190:3) {#if (conf.page === 2)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (195:5) <div slot="activator">
+    // (196:5) <div slot="activator">
     function create_activator_slot$3(ctx) {
     	let div;
     	let switch_1;
@@ -15142,7 +15143,7 @@ var app = (function () {
     			div = element("div");
     			create_component(switch_1.$$.fragment);
     			attr_dev(div, "slot", "activator");
-    			add_location(div, file$o, 194, 5, 6587);
+    			add_location(div, file$o, 195, 5, 6611);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -15179,14 +15180,14 @@ var app = (function () {
     		block,
     		id: create_activator_slot$3.name,
     		type: "slot",
-    		source: "(195:5) <div slot=\\\"activator\\\">",
+    		source: "(196:5) <div slot=\\\"activator\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (194:4) <Tooltip>
+    // (195:4) <Tooltip>
     function create_default_slot_5(ctx) {
     	let t;
 
@@ -15209,14 +15210,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_5.name,
     		type: "slot",
-    		source: "(194:4) <Tooltip>",
+    		source: "(195:4) <Tooltip>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (200:4) <Flex align="center" justify="start">
+    // (201:4) <Flex align="center" justify="start">
     function create_default_slot_4$1(ctx) {
     	let urlprefix;
     	let t;
@@ -15297,14 +15298,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_4$1.name,
     		type: "slot",
-    		source: "(200:4) <Flex align=\\\"center\\\" justify=\\\"start\\\">",
+    		source: "(201:4) <Flex align=\\\"center\\\" justify=\\\"start\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (207:3) {#if (conf.page === 3)}
+    // (208:3) {#if (conf.page === 3)}
     function create_if_block_1$6(ctx) {
     	let textfield;
     	let updating_value;
@@ -15352,7 +15353,7 @@ var app = (function () {
     			t = space();
     			p = element("p");
     			create_component(card_card.$$.fragment);
-    			add_location(p, file$o, 211, 4, 7265);
+    			add_location(p, file$o, 212, 4, 7289);
     		},
     		m: function mount(target, anchor) {
     			mount_component(textfield, target, anchor);
@@ -15404,14 +15405,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1$6.name,
     		type: "if",
-    		source: "(207:3) {#if (conf.page === 3)}",
+    		source: "(208:3) {#if (conf.page === 3)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (214:6) <div slot="title">
+    // (215:6) <div slot="title">
     function create_title_slot(ctx) {
     	let div;
     	let card_title;
@@ -15427,7 +15428,7 @@ var app = (function () {
     			div = element("div");
     			create_component(card_title.$$.fragment);
     			attr_dev(div, "slot", "title");
-    			add_location(div, file$o, 213, 6, 7292);
+    			add_location(div, file$o, 214, 6, 7316);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -15454,14 +15455,14 @@ var app = (function () {
     		block,
     		id: create_title_slot.name,
     		type: "slot",
-    		source: "(214:6) <div slot=\\\"title\\\">",
+    		source: "(215:6) <div slot=\\\"title\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (217:6) <div slot="text" class="p-5 pb-5 pt-0 text-gray-700 body-2">
+    // (218:6) <div slot="text" class="p-5 pb-5 pt-0 text-gray-700 body-2">
     function create_text_slot(ctx) {
     	let div;
     	let t0;
@@ -15486,14 +15487,14 @@ var app = (function () {
     			t5 = text("\n\t\t\t\t\t\t\tIf you are unsure type something like \"server1, server2, server3\". You can modify this and the rest of\n\t\t\t\t\t\t\tvalues later.");
     			attr_dev(a0, "href", "https://github.com/AtlasOfLivingAustralia/documentation/wiki/Infrastructure-Requirements");
     			attr_dev(a0, "target", "_blank");
-    			add_location(a0, file$o, 217, 15, 7442);
+    			add_location(a0, file$o, 218, 15, 7466);
     			attr_dev(a1, "href", "https://github.com/AtlasOfLivingAustralia/documentation/wiki/");
     			attr_dev(a1, "target", "_blank");
-    			add_location(a1, file$o, 219, 7, 7651);
-    			add_location(br, file$o, 221, 74, 7878);
+    			add_location(a1, file$o, 220, 7, 7675);
+    			add_location(br, file$o, 222, 74, 7902);
     			attr_dev(div, "slot", "text");
     			attr_dev(div, "class", "p-5 pb-5 pt-0 text-gray-700 body-2");
-    			add_location(div, file$o, 216, 6, 7366);
+    			add_location(div, file$o, 217, 6, 7390);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -15514,14 +15515,14 @@ var app = (function () {
     		block,
     		id: create_text_slot.name,
     		type: "slot",
-    		source: "(217:6) <div slot=\\\"text\\\" class=\\\"p-5 pb-5 pt-0 text-gray-700 body-2\\\">",
+    		source: "(218:6) <div slot=\\\"text\\\" class=\\\"p-5 pb-5 pt-0 text-gray-700 body-2\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (213:5) <Card.Card>
+    // (214:5) <Card.Card>
     function create_default_slot_3$1(ctx) {
     	let t;
 
@@ -15544,14 +15545,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_3$1.name,
     		type: "slot",
-    		source: "(213:5) <Card.Card>",
+    		source: "(214:5) <Card.Card>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (230:3) {#if (conf.page === 4)}
+    // (231:3) {#if (conf.page === 4)}
     function create_if_block$c(ctx) {
     	let div;
     	let h5;
@@ -15590,20 +15591,20 @@ var app = (function () {
     			form = element("form");
     			button = element("button");
     			attr_dev(h5, "class", "t-center svelte-i3mvti");
-    			add_location(h5, file$o, 231, 5, 8122);
+    			add_location(h5, file$o, 232, 5, 8146);
     			attr_dev(div, "class", "to-left svelte-i3mvti");
-    			add_location(div, file$o, 230, 4, 8095);
+    			add_location(div, file$o, 231, 4, 8119);
     			attr_dev(button, "id", "submit-btn");
     			attr_dev(button, "type", "submit");
     			attr_dev(button, "name", "conf");
     			button.value = button_value_value = JSON.stringify(/*conf*/ ctx[1]);
     			attr_dev(button, "class", "link-button");
-    			add_location(button, file$o, 240, 5, 8517);
+    			add_location(button, file$o, 241, 5, 8541);
     			attr_dev(form, "target", "_blank");
     			attr_dev(form, "method", "post");
     			attr_dev(form, "action", "/v1/gen");
     			attr_dev(form, "class", "form-link svelte-i3mvti");
-    			add_location(form, file$o, 239, 4, 8440);
+    			add_location(form, file$o, 240, 4, 8464);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -15649,14 +15650,14 @@ var app = (function () {
     		block,
     		id: create_if_block$c.name,
     		type: "if",
-    		source: "(230:3) {#if (conf.page === 4)}",
+    		source: "(231:3) {#if (conf.page === 4)}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (234:6) <li slot="item" let:item={item}>
+    // (235:6) <li slot="item" let:item={item}>
     function create_item_slot(ctx) {
     	let li;
     	let service;
@@ -15678,7 +15679,7 @@ var app = (function () {
     			li = element("li");
     			create_component(service.$$.fragment);
     			attr_dev(li, "slot", "item");
-    			add_location(li, file$o, 233, 6, 8238);
+    			add_location(li, file$o, 234, 6, 8262);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, li, anchor);
@@ -15712,14 +15713,14 @@ var app = (function () {
     		block,
     		id: create_item_slot.name,
     		type: "slot",
-    		source: "(234:6) <li slot=\\\"item\\\" let:item={item}>",
+    		source: "(235:6) <li slot=\\\"item\\\" let:item={item}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (183:1) <Flex direction="column" align="stretch" justify="start">
+    // (184:1) <Flex direction="column" align="stretch" justify="start">
     function create_default_slot_1$6(ctx) {
     	let div;
     	let h2;
@@ -15763,9 +15764,9 @@ var app = (function () {
     			t5 = space();
     			create_component(btnarea.$$.fragment);
     			attr_dev(h2, "class", "svelte-i3mvti");
-    			add_location(h2, file$o, 184, 3, 6124);
+    			add_location(h2, file$o, 185, 3, 6148);
     			attr_dev(div, "class", "main-flex svelte-i3mvti");
-    			add_location(div, file$o, 183, 2, 6097);
+    			add_location(div, file$o, 184, 2, 6121);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -15910,14 +15911,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$6.name,
     		type: "slot",
-    		source: "(183:1) <Flex direction=\\\"column\\\" align=\\\"stretch\\\" justify=\\\"start\\\">",
+    		source: "(184:1) <Flex direction=\\\"column\\\" align=\\\"stretch\\\" justify=\\\"start\\\">",
     		ctx
     	});
 
     	return block;
     }
 
-    // (248:1) <Snackbar top bind:value={showSnackbarTop}>
+    // (249:1) <Snackbar top bind:value={showSnackbarTop}>
     function create_default_slot$9(ctx) {
     	let div;
 
@@ -15925,7 +15926,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			div.textContent = "Configuration copied!";
-    			add_location(div, file$o, 248, 2, 8830);
+    			add_location(div, file$o, 249, 2, 8854);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -15939,7 +15940,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$9.name,
     		type: "slot",
-    		source: "(248:1) <Snackbar top bind:value={showSnackbarTop}>",
+    		source: "(249:1) <Snackbar top bind:value={showSnackbarTop}>",
     		ctx
     	});
 
@@ -16045,7 +16046,7 @@ var app = (function () {
     			add_location(link2, file$o, 2, 0, 181);
     			attr_dev(main, "class", "hero svelte-i3mvti");
     			set_style(main, "--footer-height", /*footerHeight*/ ctx[15]);
-    			add_location(main, file$o, 180, 0, 5948);
+    			add_location(main, file$o, 181, 0, 5972);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -16171,6 +16172,7 @@ var app = (function () {
     		if (copyConf) {
     			let newConf = { ...conf };
     			newConf.LA_project_name = `Copy of ${conf.LA_project_name}`;
+    			newConf.page = 2;
     			req = { conf: JSON.stringify(newConf) };
     		} else {
     			req = { uuid, conf: JSON.stringify(conf) };

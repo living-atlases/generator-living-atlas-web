@@ -22,7 +22,8 @@
     if (conf[`LA_${service.name_int}_iniPath`] == null) {
       conf[`LA_${service.name_int}_iniPath`] = service.path;
     }
-    if (conf[`LA_${service.name_int}_hostname`] == null && hostnamesList && hostnamesList.length > 0) {
+    if (hostnamesList && hostnamesList.length > 0 && (conf[`LA_${service.name_int}_hostname`] == "" ||
+      !hostnamesList.includes(conf[`LA_${service.name_int}_hostname`]))) {
       conf[`LA_${service.name_int}_hostname`] = hostnamesList[0];
     }
     if (!conf['LA_use_ala_bie']) {
@@ -40,6 +41,7 @@
     deployError[service.name_int] = conf[`LA_${service.name_int}_hostname`] == null ? "Please select a server" : "";
     if (debug) console.log("Url: " + conf[`LA_${service.name_int}_url`]);
     if (debug) console.log("Path: " + conf[`LA_${service.name_int}_path`]);
+    if (debug) console.log("Hostname : " + conf[`LA_${service.name_int}_hostname`]);
   }
 
   let onChange = function () {
