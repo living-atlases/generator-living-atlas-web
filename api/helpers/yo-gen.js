@@ -11,6 +11,7 @@ async function yoGen(pkgName, path, yoRc) {
             desc.close();
             let errC;
             let errY;
+            let errCF;
             console.log(`Copying branding from ${brandOrign}`);
             cp.execSync(
               `cp -a ${brandOrign} ${pkgName}-branding`,
@@ -20,9 +21,11 @@ async function yoGen(pkgName, path, yoRc) {
             cp.execSync(
               "yo living-atlas --replay-dont-ask --force", //  --debug",
               {cwd: path, stderr: errY});
-            if (errY) {
-              console.log(errY);
-            }
+            cp.execSync(
+              `cp -f ${pkgName}-branding/app/js/settings.js.sample ${pkgName}-branding/app/js/settings.js`,
+              {cwd: path, stderr: errCF});
+            if (errCF) console.log(errCF);
+            if (errY) console.log(errY);
             console.log("End of yo");
             resolve();
           }).catch((err) => {
