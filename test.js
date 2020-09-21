@@ -220,6 +220,14 @@ test("invalid and valid hostnames", (t) => {
   t.is(hostnameRegexp.test('aad1213_0-1'), true);
 });
 
+test("invalid and valid domains", (t) => {
+  t.is(domainRegexp.test('http://gbif.ad'), false);
+  t.is(domainRegexp.test('https://gbif.ad'), false);
+  t.is(domainRegexp.test('gbif.ad'), true);
+  t.is(domainRegexp.test('data.canadensys.net'), true);
+  t.is(domainRegexp.test('gbif.ad/'), false);
+});
+
 test("spatial false also regions", async (t) => {
   const src = {conf: {LA_project_shortname: "GBIF.ES", LA_use_spatial: false}};
   let dest = transform(src);
