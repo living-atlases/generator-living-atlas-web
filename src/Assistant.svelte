@@ -25,7 +25,6 @@
   import UrlPrefix from './UrlPrefix.svelte';
   import {Card, Button, List, Snackbar, Switch, TextField, Tooltip} from "smelte";
   import {services, servicesStore} from './Services.svelte';
-  import storez from "storez";
   import '@beyonk/gdpr-cookie-consent-banner/dist/style.css' // optional, you can also define your own styles
   import GdprBanner from '@beyonk/gdpr-cookie-consent-banner';
   import {title} from './utils';
@@ -55,6 +54,9 @@
   export let initStore;
   let uuid = initStore.uuid;
   let conf = initStore.conf;
+  const pageStoreId = `${uuid}-page`;
+  let storedPage = localStorage.getItem(pageStoreId);
+  let page = storedPage != null ? parseInt(storedPage) : conf.page;
 
   if (debug) console.log(`Conf of '${conf.LA_project_name}' with uuid: ${uuid} `);
 
@@ -140,12 +142,12 @@
     hostnameError = hostnameInvalid ? hostnamesHint : "";
     hostnameAppend = hostnameInvalid
 
-    firstBtnDisabled = conf.page === 1
-    if (debug) console.log(`Current page ${conf.page} valid ${pageValid[(conf.page - 1)]()}`)
-    sndBtnDisabled = !pageValid[(conf.page - 1)]();
+    firstBtnDisabled = page === 1
+    if (debug) console.log(`Current page ${page} valid ${pageValid[(page - 1)]()}`)
+    sndBtnDisabled = !pageValid[(page - 1)]();
 
-    lastPage = conf.page === 4;
-    sndBtnText = conf.page === 1 ? "Start" : lastPage ? "Generate & Download" : "Continue »";
+    lastPage = page === 4;
+    sndBtnText = page === 1 ? "Start" : lastPage ? "Generate & Download" : "Continue »";
 
     const nextTitle = title(conf.LA_project_shortname);
     if (document.title != nextTitle) {
@@ -160,7 +162,8 @@
   }
 
   let onFirstBtnClick = function () {
-    conf.page -= 1;
+    page -= 1;
+    localStorage.setItem(pageStoreId, page);
     save();
   }
 
@@ -170,10 +173,11 @@
   }
 
   let onSndBtnClick = function () {
-    if (conf.page === 4) {
+    if (page === 4) {
       save(false, false, () => doPost());
     } else {
-      conf.page += 1;
+      page += 1;
+      localStorage.setItem(pageStoreId, page);
       save();
     }
   }
@@ -185,10 +189,10 @@
 	<Flex direction="column" align="stretch" justify="start">
 		<div class="main-flex">
 			<h2>Living Atlas Generator</h2>
-			{#if (conf.page === 1)}
+			{#if (page === 1)}
 				<IntroPage/>
 			{/if}
-			{#if (conf.page === 2)}
+			{#if (page === 2)}
 				<TextField bind:value={conf.LA_project_name} label="Your LA Project Long Name" error={longNameError}
 									 on:change={onChange} append={longNameAppend}/>
 				<TextField bind:value={conf.LA_project_shortname} label="Your LA Project Short Name" error={shortNameError}
@@ -206,7 +210,7 @@
 				</Flex>
 			{/if}
 
-			{#if (conf.page === 3)}
+			{#if (page === 3)}
 				<TextField textarea rows=4 bind:value={conf.hostnames} append={hostnameAppend} error={hostnameError}
 									 on:change={onChange} outlined
 									 label="Names of the servers you will use (comma or space separated)"
@@ -231,7 +235,7 @@
 				</p>
 			{/if}
 
-			{#if (conf.page === 4)}
+			{#if (page === 4)}
 				<div class="to-left">
 					<h5 class="t-center">Define how your services URLs will look like:</h5>
 					<List class="" items={services}>
