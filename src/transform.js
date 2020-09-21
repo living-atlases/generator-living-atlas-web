@@ -91,13 +91,20 @@ module.exports = function (inputs) {
     LA_doi_url: "LA_doi_url",
   };
 
+  let objMapped = objectMapper(inputs.conf, map)
+
+  if (!objMapped.LA_use_spatial)
+    objMapped.LA_use_regions = false;
+
+  if (!objMapped.LA_use_species)
+    objMapped.LA_use_species_lists = false;
+
   const dest = {
     "generator-living-atlas": {
-      promptValues: objectMapper(inputs.conf, map),
+      promptValues: objMapped,
       firstRun: false,
     },
   };
-  // console.log(dest);
 
   return dest;
 };

@@ -219,3 +219,15 @@ test("invalid and valid hostnames", (t) => {
   t.is(hostnameRegexp.test('aad1213.org'), true);
   t.is(hostnameRegexp.test('aad1213_0-1'), true);
 });
+
+test("spatial false also regions", async (t) => {
+  const src = {conf: {LA_project_shortname: "GBIF.ES", LA_use_spatial: false}};
+  let dest = transform(src);
+  t.is(dest[P][G].LA_use_regions, false);
+});
+
+test("bie false also species lists", async (t) => {
+  const src = {conf: {LA_project_shortname: "GBIF.ES", LA_use_ala_bie: false}};
+  let dest = transform(src);
+  t.is(dest[P][G].LA_use_species_lists, false);
+});
