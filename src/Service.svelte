@@ -46,21 +46,22 @@
     if (debug) console.log("Hostname : " + conf[`LA_${service.name_int}_hostname`]);
   }
 
-  let onChange = function (val) {
-    if (val && debug) console.log(val);
+  let onChange = function () {
     if (debug) console.log("on service change")
     verify();
     save();
   }
+  let visible;
 
   $: {
+    visible = service.depends == null || conf[`LA_use_${service.depends}`];
     verify();
   }
 </script>
 
 <!--<div class="service-group">-->
 <!-- <Card.Card > -->
-{#if (service.depends != null && conf[`LA_use_${service.depends}`] === true) || service.depends == null }
+{#if visible}
 	<div class="p-20 pb-5 pt-3 body-2">
 		<Flex justify="between">
 			{#if (service.optional) }
@@ -118,7 +119,7 @@
 				<div class="deploy-in">
 					<Select bind:value={conf[`LA_${service.name_int}_hostname`]}
 									error={deployError[service.name_int]} class="deploy-in" outlined autocomplete
-									on:change={v => onChange(v.datail)} label="deploy it in" items={hostnamesList}/>
+									on:change={onChange} label="deploy it in" items={hostnamesList}/>
 				</div>
 				{#if service.sample != null}
 					<Tooltip>
