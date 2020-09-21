@@ -236,8 +236,9 @@
 					<h5 class="t-center">Define how your services URLs will look like:</h5>
 					<List class="" items={services}>
 						<li slot="item" let:item={item}>
-							<Service conf={conf} service={servicesStore[item]} save="{save}" {debug}
-											 hostnamesList={conf.hostnamesList}/>
+							<Service bind:conf={conf} service={servicesStore[item]} save="{save}" {debug}
+											 hostnamesList={conf.hostnamesList}
+							/>
 						</li>
 					</List>
 				</div>
