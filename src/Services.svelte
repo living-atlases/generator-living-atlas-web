@@ -1,6 +1,6 @@
 <script context="module">
   export const services = ["collectory", "ala_hub", "biocache_service", "ala_bie", "bie_index", "images", "species_lists",
-    "regions", "logger", "solr", "cas", "spatial", "alerts", "doi", "dashboard", "branding", "biocache_backend"];
+    "spatial", "regions", "logger", "solr", "cas", "alerts", "doi", "dashboard", "branding", "biocache_backend"];
   export let servicesStore = {
     collectory: {
       name: "collections",
@@ -65,6 +65,7 @@
       name: "regions",
       name_int: "regions",
       desc: "regional data frontend",
+      depends: "spatial",
       optional: true,
       sample: "https://regions.ala.org.au",
       path: ""
