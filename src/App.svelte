@@ -4,7 +4,12 @@
   import {title} from './utils';
   import Flex from 'svelte-flex';
   import {Button} from "smelte";
+  import browserUpdate from 'browser-update';
 
+  browserUpdate({
+    // fetch compatibility
+    required: {i: 14, f: 139, o: 29, s: 10.1, c: 42},
+  });
   let initStore = {};
   let debug = false;
   let uuid = new Url().path.replace(/^\/+/, '');

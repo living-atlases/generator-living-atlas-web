@@ -39,6 +39,7 @@
     "@sailshq/lodash": "^3.10.3",
     "@sailshq/socket.io-redis": "^5.2.0",
     "archiver": "^5.0.0",
+    "browser-update": "^3.3.22",
     "domurl": "^2.3.4",
     "git-rev-sync": "^3.0.1",
     "grunt": "1.0.4",
