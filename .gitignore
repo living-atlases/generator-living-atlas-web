@@ -133,3 +133,8 @@ lib-cov
 *.pid
 
 #/public/build/
+assets/jso/bundle.js
+assets/jso/bundle.js.map
+assets/styles/bundle.css
+assets/styles/bundle.css.map
+assets/styles/global-smelte.css
