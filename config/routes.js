@@ -33,5 +33,7 @@ module.exports.routes = {
    ***************************************************************************/
 
   "POST /v1/gen": "gen",
+  // Also with direct link
+  'GET /gen/:uuid': "gen",
   "POST /v1/ses": "ses"
 };
