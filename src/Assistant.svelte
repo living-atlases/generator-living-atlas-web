@@ -184,7 +184,6 @@
 	<SiteMenu save="{save}"/>
 	<Flex direction="column" align="stretch" justify="start">
 		<div class="main-flex">
-
 			<h2><img src="/images/la-generator-logo.svg" alt="Living Atlas Generator"/></h2>
 			{#if (page === 1)}
 				<IntroPage/>
@@ -275,6 +274,7 @@
         width: 60%;
         height: 60%;
         max-width: 450px;
+        margin: 0 auto;
     }
 
     .to-left, blockquote {
