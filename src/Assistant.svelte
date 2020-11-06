@@ -233,7 +233,7 @@
 
 			{#if (page === 4)}
 				<div class="to-left">
-					<h5 class="t-center">Define how your services URLs will look like:</h5>
+					<h5>Define how your services URLs will look like:</h5>
 					<List class="" items={services}>
 						<li slot="item" let:item={item}>
 							<Service bind:conf={conf} service={servicesStore[item]} save="{save}" {debug}
@@ -274,7 +274,10 @@
         width: 60%;
         height: 60%;
         max-width: 450px;
-        margin: 0 auto;
+    }
+
+    h5 {
+
     }
 
     .to-left, blockquote {

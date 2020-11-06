@@ -62,7 +62,7 @@
 <!--<div class="service-group">-->
 <!-- <Card.Card > -->
 {#if visible}
-	<div class="p-20 pb-5 pt-3 body-2">
+	<div class="pb-5 pt-3 body-2">
 		<Flex justify="between">
 			{#if (service.optional) }
 				<div on:click={onChange}>
