@@ -64,3 +64,9 @@
         font-size: 24px;
     }
 </style>
+<svelte:head>
+	<link href="https://fonts.googleapis.com/css2?family=Signika:wght@300;400;500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</svelte:head>

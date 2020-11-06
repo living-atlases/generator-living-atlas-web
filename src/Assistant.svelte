@@ -1,7 +1,3 @@
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
 <GdprBanner
 		cookieName="la-generator"
 		acceptLabel="Accept"
@@ -188,7 +184,8 @@
 	<SiteMenu save="{save}"/>
 	<Flex direction="column" align="stretch" justify="start">
 		<div class="main-flex">
-			<h2>Living Atlas Generator</h2>
+
+			<h2><img src="/images/la-generator-logo.svg" alt="Living Atlas Generator"/></h2>
 			{#if (page === 1)}
 				<IntroPage/>
 			{/if}
@@ -270,6 +267,14 @@
     h2, .t-center {
         text-align: center;
         padding-bottom: 20px;
+        font-family: 'Signika', sans-serif;
+        font-weight: 400;
+    }
+
+    h2 img {
+        width: 60%;
+        height: 60%;
+        max-width: 450px;
     }
 
     .to-left, blockquote {
@@ -293,6 +298,11 @@
 
         h2 {
             font-size: 32px;
+        }
+
+        h2 img {
+            width: 80%;
+            height: 80%;
         }
     }
 

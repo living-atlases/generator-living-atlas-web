@@ -32,3 +32,7 @@ label {
 .cookieConsent__Button--Close {
     color: white;
 }
+
+h3, h4, h5, blockquote, .font-medium {
+    font-family: 'Signika', sans-serif;
+}
