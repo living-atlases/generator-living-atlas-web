@@ -138,7 +138,7 @@
     dashboard: {
       name: "dashboard",
       name_int: "dashboard",
-      desc: "work in progress",
+      desc: "",
       optional: true,
       sample: "https://dashboard.ala.org.au",
       path: ""
