@@ -5,13 +5,17 @@
 <div class="to-left">
 	<blockquote class="pl-8 mt-2 mb-10 border-l-8 border-primary-300 text-lg right">
 		<p>
-			This tool facilitates the generation of your Living Atlas (LA) initial configuration.
-		</p>
-		<p>
-			This allows you to bootstrap the initial deployment of your LA Platform.
+			This tool is deprecated, please use the <a href="https://github.com/living-atlases/la-toolkit" target="_blank">LA Toolkit</a> instead.
 		</p>
 	</blockquote>
-	<h5>How this works?</h5>
+  <p>
+		This tool facilitates the generation of your Living Atlas (LA) initial configuration.
+	</p>
+	<p>
+		This allows you to bootstrap the initial deployment of your LA Platform.
+	</p>
+
+	    <h5>How this works?</h5>
 	<p>A <a href="https://living-atlases.gbif.org" target="_blank">Living Atlas</a> can be typically
 		deployed using:</p>
 	<ul class="list-decimal">
