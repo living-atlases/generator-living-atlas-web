@@ -1,5 +1,7 @@
 # Living Atlas Ansible Web Generator
 
+** NOTE**: This tool is deprecated, please use the [LA Toolkit](https://github.com/living-atlases/la-toolkit) instead.
+
 This is a web interface for our yeoman [Living Atlas generator](https://github.com/living-atlases/generator-living-atlas).
 It tries to facilitate even more the initial deployment of a LA portal. [Demo site](https://generator.l-a.site).
 
